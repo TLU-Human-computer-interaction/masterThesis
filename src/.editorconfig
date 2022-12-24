@@ -1,6 +1,4 @@
 # Editor configuration file
-# For Sublime Text install package `EditorConfig`
-# For Atom install package `editorconfig`
 root = true
 
 [*]
