@@ -19,10 +19,8 @@
 
 % Use biblatex for references - change style= as appropriate
 % needed to switch to backend=bibtex and then back to biber
-% \RequirePackage[style=apa]{biblatex}
 \usepackage[natbib=true,backend=biber,sorting=nyt,style=apa]{biblatex}
-% \usepackage[backend=biber,citestyle=verbose-ibid,urldate=short,style=apa]{biblatex}
-% \RequirePackage[style=apa]{biblatex}
+
 % add your references to this file
 \addbibresource{refs.bib}
 \renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
