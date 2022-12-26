@@ -13,39 +13,19 @@
 
 \RequirePackage[]{times}
 \RequirePackage{graphicx}
+\usepackage{csquotes}
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
-
 % Use biblatex for references - change style= as appropriate
 % needed to switch to backend=bibtex and then back to biber
-\RequirePackage[natbib=true,backend=biber,sorting=nyt,style=apa]{biblatex}
-\renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
+% \RequirePackage[style=apa]{biblatex}
+\usepackage[natbib=true,backend=biber,sorting=nyt,style=apa]{biblatex}
+% \usepackage[backend=biber,citestyle=verbose-ibid,urldate=short,style=apa]{biblatex}
+% \RequirePackage[style=apa]{biblatex}
 % add your references to this file
 \addbibresource{refs.bib}
-
-\newcommand\school{School of Digital Technologies, Tallinn University, Estonia}
-\newcommand\doctype{Research Proposal}
-
-\newcommand{\email}[1]{\gdef\@email{#1}}%
-\newcommand{\@email}{\@latex@warning@no@line{No \noexpand\email given}}
-
-\renewcommand{\maketitle}{%
-\begin{center}%
-    {\LARGE \doctype \par}%
-    {\LARGE \@title \par}%
-    \vskip 3em%
-    {\large
-    \lineskip .75em%
-    \begin{tabular}[t]{c}%
-        \@author\\
-        \@email
-    \end{tabular}\par}%
-    \school\\
-      \vskip 1.5em%
-    {\large \@date \par}%
-\end{center}\par
-}
+\renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
 
 % custom command for listing research questions
 \newcounter{questionCounter}
@@ -55,35 +35,3 @@
 	{\usecounter{questionCounter}}
 }
 {\end{list}}
-
-
-% \title{Research Proposal\\
-% *****}
-
-% \author{*********\\
-%     School of Digital Technologies, Tallinn University, Estonia\\
-%     ******}
-
-
-\newenvironment{keywords}[1]{
-    \begin{flushleft}
-            \textbf{Keywords: }#1\\
-    \end{flushleft}
-}
-
-\newenvironment{supervisor}[1]{
-    % if contains comma then Supervisors
-    \begin{flushleft}
-        \textbf{Supervisor: }#1\\
-    \end{flushleft}
-    }
-
-
-% \newif\ifsupervisor
-% \supervisortrue
-% \ifsupervisor
-% \fi
-% \supervisorfalse
-% \ifsupervisor
-% \fi
-
