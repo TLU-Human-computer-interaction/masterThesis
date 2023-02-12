@@ -1,3 +1,4 @@
+% !TEX root = /Users/mariann/git/masterThesis/src/thesis/thesis.tex
 \documentclass{master_thesis}
 
 \begin{document}
@@ -5,12 +6,53 @@
 % title of the thesis must be capitalized like this https://capitalizemytitle.com/
 
 \section{Introduction}
-
 \subfile{accessibility}
 
-\subfile{automated_testing}
+\section{Common way of testing for accessibility?}
+What are the most common methods for testing?\\
+\begin{itemize}
+	\item Testing with users
+	\item Testing using experts
+	\item Testing by using checkers that run in a browser
+\end{itemize}
 
-\section{Summary}
+\section{Automated accessibility testing.}
+
+\begin{itemize}
+	\item How can accessibility testing be automated?
+	\item In software development CI (Continuous integration is commonly used). How can we use the same principle for automated testing.
+	\item What are common strategies used by other companies?
+\end{itemize}
+
+\section{Case study}
+
+Tested out some automated accessibility testing strategies in Pipedrive.
+Decided to test out some ways of testing for accessibility in out component library. It is commonly advised by accessibility specialist that don't build a component library from scratch. Ours uses some other libraries as the base, but a lot of is custom. Currently, we are adopting inner sourcing – every developer in the company is free to contribute to the library. Automated testing can help keep a better quality standard.
+
+\subsection{Storybook and a11y-addon}
+
+\begin{itemize}
+	\item What is storybook and what is it used for?\\
+	Short description of the tool.
+	\item How does this tool work?\\
+	Uses axe-core in the background.
+	\item What issues are tested for each example? \\
+	Based on HTML tags? What else?
+\end{itemize}
+
+\subsection{Steps}
+\begin{enumerate}
+	\item Set up automates accessibility issue detection in storybook \\
+	adding a11y-addon + find a way to generate report of all issues
+	\item Manual accessibility audit with other team members. We already had the addon set up, and we used storybook preview of components for testing, so we looked at the violations reported by the addon-a11y also.
+	\item Comparison between manual and automated report
+	\item Research other possibilities. Testing new storybook test-runner to automatically run all a11y tests. How can we ignore some issues without losing the info.
+	\item Set up a new solution in a new component library. Will it help to ensure better accessibility from the beginning?
+\end{enumerate}
+
+\subsection{Future plans/improvements}
+Test runner that works in the next major version so that the tests can be run the same way as unit tests in CI workflow. This would ensure more visibility and make it easier to keep an eye on the issues.
+
 
 \pagebreak
 ** All references are listed remove before submitting

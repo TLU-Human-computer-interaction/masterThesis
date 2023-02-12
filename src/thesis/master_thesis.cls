@@ -13,17 +13,19 @@
 
 \RequirePackage[]{times}
 \RequirePackage{graphicx}
-\usepackage{csquotes}
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
-% Use biblatex for references - change style= as appropriate
-% needed to switch to backend=bibtex and then back to biber
+% % Use biblatex for references - change style= as appropriate
+% % needed to switch to backend=bibtex and then back to biber
+% \usepackage[natbib=true,backend=bibtex,sorting=nyt,style=apa]{biblatex}
 \usepackage[natbib=true,backend=biber,sorting=nyt,style=apa]{biblatex}
 
-% add your references to this file
+% % add your references to this file
 \addbibresource{refs.bib}
 \renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
+
+\bibliography{citation}
 
 % custom command for listing research questions
 \newcounter{questionCounter}
