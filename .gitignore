@@ -15,3 +15,5 @@ credentials/*
 .DS_store
 node_modules
 scripts/gantt
+src/thesis/aux/accessibility.pdf
+src/thesis/aux/accessibility.pdf
