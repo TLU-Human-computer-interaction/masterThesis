@@ -8,7 +8,7 @@
 \section{Introduction}
 \subfile{accessibility}
 
-\section{Common way of testing for accessibility?}
+\section{Common ways of testing for accessibility?}
 What are the most common methods for testing?\\
 \begin{itemize}
 	\item Testing with users
@@ -29,8 +29,11 @@ What are the most common methods for testing?\\
 Tested out some automated accessibility testing strategies in Pipedrive.
 Decided to test out some ways of testing for accessibility in out component library. It is commonly advised by accessibility specialist that don't build a component library from scratch. Ours uses some other libraries as the base, but a lot of is custom. Currently, we are adopting inner sourcing – every developer in the company is free to contribute to the library. Automated testing can help keep a better quality standard.
 
-\subsection{Storybook and a11y-addon}
+\subsection{Storybook and a11y-addon, axe-core}
 
+During the time of this testing axe-core improved in evaluating color contrast for disabled elements. At the time of the audit they were evaluated for color contrast issues, but later this has been improved to comply with the change in WCAG standard.\\
+
+The issue with Modals, dialogs and similar elements is that they never get checked. Could we improve this by changing the examples provided in storybook \cite{DequeSystems2021}.
 \begin{itemize}
 	\item What is storybook and what is it used for?\\
 	Short description of the tool.
@@ -43,7 +46,14 @@ Decided to test out some ways of testing for accessibility in out component libr
 \subsection{Steps}
 \begin{enumerate}
 	\item Set up automates accessibility issue detection in storybook \\
-	adding a11y-addon + find a way to generate report of all issues
+	adding a11y-addon + find a way to generate report of all issues. \\ \\
+	\textbf{Data gathered from automated testing report:}
+	\begin{itemize}
+		\item How many occurrences in the accessibility violations report. This will show how many violations where detected from all the examples. Might contain the same issue multiple times.
+		\item How many unique issues will only count different violations for each component.
+		\item How many passed checks – this together with violations will show how many things where tested for each component – Most component have more than one story – the list will contain all different passed checks listed
+		\item How many valid checks – are the passed checks relevant to the component – only count the ones that are related to the component that the example is about.
+	\end{itemize}
 	\item Manual accessibility audit with other team members. We already had the addon set up, and we used storybook preview of components for testing, so we looked at the violations reported by the addon-a11y also.
 	\item Comparison between manual and automated report
 	\item Research other possibilities. Testing new storybook test-runner to automatically run all a11y tests. How can we ignore some issues without losing the info.

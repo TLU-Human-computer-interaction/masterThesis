@@ -35,3 +35,7 @@
 	{\usecounter{questionCounter}}
 }
 {\end{list}}
+% custom command for todo items
+\newenvironment{todo}
+{\\ \\ \textbf{TODO:}\begin{list}}
+{\end{list}}
