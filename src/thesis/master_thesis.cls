@@ -31,7 +31,7 @@
 \RequirePackage[natbib=true,backend=biber,style=apa, labeldate=year, urldate=short]{biblatex}
 \renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
 % add your references to this file
-\addbibresource{refs.bib}
+% \addbibresource{refs.bib}
 
 
 % CUSTOM COMMANDS
