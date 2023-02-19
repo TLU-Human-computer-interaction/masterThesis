@@ -1,4 +1,3 @@
-% !TEX root = /Users/mariann/git/masterThesis/src/thesis/thesis.tex
 \documentclass{master_thesis}
 
 \begin{document}
@@ -9,7 +8,7 @@
 \subfile{accessibility}
 
 \section{Common ways of testing for accessibility?}
-What are the most common methods for testing?\\
+What are the most common methods for testing? \\
 \begin{itemize}
 	\item Testing with users
 	\item Testing using experts
@@ -27,13 +26,13 @@ What are the most common methods for testing?\\
 \section{Case study}
 
 Tested out some automated accessibility testing strategies in Pipedrive.
-Decided to test out some ways of testing for accessibility in out component library. It is commonly advised by accessibility specialist that don't build a component library from scratch. Ours uses some other libraries as the base, but a lot of is custom. Currently, we are adopting inner sourcing – every developer in the company is free to contribute to the library. Automated testing can help keep a better quality standard.
+Decided to test out some ways of testing for accessibility in out component library. It is commonly advised by accessibility specialist that don't build a component library from scratch. Ours uses some other libraries as the base, but a lot of is custom. Currently, we are adopting inner sourcing – every developer in the company is free to contribute to the library. Automated testing can help keep a better quality standard \citep{Sane2021}.
 
 \subsection{Storybook and a11y-addon, axe-core}
 
 During the time of this testing axe-core improved in evaluating color contrast for disabled elements. At the time of the audit they were evaluated for color contrast issues, but later this has been improved to comply with the change in WCAG standard.\\
 
-The issue with Modals, dialogs and similar elements is that they never get checked. Could we improve this by changing the examples provided in storybook \cite{DequeSystems2021}.
+The issue with Modals, dialogs and similar elements is that they never get checked. Could we improve this by changing the examples provided in storybook \citep{DequeSystems2021}. \autocite{Sane2021}
 \begin{itemize}
 	\item What is storybook and what is it used for?\\
 	Short description of the tool.
@@ -67,8 +66,8 @@ Test runner that works in the next major version so that the tests can be run th
 \pagebreak
 ** All references are listed remove before submitting
 % with this all references in ref.bib file are listed. without only the ones that are actually used
-% \nocite{*}
-\printbibliography{}
+\nocite{*}
+\printbibliography
 
 \end{document}
 

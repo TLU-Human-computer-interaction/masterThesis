@@ -16,3 +16,5 @@ credentials/*
 node_modules
 scripts/gantt
 src/thesis/aux/accessibility.pdf
+tutorial
+src/thesis/refs.bib.sav
