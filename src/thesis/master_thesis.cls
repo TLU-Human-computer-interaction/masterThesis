@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
-% the name if the new class I created
-\ProvidesClass{master_thesis}[2022/05/08 TLU Master Thesis Proposal]
+% the name of the new class I created
+\ProvidesClass{master_thesis}[2023/01/01 TLU Master Thesis]
 
 % Load an existing class as the base
 \LoadClass[12pt, a4paper]{article}
@@ -13,17 +13,28 @@
 
 \RequirePackage[]{times}
 \RequirePackage{graphicx}
-\usepackage{csquotes}
 
-\usepackage{subfiles} % Best loaded last in the preamble
+\RequirePackage[english]{babel}
 
-% Use biblatex for references - change style= as appropriate
+\RequirePackage{subfiles} % Best loaded last in the preamble
+
+
+% BIBLIOGRAPHY
+
+%  Use biblatex for references - change style= as appropriate
+
 % needed to switch to backend=bibtex and then back to biber
-\usepackage[natbib=true,backend=biber,sorting=nyt,style=apa]{biblatex}
+% \RequirePackage[natbib=true,backend=bibtex,sorting=nyt,style=apa]{biblatex}
 
-% add your references to this file
-\addbibresource{refs.bib}
+% use this to see all they keys
+% \RequirePackage[natbib=true,backend=biber,style=draft]{biblatex}
+\RequirePackage[natbib=true,backend=biber,style=apa, labeldate=year, urldate=short]{biblatex}
 \renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
+% add your references to this file
+% \addbibresource{refs.bib}
+
+
+% CUSTOM COMMANDS
 
 % custom command for listing research questions
 \newcounter{questionCounter}
@@ -32,4 +43,9 @@
 	{\textbf{RQ\arabic{questionCounter}:}}
 	{\usecounter{questionCounter}}
 }
+{\end{list}}
+
+% custom command for todo items
+\newenvironment{todo}
+{\\ \\ \textbf{TODO:}\begin{list}}
 {\end{list}}
