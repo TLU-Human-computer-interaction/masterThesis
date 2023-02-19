@@ -17,7 +17,6 @@ jobs:
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.DRIVE_CREDENTIALS }}
-          filename: 'archive.zip'
+          filename: 'src/thesis/aux/thesis.pdf'
           folderId: '1k2P5yemljxexE_DFyQmHiDeDgJb0J885'
-          name: 'src/thesis/aux/thesis.pdf' # optional string
           overwrite: 'true' # optional boolean
