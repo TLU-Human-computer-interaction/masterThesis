@@ -2,7 +2,7 @@ name: Main
 on:
   push:
     branches:
-      - 'thesis-skeleton'
+      - 'main'
   workflow_dispatch:
 
 jobs:
@@ -18,5 +18,5 @@ jobs:
         with:
           credentials: ${{ secrets.DRIVE_CREDENTIALS }}
           filename: 'src/thesis/aux/thesis.pdf'
-          folderId: '1k2P5yemljxexE_DFyQmHiDeDgJb0J885'
+          folderId: '1QYIBK03dci_H-JtNw_AUjlvtKoSZSdSi'
           overwrite: 'true' # optional boolean
