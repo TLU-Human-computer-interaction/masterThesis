@@ -15,6 +15,7 @@
 \RequirePackage{graphicx}
 
 \RequirePackage[english]{babel}
+\RequirePackage{csquotes}
 
 \RequirePackage{subfiles} % Best loaded last in the preamble
 
