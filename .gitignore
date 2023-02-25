@@ -15,6 +15,9 @@ credentials/*
 .DS_store
 node_modules
 scripts/gantt
-src/thesis/aux/accessibility.pdf
 tutorial
 src/thesis/refs.bib.sav
+src/thesis/aux/accessibility.pdf
+src/thesis/aux/automated_testing.pdf
+src/thesis/aux/thesis_structure.pdf
+
