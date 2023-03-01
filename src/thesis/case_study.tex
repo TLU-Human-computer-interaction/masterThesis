@@ -1,26 +1,12 @@
-\section{Case study}
+\documentclass{master_thesis}
+\addbibresource{refs.bib}
 
-Tried out some automated accessibility strategies in Pipedrive. Pipedrive has been developing a sales CRM using mostly typescript and React. Accessibility has never been high priority and at this point it is not very easy to get started. We have a design system and a React based component library to keep the look and UX consistent. This seems like a good place to start with solving accessibility issues. If a button in the reusable library gets fixed 95\% of the buttons in the webapp that our customers use should be improved. \\
-It is commonly advised by accessibility specialist that don't build a component library from scratch.
-%!!!CITATION HERE
-Ours uses some other libraries as the base, but a lot of it custom. Currently, we are adopting inner sourcing – every developer in the company is free to contribute to the library.
-% more details needed here
-Automated testing can help keep a better quality standard
 
-\subsection{Storybook and a11y-addon, axe-core}
+\begin{document}
+% \section{Case study}
 
-% During the time of this testing axe-core improved in evaluating color contrast for disabled elements. At the time of the audit they were evaluated for color contrast issues, but later this has been improved to comply with the change in WCAG standard.\\
-% The issue with Modals, dialogs and similar elements is that they never get checked. Could we improve this by changing the examples provided in storybook.
-\begin{itemize}
-	\item What is storybook and what is it used for?\\
-	Short description of the tool.
-	\item How does this tool work?\\
-	Uses axe-core in the background. How does axe-core work
-	\item What issues are tested for each example? \\
-	Based on HTML tags? What else? There is a standard for these rules so they could be checked better \citep{InitiativeWAI}.
-\end{itemize}
-
-\subsection{Steps}
+% \subsection{Steps}
+Steps
 \begin{enumerate}
 	\item Set up automates accessibility issue detection in storybook
 	adding a11y-addon + find a way to generate report of all issues. \\
@@ -31,11 +17,46 @@ Automated testing can help keep a better quality standard
 		\item How many passed checks – this together with violations will show how many things where tested for each component – Most component have more than one story – the list will contain all different passed checks listed
 		\item How many valid checks – are the passed checks relevant to the component – only count the ones that are related to the component that the example is about.
 	\end{itemize}
-	\item Manual accessibility audit with other team members. We already had the addon set up, and we used storybook preview of components for testing, so we looked at the violations reported by the addon-a11y also.
+	\item Manual accessibility audit with other team members. We already had the add-on set up, and we used storybook preview of components for testing, so we looked at the violations reported by the addon-a11y also.
 	\item Comparison between manual and automated report
 	\item Research other possibilities. Testing new storybook test-runner to automatically run all a11y tests. How can we ignore some issues without losing the info.
 	\item Set up a new solution in a new component library. Will it help to ensure better accessibility from the beginning?
 \end{enumerate}
 
+Pipedrive has been developing a sales CRM using mostly typescript and React. Accessibility has never been high priority and at this point it is not very easy to get started. We have a design system and a React based component library to keep the look and UX consistent. This seems like a good place to start with solving accessibility issues. The library is used widely in the company and developer from different teams contribute to it. If a button in the reusable library gets fixed 95\% of the buttons in the web app that our customers use should be improved.
+
+This should not be taken as a way to solve all accessibility problems, but a good first step to get started. Making changes in a reusable UI library should have a wide impact on the products overall accessibility and without reaching some basic level there first it could be hard to start testing views in the final product.
+
+\subsection{Current state of awareness about accessibility in the company}
+
+First I sent out a survey in our company Slack channels to understand what is the knowledge and general approach on web accessibility in the company. It was shared in one front end developers channel with 212 members, designers channel with 73 members, accessibility channel with 31 members and in out component library channel with 124 members. Some people might also be in more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and who would be likely contributors to the library. There were 7 questions and some of they also included a field for free text to give more details on the subject if they wanted.
+
+\includegraphics[scale=0.4]{img/survey_2.png}
+
+In total 20 people replied to the survey - 6 designers and 14 developers, including one engineering manager. This does not give a full overview of the company, but it should give a good insight into what general opinions regarding accessibility might be. It is likely that developers and designers that are more involved with our component library and/or interested in accessibility where more likely to respond.
+
+The results show that 10\% of people who responded think their knowledge on accessibility is very good, while most think that knowledge level is average. 35\% of responders know where do find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more. They don't see that accessibility has high priority in the company currently, but at the same time 40\% of responders think that following accessibility standards should be prioritized. There were several comments in the free text sections expressing saying they appreciate this subject being opened.
+
+\subsection{Adding tests to our component library}
+The next step was adding some automated test to our component library development workflow and observing their usefulness. The aim was to find something that we can integrate to our development workflow without a need to learn a new tool or add unnecessary complexity.
+
+We use Storybook for our UI development. It is an open source software for UI development tool that allows you to work on one component at a time \citep{storybook}. It allows us to render isolated UI components without integrating them to the final product right away. Our developers use it to test out the components they are developing locally. We also have a version of storybook available for anyone in the company to see with all the components. If this is the first place where elements will be rendered it seems logical to try to find a way to start testing them there.
+
+To show a component you need to write a story - this means use it the way you would use it in the real world, and it will be rendered in a browser inside Storybook UI. It also has a sidebar for navigating between different examples, controls for additional tools and documentation. This means using a browser extension for accessibility tests would also test the UI around the actual example.
+
+Storybook has a wide ecosystem of add-ons and one of them is addon-a11y. It uses Deque's axe-core to audit the html rendered for an isolated component \citep{addon-a11y}. Axe is an accessibility testing engine for websites and other HTML-based user interfaces. It includes WCAG 2.0 and 2.1 on level A and AA and promises to catch 57\% of WCAG issues on average. \citep{Deque2023}
+This seemed like the best solution in our situation so addon-a11y was added to our component library's storybook. The tool is visible in the sidebar of every example. It shows all the checks that it has passed, all the violations that where found and any issues that could not be checked and might need manual testing. Every rule listed there also has reference to the html node that had the violation, explanation and links to Deque webpage with examples. This should be very useful in understanding and fixing these issues.
+It does not generate a report of all the issues found across the whole library for this another tool was used that will go through all the examples and generate a summary of all the violations found.
+
+% During the time of this testing axe-core improved in evaluating color contrast for disabled elements. At the time of the audit they were evaluated for color contrast issues, but later this has been improved to comply with the change in WCAG standard.\\
+% The issue with Modals, dialogs and similar elements is that they never get checked. Could we improve this by changing the examples provided in storybook.
+
+\subsection{Manual accessibility audit}
+
+The second part is conducting a manual accessibility audit in the same library and comparing the results with the automatically generated test report results to determine what are its strengths and weaknesses and if testing isolated components poses any limitations.
+
+\subsection{Limitations running automated tests on a component library}
 \subsection{Future plans/improvements}
-Test runner that works in the next major version so that the tests can be run the same way as unit tests in CI workflow. This would ensure more visibility and make it easier to keep an eye on the issues.
+In the current version of Storybook there is no easy way to run all these tests in the development workflow. This will become much easier in the next major version. I have tested out this solution on a test library, and it seems like it would definitely be an improvement. Running the tests in CI would ensure that they are run every time someone makes a change and not only when we choose to. We could also block changes that don't pass the required accessibility checks.
+
+\end{document}

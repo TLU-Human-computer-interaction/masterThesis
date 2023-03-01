@@ -1,5 +1,6 @@
 \documentclass{master_thesis}
 %  this needs to be here so that intellisense works for citations
+
 \addbibresource{refs.bib}
 
 \begin{document}
@@ -10,7 +11,7 @@
 % title of the thesis must be capitalized like this https://capitalizemytitle.com/
 \addcontentsline{toc}{section}{Introduction}
 \section*{Introduction}
-% Should I put research goal, research questions and metohodology under introduction
+% Should I put research goal, research questions and methodology under introduction
 
 \section{Research goal and methodology}
 	\subsection{Research goal}
@@ -18,11 +19,11 @@
 
 	\begin{RQlist}
 		\item How good is the knowledge about accessibility standards, tools and best practices in the company currently?
-		\item What kind of errors can be caught by running automated accessbility tests on a component library?
-		\item To what extent can integrating automated testing to a component library's development pipeline help improve it's compliance with WCAG standards?
+		\item What kind of errors can be caught by running automated accessibility tests on a component library?
+		\item To what extent can integrating automated testing to a component library's development pipeline help improve its compliance with WCAG standards?
 		\item What are the biggest problems of integrating automated accessibility testing to a component library development workflow?
 	\end{RQlist}
-	\subsection{Metohodology}
+	\subsection{Methodology}
 
 \section{Background}
 	\todo{test}
@@ -37,14 +38,8 @@
 		\subsubsection{Limitations of automated tests}
 
 \section{Case study}
-% \subfile{case_study.tex}
-	\subsection{Goal of the study}
-	\subsection{Current state of awarness about accessibility in the company}
-	Results from the survey
-	\subsection{Tools used in the intervention}
-		\subsubsection{Storybook}
-		\subsubsection{Axe-core}
-	\subsection{Limitations running automated tests on a component library}
+\citep{byrne-harber2021}
+\subfile{case_study.tex}
 
 \section{Results}
 \section{Discussion}
@@ -55,7 +50,7 @@
 
 
 % with this all references in ref.bib file are listed. without only the ones that are actually used
-\nocite{*}
+% \nocite{*}
 \printbibliography
 ** All references are listed remove before submitting
 \addcontentsline{toc}{section}{References}

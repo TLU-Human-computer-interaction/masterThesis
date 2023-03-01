@@ -17,6 +17,9 @@
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
 
+% embed jpeg png
+\RequirePackage{graphicx}
+
 
 % BIBLIOGRAPHY
 
@@ -30,7 +33,7 @@
 \RequirePackage[natbib=true,backend=biber,style=apa, labeldate=year, urldate=short]{biblatex}
 \renewcommand*{\bibfont}{\fontsize{10}{12}\selectfont}
 % References file in in main file to enable intellisense in VS code
-
+% \addbibresource{refs.bib}
 
 % Formatting
 % Font. The preferred font is Times New Roman, 12 points, with 1,5 spacing.
