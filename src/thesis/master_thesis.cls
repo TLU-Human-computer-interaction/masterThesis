@@ -20,6 +20,9 @@
 % embed jpeg png
 \RequirePackage{graphicx}
 
+% this will make table of contents hypelinks and will allow to use hyperlinks in refs
+\usepackage[]{hyperref}
+    \hypersetup{hidelinks}
 
 % BIBLIOGRAPHY
 
