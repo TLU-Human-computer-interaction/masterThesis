@@ -39,8 +39,27 @@
 \section[The title in table of contents is different]{Introduction}
 \subsection{Images}
 This works with JPEG, PNG, EPS, PDF\\
-\includegraphics[width=10cm]{page_layput.png}\\
-\includegraphics[scale=0.4]{margins.png}\\
+\begin{figure}[h]
+	% \centering
+	\includegraphics[width=\textwidth]{page_layput.png}
+	% \includegraphics[width=10cm]{page_layput.png}\\
+	\caption{Message that was shared in the company Slack channel}
+	\label{fig:layout}
+\end{figure}
+
+\begin{figure}[h]
+	% \centering
+	\includegraphics[width=\textwidth]{margins.png}
+	% \includegraphics[scale=0.4]{margins.png}\\
+	\caption{Message that was shared in the company Slack channel}
+	\label{fig:margins}
+\end{figure}
+
+As you can see in the figure \ref{fig:layout} and \ref{fig:margins}, the
+page has different areas and margins. Also, in the page \pageref{fig:margins}
+is the same example.
+
+
 \subsection{Table of contents}
 For custom tables tocloft package might be useful.
 \subsection{General} \label{sec:Mysec}
