@@ -12,17 +12,22 @@ credentials/*
 *.blg
 *.run.xml
 *blx.bib
+*.lof
 .DS_store
 node_modules
 scripts/gantt
 tutorial
+
+# Files not needed in version control
 src/thesis/refs.bib.sav
-src/thesis/aux/accessibility.pdf
-src/thesis/aux/automated_testing.pdf
 src/thesis/The Style Sheet for BA and MA Thesis at the School of Humanities-1.pdf
 src/thesis/blank.tex
+src/thesis/img/2022_State_of_Digital_Accessibility_Report.pdf
+
+# PDF-s not synced
+src/thesis/aux/automated_testing.pdf
 src/thesis/aux/case_study.pdf
 src/thesis/aux/appendix.pdf
 src/tutorial/aux/latex_tutorial.pdf
-src/thesis/img/2022_State_of_Digital_Accessibility_Report.pdf
 src/thesis/aux/images_tables.pdf
+src/thesis/aux/accessibility.pdf

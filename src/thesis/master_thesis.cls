@@ -13,8 +13,9 @@
 % \RequirePackage{ifthen}
 \RequirePackage{parskip}
 
-
+% Form images
 \RequirePackage{graphicx}
+\RequirePackage{float}
 
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
