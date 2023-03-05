@@ -11,6 +11,8 @@
 % margin 3,5 cm to allow appropriate binding.
 \RequirePackage[left=35mm, right=20mm, top=25mm, bottom=25mm]{geometry}
 % \RequirePackage{ifthen}
+\RequirePackage{parskip}
+
 
 \RequirePackage{graphicx}
 
