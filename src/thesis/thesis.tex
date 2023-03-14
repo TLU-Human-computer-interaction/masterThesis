@@ -15,15 +15,17 @@
 
 \section{Research goal and methodology}
 	\subsection{Research goal}
-Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers. In software development code quality and best practices are checked with linters and tests. This helps maintain a high quality and when set up right demands a low effort on a daily basis. Accessibility consists of different parts and a part of it is the html that the end user interacts with. This is quite testable.
+Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers and testing with real users.
 
-I would like to see if automated accessibility test can potentially help improve the overall accessibility in out component library. Most testing tools also provide links and instructions about the issue that was detected. Can this help improve the developer knowledge about accessibility?
+In software development to ensure all new added code follows the quality and best practice standards linters and test are used. A similar quality gate could be set up for conformance with accessibility standards. This would act as a gatekeeper to ensure that if there are any detectable problems in the added code then it can not be deployed until these have been fixed.
 
-Many companies have design systems to help maintain consistency both in what the end users experience and in the code. This seems like a good place to start with establishing a basic accessibility standard. Most accessibility checkers are intended to be used for a website. How effectively can components be tested? What limitations might there be?
+I would like to see if automated accessibility test can potentially help improve the overall accessibility in our component library. Most testing tools also provide links and instructions about the issue that was detected. This could help improve the developers' knowledge about accessibility issues and how to fix them.
 
-There have been various studies that have compared different accessibility testing tools (\todo{Find refs}) and studies that have tried to find reliable ways to measure websites conformance with accessibility standards. I will take a look at enough tools to find one that would be usable for my purposes, but I am not intending to compare them as a part of this work.
+Many companies have design systems to help maintain consistency both in what the end users experience and in the codebase. This seems like a good place to start with establishing a basic accessibility standard. Most accessibility checkers are intended to be used for a website. How effectively can components be tested? What limitations might there be?
 
-I intend to test out and automated accessibility tool in my workplace on our React component library - Convention UI React (CUI for short) \todo{should I use this?}. This will probably pose some limitations on the tool I can use.
+Many studies have been done that compare different accessibility testing tools \citep{Alsaeedi2020,Ismailova2022,Sane2021,Vigo2013,RybinKoob2022}. I will take a look at the results of these studies and test out enough tools on my own to find one that would be usable for my purposes, but I am not intending to compare them as a part of this work.
+
+I intend to test out and automated accessibility tool in my workplace on our React component library - Convention UI React (CUI for short) \todo{Abbreviations, should I use this?}. This will probably pose some limitations on the tool I can use. The selected tool should work with our current tooling and not disrupt the current development flow.
 
 	\subsection{Research questions}
 
@@ -31,7 +33,7 @@ I intend to test out and automated accessibility tool in my workplace on our Rea
 		\item How good is the knowledge about accessibility standards, tools and best practices in the company currently?
 		\item What kind of errors can be caught by running automated accessibility tests on a component library?
 		\item To what extent can integrate automated testing to a component library's development pipeline help improve its compliance with WCAG standards?
-		\item What are the biggest problems of integrating automated accessibility testing to a component library development workflow?
+		\item What are the biggest problems of integrating automated accessibility testing to a component libraries' development workflow?
 	\end{RQlist}
 	\subsection{Methodology}
 
@@ -51,7 +53,6 @@ I intend to test out and automated accessibility tool in my workplace on our Rea
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
-\citep{Alsaeedi2020}
 % with this all references in ref.bib file are listed. without only the ones that are actually used
 % \nocite{*}
 \printbibliography
@@ -59,7 +60,6 @@ I intend to test out and automated accessibility tool in my workplace on our Rea
 \addcontentsline{toc}{section}{References}
 \section*{Appendices}
 \addcontentsline{toc}{section}{Appendices}
-% \section*{List of Figures and Tables}
 \listoffigures
 \addcontentsline{toc}{section}{List of Figures and Tables}
 \subfile{images_tables.tex}

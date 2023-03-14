@@ -4,10 +4,12 @@
 
 \begin{document}
 \subsection{Automated testing}
-Continuous integration or CI for short  is a software development practice where members of the team integrate that work frequently and each integration is verified with and automated build that includes test to detect and errors as quickly as possible. This is believed to help develop high quality software more rapidly. One of the practices in CI is making your code Self-Testing - adding a suite of automated tests that can check a large part of the code base for bugs. These tests need to be easy to trigger and indicate of any failures.
+Continuous integration or CI for short  is a software development practice where members of the team integrate their work frequently and each integration is verified with and automated build that includes test to detect and errors as quickly as possible. This is believed to help develop high quality software more rapidly. One of the practices in CI is making your code Self-Testing - adding a suite of automated tests that can check a large part of the code base for bugs. These tests need to be easy to trigger and indicate of any failures.
 \citep{Fowler2006}
 
 This last principle could be applied to accessibility. It goes well modern software development principles. Test will not catch everything, but they will catch enough to make it worthwhile. After the initial setup they should not need a lot of maintenance and will be run every time someone contributes to the codebase. This can act as a very effective gatekeeper for any potential accessibility issues.
+
+According to the survey conducted by Level Access about the state of digital accessibility 67\% of organizations that practice continuous integration also include accessibility tests. This has gone up from 56\% reported in 2021. Organizations who have an accessibility program that is in the early stages (2-6 years) or who have IAAP-certified personnel are more likely than average to have implemented CI testing process that includes accessibility. \citep{LevelAccess}
 
 \subsubsection{How does it work?}
 
@@ -15,15 +17,22 @@ Web content is essentially code and any code can be analyzed and compared agains
 
 It can be set up in different way - as a browser plugin that check the site you are currently on against a rule set or a test written to ensure that a piece of code does not violate a certain rule or unit test that will ensure that the sites' compliance with a set of rules is consistent.
 
-These kinds of test can detect up to 60\% of violations. \todo{Find citation}
+These kinds of test can detect only a part of all the possible violations. Craig Abbot compared two most popular accessibility tools that can be used in CI and reported that axe-core caught 27\% and pa11y 20\% \citep{Abbott2021}. Axe-core promises to find on average 57\% issues \citep{Deque2023}. \todo{Read report and find more details}
 There is a limit to what can be detected. More testing will always be required to ensure that the content is fully accessible. These kinds of tests can be set up to run automatically, and they provide measurable results. This means it a good way to monitor compliance with WCAG rules consistently without any extra effort. This can help avoid unwanted changes and show easy fixes in  your code.
 
 WCAG 2.0 was made in a way that works better for automated testing. \todo{Find citation}
 
 \subsubsection{Types of tools}
+\subsubsection{Rules format that makes testing easier}
+
+W3C Accessibility Guidelines Working Group has developed Accessibility Conformance Testing (ACT) Rules Format to provide developers of evaluation methodologies and testing tools a consistent interpretation of how to test for conformance with accessibility requirements like WCAG. The format describes both manual and automated tests. The aim of this is to make accessibility tests transparent and results reproducible. \citep{Fiers2019}
+
+Accessibility testing tools check in the HTML provided meets the requirements defined in WCAG. These requirements are different for each element, but they might be also combined and include more criteria. Each element needs a specific set of requirements to be checked.
+
+ACT Rules include atomic rules that define and element to be tested for a single condition and composite rules that can combine multiple atomic rules to determine if a single test subject satisfies an accessibility requirement. Each rule defines when it should be applied. For atomic rules this could be HTML tag name, computed role or distance between two elements for example and for composite rules it is a union of the applicability of the atomic elements is combines  \citep{Fiers2019}
+
 
 \citep{Sane2021}
-\citep{AbouZahra2017}
 \citep{AbouZahra2020}
 \citep{Alsaeedi2020}
 \citep{WebAIM2019}
