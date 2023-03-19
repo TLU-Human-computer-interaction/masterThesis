@@ -33,3 +33,14 @@ src/thesis/aux/images_tables.pdf
 src/thesis/aux/accessibility.pdf
 src/thesis/audit_compared.tex
 src/thesis/aux/audit_compared.pdf
+.vscode/ltex.hiddenFalsePositives.en-US.txt
+.vscode/ltex.dictionary.en-US.txt
+src/thesis/aux/1_goal_and_methodology.pdf
+src/thesis/aux/2_background.pdf
+src/thesis/aux/3_research.pdf
+src/thesis/aux/4_results.pdf
+src/thesis/aux/5_discussion.pdf
+src/thesis/aux/blank.pdf
+.gitignore
+src/thesis/helpers/The Style Sheet for BA and MA Thesis at the School of Humanities-1.pdf
+src/thesis/aux/goal_and_methodology.pdf

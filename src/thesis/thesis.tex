@@ -11,45 +11,18 @@
 % title of the thesis must be capitalized like this https://capitalizemytitle.com/
 \addcontentsline{toc}{section}{Introduction}
 \section*{Introduction}
-% Should I put research goal, research questions and methodology under introduction
+% Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers and testing with real users.
 
-\section{Research goal and methodology}
-	\subsection{Research goal}
-Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers and testing with real users.
+\subfile{1_goal_and_methodology.tex}
 
-In software development to ensure all new added code follows the quality and best practice standards linters and test are used. A similar quality gate could be set up for conformance with accessibility standards. This would act as a gatekeeper to ensure that if there are any detectable problems in the added code then it can not be deployed until these have been fixed.
+\subfile{2_background.tex}
 
-I would like to see if automated accessibility test can potentially help improve the overall accessibility in our component library. Most testing tools also provide links and instructions about the issue that was detected. This could help improve the developers' knowledge about accessibility issues and how to fix them.
+\subfile{3_research.tex}
 
-Many companies have design systems to help maintain consistency both in what the end users experience and in the codebase. This seems like a good place to start with establishing a basic accessibility standard. Most accessibility checkers are intended to be used for a website. How effectively can components be tested? What limitations might there be?
+\subfile{4_results.tex}
 
-Many studies have been done that compare different accessibility testing tools \citep{Alsaeedi2020,Ismailova2022,Sane2021,Vigo2013,RybinKoob2022}. I will take a look at the results of these studies and test out enough tools on my own to find one that would be usable for my purposes, but I am not intending to compare them as a part of this work.
+\subfile{5_discussion.tex}
 
-I intend to test out and automated accessibility tool in my workplace on our React component library - Convention UI React (CUI for short) \todo{Abbreviations, should I use this?}. This will probably pose some limitations on the tool I can use. The selected tool should work with our current tooling and not disrupt the current development flow.
-
-	\subsection{Research questions}
-
-	\begin{RQlist}
-		\item How good is the knowledge about accessibility standards, tools and best practices in the company currently?
-		\item What kind of errors can be caught by running automated accessibility tests on a component library?
-		\item To what extent can integrate automated testing to a component library's development pipeline help improve its compliance with WCAG standards?
-		\item What are the biggest problems of integrating automated accessibility testing to a component libraries' development workflow?
-	\end{RQlist}
-	\subsection{Methodology}
-
-\section{Background}
-	\subsection{Web accessibility}
-	% \subfile{accessibility}
-	What is it, and why should we care about it?
-		\subsubsection{What standards should be followed?}
-\subfile{automated_testing.tex}
-
-\subfile{case_study.tex}
-
-\section{Results}
-\section{Discussion}
-	\subsection{Limitations of the study}
-	\subsection{Future research}
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
