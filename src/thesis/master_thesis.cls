@@ -18,6 +18,7 @@
 \RequirePackage{float}
 
 \RequirePackage[english]{babel}
+\RequirePackage{microtype}
 \RequirePackage{csquotes}
 
 % embed jpeg png
@@ -41,9 +42,27 @@
 % References file in in main file to enable intellisense in VS code
 % \addbibresource{refs.bib}
 
+% FONTS
+% \RequirePackage{fontspec}
+
+% % \setmainfont[
+% %     Path=../helpers/AtkinsonHyperlegible/
+% %     Scale=0.9,
+% %     Extension = .ttf,
+% %     UprightFont=*-Regular,
+% %     BoldFont=*-Bold,
+% %     ItalicFont=*-Italic,
+% %     BoldItalicFont=*-BoldItalic
+% %     ]{AtkinsonHyperlegible}
+
+% \setmainfont{Atkinson_Hyperlegible}
+
+
 % Formatting
 % Font. The preferred font is Times New Roman, 12 points, with 1,5 spacing.
 \RequirePackage[]{times}
+
+
 % line spacing to 1.5
 \RequirePackage{setspace}
 \onehalfspacing

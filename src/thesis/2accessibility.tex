@@ -6,9 +6,9 @@
 
 \subsection{Web accessibility}
 
-Accessibility is about access. In the physical worlds that could mean being able to go inside a building and on the web it could mean being able to consume an article that has been published. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. Everyone who designs the physical and virtual environment around us should consider these different limitations.
+Essentially accessibility is about providing equal access to goods and services to everyone regardless or their age, gender or disabilities. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. Everyone who designs the physical and virtual environment around us should consider these different limitations.
 
-Essentially accessibility is about providing equal access to goods and services to everyone regardless or their age, gender or disabilities. These principles can be applied to any various fields. For example in architecture it could be designing buildings in a way that that can be accessed by people who can walk on their own as well as the ones who need to use a wheelchair. In digital products it is more often related to the senses we use to consume content. Everything could be equally accessible whether I want to consume the information  using my vision or ability to hear.
+These principles can be applied to any various fields. For example in architecture it could be designing buildings in a way that that can be accessed by people who can walk on their own as well as the ones who need to use a wheelchair. In digital products it is more often related to the senses we use to consume content. Everything could be equally accessible whether I want to consume the information  using my vision or ability to hear.
 
 "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect," said Tim Berners-Lee, W3C Director and inventor of the World Wide Web\citep{WWWC1997}.
 
@@ -24,14 +24,15 @@ The standards for considering people with different abilities and making web con
 
 WCAG is intended for developers of web content, authoring tools or web accessibility evaluation tools and others who need a standard for accessibility. The 4 principles of accessibility addressed in the guidelines are:
 \begin{enumerate}
-	\item perceivable - information and user interface can't be invisible to all the users senses,
-	\item operable - user can interact with the interface,
-	\item understandable - user should understand the information and how the user interface operates
-	\item robust - content should be robust enough that it can be interpreted reliably by a wide variety of user agents.
+	\item Perceivable - information and user interface can't be invisible to all the users senses,
+	\item Operable - user can interact with the interface,
+	\item Understandable - user should understand the information and how the user interface operates
+	\item Robust - content should be robust enough that it can be interpreted reliably by a wide variety of user agents.
 \end{enumerate}
-Under each principle is a list of guidelines that address that principle. Under each guideline there are Success Criteria that describe specifically what conformance to it means. Each Success Criterion is a statement that will be either true or false for a specific Web content.\citep{AGWGP2022}
+Under each principle is a list of guidelines that address that principle. Under each guideline there are Success Criteria that describe specifically what conformance to it means. Each Success Criterion is a statement that will be either true or false for a specific Web content.
 
-\todo{Other standards - European standard section 509 in US}
+\citep{AGWGP2022} \todo{Other standards - European standard section 509 in US}
+
 \subsubsection{Rules format}
 
 W3C Accessibility Guidelines Working Group has developed Accessibility Conformance Testing (ACT) Rules Format to provide developers of evaluation methodologies and testing tools a consistent interpretation of how to test for conformance with accessibility requirements like WCAG. The format describes both manual and automated tests. The aim of this is to make accessibility tests transparent and results reproducible. \citep{Fiers2019}
@@ -40,15 +41,19 @@ Accessibility testing tools check in the HTML provided meets the requirements de
 
 ACT Rules include atomic rules that define and element to be tested for a single condition and composite rules that can combine multiple atomic rules to determine if a single test subject satisfies an accessibility requirement. Each rule defines when it should be applied. For atomic rules this could be HTML tag name, computed role or distance between two elements for example and for composite rules it is a union of the applicability of the atomic elements is combines  \citep{Fiers2019}
 
-\subsection{Accessibility testing}
+\subsection{Accessibility evaluation}
 
-Peter Drucker - an influential thinker on management said: "If you can't measure it you can't improve it". To determine is a website is accessible evaluation is needed. This can be done using different methods like expert review, user testing, subjective assessment, screening techniques and barrier walkthrough.
+% Peter Drucker - an influential thinker on management said: "If you can't measure it you can't improve it".
 
-Expert review, also called, conformance, standards or guidelines review or manual inspection is most widely used. It means checking if a page satisfies a checklist of criteria. The results depend on the evaluators opinions and depend on the chosen guidelines. For this method to be effective skillful evaluations are needed. \citep{Brajnik2008}
+To determine if a website is accessible evaluation is needed. This can be done using different methods like expert review, user testing, subjective assessment, screening techniques or barrier walkthrough. Each method has its pros and cons depending on resources, available experts and other factors.
+
+Expert review, also called, conformance, standards or guidelines review or manual inspection is most widely used. It means checking if a page satisfies a checklist of criteria. The results depend on the evaluators opinions and depend on the chosen guidelines. For this method to be effective skillful evaluators are needed. \citep{Brajnik2008}
 
 Barrier walkthrough is a technique where the evaluator has to assess how severely a number of predefined barriers impact the user to achieve their goal on the website. Accessibility barrier can be any condition that makes it difficult for people to achieve a goal. Which method is suitable depends on a number of factors including availability of skilled auditors and resources. \citep{Brajnik2008}
 
 Screening techniques consist of evaluating a website by using an interface in a way that some sensory, motor or cognitive capabilities of the user are artificially reduced is called. Subjective assessment is based on a panel of users exploring a website themselves and giving feedback on what worked and what did not. User testing means conducting usability tests with disabled people while adopting think-aloud method to get feedback on their experience. \citep{Brajnik2008}
+
+Evaluation with experts are very dependent on the knowledge and experience of the evaluators. Research into the effect of expertise on web accessibility evaluation conducted by \citeauthor{Brajnik2011} shows that when web pages are evaluated with non experts we see a drop in reliability and validity. Even with experts the result will vary a bit, but the results should even out when at least 3 experts are used. For the same level on reliability at least 14 evaluators that are not considered experts in the field on web accessibility are needed. \citep{Brajnik2011}
 
 \subsubsection{Tools for accessibility testing}
 
