@@ -6,7 +6,7 @@
 
 \subsection{Web accessibility}
 
-Essentially accessibility is about providing equal access to goods and services to everyone regardless or their age, gender or disabilities. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. Everyone who designs the physical and virtual environment around us should consider these different limitations.
+Accessibility is about providing equal access to goods and services to everyone regardless or their age, gender or disabilities. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. Everyone who designs the physical and virtual environment around us should consider these different limitations.
 
 These principles can be applied to any various fields. For example in architecture it could be designing buildings in a way that that can be accessed by people who can walk on their own as well as the ones who need to use a wheelchair. In digital products it is more often related to the senses we use to consume content. Everything could be equally accessible whether I want to consume the information  using my vision or ability to hear.
 
@@ -18,9 +18,15 @@ Web accessibility considers auditory, cognitive, neurological, physical, speech 
 
 \subsubsection{Standards}
 
-The international standard for making web content more accessible to people with disabilities is Web Content Accessibility Guidelines (WCAG) that is developed by Web Accessibility Initiative (WAI) that is a part of World Wide Web Consortium (W3C).
+The standards for considering people with different abilities and making web content accessible for different ways of consuming are defined in Web Content Accessibility Guidelines (WCAG) \citep{Kirkpatrick2018}. It is  that is developed by Web Accessibility Initiative (WAI) that is a part of World Wide Web Consortium (W3C).
 
-The standards for considering people with different abilities and making web content accessible for different ways of consuming are defined in Web Content Accessibility Guidelines (WCAG) \citep{Kirkpatrick2018}. The current version is WCAG 2.1 and the next version 2.2 is schedules to be finalized in April 2023 \citep{Henry2023}.
+WAI gives and overview of the laws and policies around the world. 25 out of 40 listed on the page are based on WCAG 2.0 or WCAG 2.0 derivative \citep{Mueller2018}. The most notable ones are the accessibility standard in European Union EN 301 549 V enforced by Web and Mobile Accessibility Directive \citep{MuellerEU2017} and Section 508 of the US Rehabilitation Act of 1973, as amended in United States \citep{MuellerUS2017}.
+
+These two affect a big part of the web, because they regulate how content should be presented in big parts of the world. Both these standards are based on WCAG 2.0 \citep{MuellerEU2017,MuellerUS2017}. This makes WCAG 2.0 the most influential web accessibility standard.
+
+The current version is WCAG 2.1 and the next version 2.2 is schedules to be finalized in April 2023 \citep{Henry2023}. In this thesis I will test against WCAG 2.1, because it is the latest published version of the most widely used standard.
+
+The case study will be run in Pipedrive - a private company that develops a sales CRM (Customer relationship management) software. The biggest markets it operates in are us and Europe\todo{Verify this} and even tough there are now compulsory accessibility regulations that should be followed because it is a private sector company in EU and US the regulations that apply to public sector are based on WCAG 2.0. So following a widely used and reliable standard that is the same or very similar to regulations in the markets  the company operates in makes sense.
 
 WCAG is intended for developers of web content, authoring tools or web accessibility evaluation tools and others who need a standard for accessibility. The 4 principles of accessibility addressed in the guidelines are:
 \begin{enumerate}
@@ -29,11 +35,7 @@ WCAG is intended for developers of web content, authoring tools or web accessibi
 	\item Understandable - user should understand the information and how the user interface operates
 	\item Robust - content should be robust enough that it can be interpreted reliably by a wide variety of user agents.
 \end{enumerate}
-Under each principle is a list of guidelines that address that principle. Under each guideline there are Success Criteria that describe specifically what conformance to it means. Each Success Criterion is a statement that will be either true or false for a specific Web content.
-
-\citep{AGWGWP2022} \todo{Other standards - European standard section 509 in US}
-
-EU standards is based on WCAG \citep{Mueller2017}
+Under each principle is a list of guidelines that address that principle. Under each guideline there are Success Criteria that describe specifically what conformance to it means. Each Success Criterion is a statement that will be either true or false for a specific Web content. \citep{AGWGWP2022}
 
 \subsubsection{Rules format}
 
@@ -47,7 +49,7 @@ ACT Rules include atomic rules that define and element to be tested for a single
 
 % Peter Drucker - an influential thinker on management said: "If you can't measure it you can't improve it".
 
-To determine if a website is accessible evaluation is needed. This can be done using different methods like expert review, user testing, subjective assessment, screening techniques or barrier walkthrough. Each method has its pros and cons depending on resources, available experts and other factors.
+Different evaluation methods are used to determine if a website is accessible. These include expert review, user testing, subjective assessment, screening techniques or barrier walkthrough. Each method has its pros and cons depending on resources, available experts and other factors.
 
 Expert review, also called, conformance, standards or guidelines review or manual inspection is most widely used. It means checking if a page satisfies a checklist of criteria. The results depend on the evaluators opinions and depend on the chosen guidelines. For this method to be effective skillful evaluators are needed. \citep{Brajnik2008}
 
@@ -61,11 +63,11 @@ Evaluation with experts are very dependent on the knowledge and experience of th
 
 There are software programs and online services that help determine if web content meets accessibility guidelines. These tools may support various standards. They might be browser extensions, command line tools, desktop or mobile applications or online services. The feedback they give might be in the form of a report, inserting temporary icons and markup to the scanned page to highlight issues. \citep{AbouZahra2017}
 
-Browser extensions and online tools usually evaluate one page at a time. This might work well for small websites and one time audits, but can be quite ineffective to use as a continuous long term solution. Command line tools need more setup, but can potentially be seamlessly integrated to development workflow.
+Browser extensions and online tools usually evaluate one page at a time. This might work well for small websites and one time audits, but can be quite ineffective to use as a continuous long term solution. Command-line interface (CLI) tools need more setup, but can potentially be seamlessly integrated to development workflow.
 
-\subsubsection{Automated testing}
+\subsection{Automated accessibility testing}
 
-Accessibility testing done by software programs is called automated testing. By this I mean programs that can be set up to perform checks automatically with minimal manual effort. The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web \citep{MDN2023}. Program scans the rendered DOM of a website against accessibility standards, like WCAG to find errors. These errors are reported back with reference to code that produced the error.
+Accessibility testing done by software programs is called automated testing. By this I mean programs that can be set up to perform checks automatically with minimal manual effort. Mostly these are CLI tools that can be integrated to run together with other tests. The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web \citep{MDN2023}. Program scans the rendered DOM of a website against accessibility standards, like WCAG to find errors. These errors are reported back with reference to code that produced the error.
 
 Continuous integration (CI) is a software development practice where members of the team integrate their work frequently and each integration is verified with and automated build that includes test to detect and errors as quickly as possible. This is believed to help develop high quality software more rapidly. One of the practices in CI is making your code Self-Testing - adding a suite of automated tests that can check a large part of the code base for bugs. These tests need to be easy to trigger and indicate of any failures.
 \citep{Fowler2006}
