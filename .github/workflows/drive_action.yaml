@@ -2,7 +2,7 @@ name: Main
 on:
   push:
     branches:
-      - 'main'
+      - 'final'
   workflow_dispatch:
 
 jobs:
