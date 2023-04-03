@@ -21,6 +21,8 @@
 \RequirePackage{microtype}
 \RequirePackage{csquotes}
 
+\RequirePackage{tabularx}
+
 % embed jpeg png
 \RequirePackage{graphicx}
 

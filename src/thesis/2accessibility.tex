@@ -51,7 +51,7 @@ ACT Rules include atomic rules that define and element to be tested for a single
 
 Different evaluation methods are used to determine if a website is accessible. These include expert review, user testing, subjective assessment, screening techniques or barrier walkthrough. Each method has its pros and cons depending on resources, available experts and other factors.
 
-Expert review, also called, conformance, standards or guidelines review or manual inspection is most widely used. It means checking if a page satisfies a checklist of criteria. The results depend on the evaluators opinions and depend on the chosen guidelines. For this method to be effective skillful evaluators are needed. \citep{Brajnik2008}
+Expert review, also called, conformance, standards or guidelines review or manual inspection is most widely used. It means checking if a page satisfies a checklist of criteria. The results depend on the evaluators opinions and depend on the chosen guidelines. Skillful are needed for this method to be effective. \citep{Brajnik2008}
 
 Barrier walkthrough is a technique where the evaluator has to assess how severely a number of predefined barriers impact the user to achieve their goal on the website. Accessibility barrier can be any condition that makes it difficult for people to achieve a goal. Which method is suitable depends on a number of factors including availability of skilled auditors and resources. \citep{Brajnik2008}
 
@@ -61,13 +61,19 @@ Evaluation with experts are very dependent on the knowledge and experience of th
 
 \subsubsection{Tools for accessibility testing}
 
-There are software programs and online services that help determine if web content meets accessibility guidelines. These tools may support various standards. They might be browser extensions, command line tools, desktop or mobile applications or online services. The feedback they give might be in the form of a report, inserting temporary icons and markup to the scanned page to highlight issues. \citep{AbouZahra2017}
+There are software programs and online services that help determine if web content meets accessibility guidelines. These tools may support various standards. They might be browser or authoring tool plugins, command line tools, code linters, open source application programming interfaces (API), desktop or mobile applications or online services. There are tools that are aimed at non-technical content creators and built in to the tools they use daily. Online services, where you can enter the URL of your website to be evaluated, services that regular check your website that can be hosted b the provider or in a companies internal network. \citep{AbouZahra2017}
+
+The results can be presented as a report in HTML, CVS, PDF, XML or other format, in-page feedback with temporary icons and markup, step-by-step evaluation where the user is being prompted to assess the parts that can't be automated. The tool might transform the page, show only text or take away all the colors, to help identify issues. The scope of what the tool evaluate at once might be a single page or group of related pages. Some are capable of accessing password protected content. \citep{AbouZahra2017}
 
 Browser extensions and online tools usually evaluate one page at a time. This might work well for small websites and one time audits, but can be quite ineffective to use as a continuous long term solution. Command-line interface (CLI) tools need more setup, but can potentially be seamlessly integrated to development workflow.
 
-\subsection{Automated accessibility testing}
+There are also various tools that are more specific like Figma plugin that can check if the color contrast of your designs conforms with WCAG standards or plugins for integrated development environments (IDE) that provide immediate feedback to a developer when they miss something related to accessibility in their code.
 
-Accessibility testing done by software programs is called automated testing. By this I mean programs that can be set up to perform checks automatically with minimal manual effort. Mostly these are CLI tools that can be integrated to run together with other tests. The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web \citep{MDN2023}. Program scans the rendered DOM of a website against accessibility standards, like WCAG to find errors. These errors are reported back with reference to code that produced the error.
+\subsubsection{Automated accessibility testing}
+
+In this thesis  a computer program that can be set up to perform checks automatically with minimal manual effort will be called automated accessibility testing. This would leave out browser extensions, because with these would need to take extra steps to run the checks every time. Automated tests should be something that is triggered each time a change has been made. The earlier in the development process it can be triggered the better.
+
+Mostly these are CLI tools that can be integrated to run together with other tests. The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web \citep{MDN2023}. Program scans the rendered DOM of a website against accessibility standards, like WCAG to find errors. These errors are reported back with reference to code that produced the error.
 
 Continuous integration (CI) is a software development practice where members of the team integrate their work frequently and each integration is verified with and automated build that includes test to detect and errors as quickly as possible. This is believed to help develop high quality software more rapidly. One of the practices in CI is making your code Self-Testing - adding a suite of automated tests that can check a large part of the code base for bugs. These tests need to be easy to trigger and indicate of any failures.
 \citep{Fowler2006}
@@ -80,7 +86,7 @@ These kinds of test can detect only a part of all the possible violations. UK Go
 
 Axe-core promises to find on average 57\% issues, which is significantly higher than other tools on the market.  \citep{Deque2023}. They claim that the current statistics is founded on an inaccurate definition of accessibility coverage - percentage of individual WCAG Success Criteria. In reality some types of issues are found much more frequently and the issues found by automated tests form a higher percentage of all issues compared to those discovered by manual detection. They suggest that the coverage should be percentage of the number of issues found on a site.  They conducted a study where they compared 2000 audit results from testing pages with axe-core and manual testing methodology. The average percentage of the number of issues detected by axe-core for each data set is 57.38\%. They also say that looking at the results with current, in their opinion inaccurate, definition coverage would be in the range of 20-30\%. \citep{DequeSystems2021report}
 
-There definitely is a limit to what can be detected no matter how we define the coverage. More testing will always be required to ensure that the content is fully accessible. These kinds of tests can be set up to run automatically, and they provide measurable results. This means it a good way to monitor compliance with WCAG rules consistently without any extra effort. This can help avoid unwanted changes and show easy fixes in  your code.
+There definitely is a limit to what can be detected no matter how we define the coverage. More testing will always be required to ensure that the content is fully accessible. These kinds of tests can be set up to run automatically, and they provide measurable results. This means it a good way to monitor compliance with WCAG rules consistently without much extra effort. This can help avoid unwanted changes and show easy fixes in  your code.
 
 % WCAG 2.0 was made in a way that works better for automated testing. \todo{Find citation}
 

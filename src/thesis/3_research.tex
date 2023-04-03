@@ -17,15 +17,36 @@ The research conducted for this thesis can be divided into 6 steps:
 	\item Post case study questionnaire
 \end{enumerate}
 
-The fist things was to look at different automated accessibility tools that are available, test them out and see what would fit our purpose the best. The tool needed to be easy to use for everyone and not block development. The next step was to send out a questionnaire to better understand the current approaches towards accessibility among the people who work on it the most. After that an automated accessibility tool - addon-a11y \citep{addon-a11y} was added and announced in relevant channels to raise awareness about it. In parallel to observing how the tool is being used we preformed a manual accessibility audit in the same component library. These results where then compared with the automated testing results that we got form the same version on the library. As the last step I sent out a questionnaire to gather information about how the tool has been adopted. To get more details I also did some interviews with developers and designers I knew had used the tool during that time.
+The first things was to look at different automated accessibility tools that are available, test them out and see what would fit our purpose the best. The tool needed to be easy to use for everyone and not block development. The next step was to send out a questionnaire to better understand the current approaches towards accessibility among the people who work on it the most. After that an automated accessibility tool was integrated and announced in relevant channels to raise awareness about it. In parallel to observing how the tool is being used we preformed a manual accessibility audit in the same component library. These results where then compared with the automated testing results that we got form the same version on the library. As the last step I sent out a questionnaire to gather information about how the tool has been adopted. To get more details I also did some interviews with developers and designers I knew had used the tool during that time.
 
-Pipedrive has been developing a sales CRM using mostly typescript and React. Accessibility has never been high priority and at this point it is not very easy to get started. We have a design system and a React based component library to keep the look and UX consistent. This seems like a good place to start with solving accessibility issues. The library is used widely in the company and developer from different teams contribute to it. If a button in the reusable library gets fixed 95\% of the buttons in the web app that our customers use should be improved.
+Pipedrive has been developing a sales CRM using mostly typescript and React. Accessibility has never been high priority and at this point it is not very easy to get started. We have a design system and a React based component library to keep the look and UX consistent. This seems like a good place to start with solving accessibility issues. The library is used widely in the company and developer from different teams contribute to it. If a button in the reusable library gets fixed most of the buttons in the web app that our customers use should be improved.
 
 This should not be taken as a way to solve all accessibility problems, but a good first step to get started. Making changes in a reusable UI library should have a wide impact on the products overall accessibility and without reaching some basic level there first it could be hard to start testing views in the final product.
 
 \subsection{Current state of awareness about accessibility in the company}
 
-First I sent out a survey in our company Slack channels (see figure \ref{fig:slack-message}) to understand what is the knowledge and general approach on web accessibility in the company. It was shared in one front end developers channel with 212 members, designers channel with 73 members, accessibility channel with 31 members and in out component library channel with 124 members. Some people might also be in more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and who would be likely contributors to the library. There were 7 questions and some of they also included a field for free text to give more details on the subject if they wanted.
+First I sent out a survey in our company Slack channels (see figure \ref{fig:slack-message}) to understand what is the knowledge and general approach on web accessibility in the company. It was shared in a front end developers, designers channel, accessibility and in out component library (see more details in table \ref{table:survey-shared}).
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Channel members or theme} & \textbf{number of members}  \\
+		\hline
+		Front end developers  & 212  \\
+		\hline
+		Dedicated to our component library  & 124  \\
+		\hline
+		Designers  & 73  \\
+		\hline
+		Accessibility channel  & 31  \\
+		\hline
+	\end{tabular}
+	\caption{List of all the channels the survey was shared in.}
+	\label{table:survey-shared}
+\end{table}
+
+Some people might also be in more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and who would be likely contributors to the library. There were 7 questions and some of they also included a field for free text to give more details on the subject if they wanted.
 
 \begin{figure}[h]
 	% \centering
@@ -45,7 +66,13 @@ We use Storybook for our UI development. It is an open source software for UI de
 
 To show a component you need to write a story - this means use it the way you would use it in the real world, and it will be rendered in a browser inside Storybook UI. It also has a sidebar for navigating between different examples, controls for additional tools and documentation. This means using a browser extension for accessibility tests would also test the UI around the actual example.
 
-Storybook has a wide ecosystem of add-ons and one of them is addon-a11y. It uses Deque's axe-core to audit the HTML rendered for an isolated component \citep{addon-a11y}. Axe is an accessibility testing engine for websites and other HTML-based user interfaces. It includes WCAG 2.0 and 2.1 on level A and AA and promises to catch 57\% of WCAG issues on average. \citep{Deque2023} This should be taken with a grain of salt, because we are intending to test isolated element and not the whole webpage and other studies comparing accessibility testing tools effectiveness have found the coverage to be lower  \todo{needs citation}.
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{img/addon-a11y.png}
+	\caption{Accessibility add-on for Storybook (addon-a11y)}
+	\label{fig:addon-a11y}
+\end{figure}
+
+Storybook has a wide ecosystem of add-ons and one of them is addon-a11y (see figure \ref{fig:addon-a11y} ). It uses Deque's axe-core to audit the HTML rendered for an isolated component \citep{addon-a11y}. Axe is an accessibility testing engine for websites and other HTML-based user interfaces. It includes WCAG 2.0 and 2.1 on level A and AA and promises to catch 57\% of WCAG issues on average. \citep{Deque2023} This should be taken with a grain of salt, because we are intending to test isolated element and not the whole webpage and other studies comparing accessibility testing tools effectiveness have found the coverage to be lower  \todo{needs citation}.
 
 This seemed like the best solution in our situation so addon-a11y was added to our component library's storybook. The tool is visible in the sidebar of every example. It shows all the checks that it has passed, all the violations that where found and any issues that could not be checked and might need manual testing. Every rule listed there also has reference to the HTML node that had the violation, explanation and links to Deque webpage with examples. This should be very useful in understanding and fixing these issues.
 
