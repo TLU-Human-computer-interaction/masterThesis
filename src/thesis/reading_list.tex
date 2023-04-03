@@ -1,0 +1,41 @@
+\documentclass{master_thesis}
+%  this needs to be here so that intellisense works for citations
+\addbibresource{refs.bib}
+
+\begin{document}
+\subsection*{Accessibility}
+\subsection*{Accessibility testing}
+\begin{enumerate}
+	\item \cite{DequeSystems2021}
+	\item \cite{AbouZahra2017}
+	\item \cite{Sane2021}
+	\item \cite{Thornton2022}
+	\item \cite{RybinKoob2022}
+	\item \cite{Ismailova2022}
+	\item \cite{CampoverdeMolina2021}
+	\item \cite{Kumar2020}
+	\item \cite{Kumar2021}
+	\item \cite{Seetha2022}
+\end{enumerate}
+
+\subsection*{Theme list}
+\begin{list}{-}{}
+	\item a11y testing methods
+	\item auto-test tools compared
+	\item measuring a11y
+\end{list}
+
+\subsection*{\cite{DequeSystems2021report}}
+The 57\% coverage of axe-core tools explained. In short they looked at what issues are detected on different (big data set) sites and calculated coverage of each site based on the amount of issues found not on how many of WCAG violations are found. This means that is color contrast issue is reported on more than one instance it will be counted more than once.
+\subsection*{\cite{Tse2020}}
+Linkedin's approach to automated accessibility testing. The run their tests in CI and use axe core.
+\subsection*{\cite{Duran2017}}
+Ten automated accessibility tools compared by testing them on the least accessible site. Might be a bit outdated, because this was done in 2017.
+\subsection*{\cite{WebAIM2022}}
+Overview of the web's accessibility. Overview of the most popular sites and a lot of number on how many issues are found, and what is the general state of accessibility in the web. Three years of data compared.
+\subsection*{\cite{Vigo2013}}
+What could be the harm in relying on automated testing? This research look at number of available automated evaluation tools and compares their output to that of a team of experts in regard to the coverage, completeness and correctness. Results show that relying on tools alone is not recommended, because even if the right tool is used only 6 out of 10 violations would be caught. Tools seem to be more effective on very inaccessible sites.
+
+\todo{Take a look at some concrete numbers}
+\printbibliography
+\end{document}

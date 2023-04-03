@@ -1,79 +1,41 @@
 \documentclass{master_thesis}
 %  this needs to be here so that intellisense works for citations
+
 \addbibresource{refs.bib}
 
 \begin{document}
 
+% \renewcommand*\contentsname{Table of Contents}
+\tableofcontents
+
 % title of the thesis must be capitalized like this https://capitalizemytitle.com/
+\addcontentsline{toc}{section}{Introduction}
+\section*{Introduction}
+% Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers and testing with real users.
 
-\section{Introduction}
-\subfile{accessibility}
+\subfile{1_goal_and_methodology.tex}
 
-\section{Common ways of testing for accessibility?}
+\subfile{2_background.tex}
 
-What are the most common methods for testing?
+\subfile{3_research.tex}
 
-\begin{itemize}
-	\item Testing with users
-	\item Testing using experts
-	\item Testing by using checkers that run in a browser
-\end{itemize}
+\subfile{4_results.tex}
 
-\section{Automated accessibility testing.}
+\subfile{5_discussion.tex}
 
-\begin{itemize}
-	\item How can accessibility testing be automated?
-	\item In software development CI/CD (Continuous integration / Continuous delivery) is commonly used. How can we use the same principle for automated testing. Look et this \citep{Sane2021}
-	\item What are common strategies used by other companies?
-\end{itemize}
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
 
-\section{Case study}
-
-Tried out some automated accessibility strategies in Pipedrive. Pipedrive has been developing a sales CRM using mostly typescript and React. Accessibility has never been high priority and at this point it is not very easy to get started. We have a design system and a React based component library to keep the look and UX consistent. This seems like a good place to start with solving accessibility issues. If a button in the reusable library gets fixed 95\% of the buttons in the webapp that our customers use should be improved. \\
-It is commonly advised by accessibility specialist that don't build a component library from scratch.
-%!!!CITATION HERE
-Ours uses some other libraries as the base, but a lot of it custom. Currently, we are adopting inner sourcing – every developer in the company is free to contribute to the library.
-% more details needed here
-Automated testing can help keep a better quality standard
-
-\subsection{Storybook and a11y-addon, axe-core}
-
-% During the time of this testing axe-core improved in evaluating color contrast for disabled elements. At the time of the audit they were evaluated for color contrast issues, but later this has been improved to comply with the change in WCAG standard.\\
-% The issue with Modals, dialogs and similar elements is that they never get checked. Could we improve this by changing the examples provided in storybook.
-\begin{itemize}
-	\item What is storybook and what is it used for?\\
-	Short description of the tool.
-	\item How does this tool work?\\
-	Uses axe-core in the background. How does axe-core work
-	\item What issues are tested for each example? \\
-	Based on HTML tags? What else? There is a standard for these rules so they could be checked better \citep{InitiativeWAI}.
-\end{itemize}
-
-\subsection{Steps}
-\begin{enumerate}
-	\item Set up automates accessibility issue detection in storybook
-	adding a11y-addon + find a way to generate report of all issues. \\
-	\textbf{Data gathered from automated testing report:}
-	\begin{itemize}
-		\item How many occurrences in the accessibility violations report. This will show how many violations where detected from all the examples. Might contain the same issue multiple times.
-		\item How many unique issues will only count different violations for each component.
-		\item How many passed checks – this together with violations will show how many things where tested for each component – Most component have more than one story – the list will contain all different passed checks listed
-		\item How many valid checks – are the passed checks relevant to the component – only count the ones that are related to the component that the example is about.
-	\end{itemize}
-	\item Manual accessibility audit with other team members. We already had the addon set up, and we used storybook preview of components for testing, so we looked at the violations reported by the addon-a11y also.
-	\item Comparison between manual and automated report
-	\item Research other possibilities. Testing new storybook test-runner to automatically run all a11y tests. How can we ignore some issues without losing the info.
-	\item Set up a new solution in a new component library. Will it help to ensure better accessibility from the beginning?
-\end{enumerate}
-
-\subsection{Future plans/improvements}
-Test runner that works in the next major version so that the tests can be run the same way as unit tests in CI workflow. This would ensure more visibility and make it easier to keep an eye on the issues.
-
-\pagebreak
-** All references are listed remove before submitting
 % with this all references in ref.bib file are listed. without only the ones that are actually used
-\nocite{*}
+% \nocite{*}
 \printbibliography
+** All references are listed remove before submitting
+\addcontentsline{toc}{section}{References}
+\section*{Appendices}
+\addcontentsline{toc}{section}{Appendices}
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures and Tables}
+\subfile{images_tables.tex}
 
 \end{document}
 
