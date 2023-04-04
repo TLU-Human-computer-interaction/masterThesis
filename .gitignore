@@ -13,6 +13,7 @@ credentials/*
 *.run.xml
 *blx.bib
 *.lof
+*.lot
 .DS_store
 node_modules
 scripts/gantt
