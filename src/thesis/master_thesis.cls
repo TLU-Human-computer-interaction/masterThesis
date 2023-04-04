@@ -97,8 +97,16 @@
 % \newenvironment{name}[numarg][optarg_default]{begin_def}{end_def}
 \RequirePackage[dvipsnames]{xcolor}
 \definecolor{brightRed}{HTML}{F15E22}
-\newenvironment{todo}
-	{\textcolor{brightRed}{\textbf{**TODO: }}}
-	{\textcolor{orange}{\textbf{**-----}}}
+\definecolor{darkRed}{HTML}{BD3E09}
+% \newenvironment{todo}
+% 	{
+% 		\textcolor{brightRed}{\textbf{**TODO: }}
+% 	}
+% 	{
+% 		\textcolor{orange}{\textbf{**-----}}
+% 	}
+
+\newcommand{\todo}[1][\textcolor{darkRed}]{\textcolor{brightRed}{\textbf{TODO:} }#1}
+\newcommand{\comment}[1][\textcolor{darkRed}]{\textcolor{brightRed}{\textbf{Comment:} }#1}
 
 \RequirePackage{subfiles} % Best loaded last in the preamble

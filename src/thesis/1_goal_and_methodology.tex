@@ -6,31 +6,33 @@
 \section{Research goal and methodology}
 \subsection{Research goal}
 
-In software development linters and tests are used to ensure all new added code follows the quality and best practice standards and does not break anything. A similar quality gate could be set up for ensuring conformance with accessibility standards. This would act as a gatekeeper to ensure that if there are any detectable problems in the added code then it can not be deployed until these have been fixed.
+Linters and tests are used in software development to ensure that all newly added code follows the quality and best practice standards that the company or developer has defined and that these changes don't break anything. A similar quality gate could be set up for ensuring conformance with accessibility standards. This would act as a gatekeeper to ensure that if there are any detectable problems in the added code then it can not be deployed until these have been fixed.
 
-In this master thesis I intend to test if automated accessibility tests can potentially help improve the overall accessibility and awareness about it. Most testing tools also provide links and instructions about the issue that was detected. This could help improve the developers' knowledge about accessibility issues and how to fix them.
+In this thesis, I intend to test if automated accessibility tests can help improve overall accessibility and awareness about it. Most testing tools also provide links and instructions about the issue that was detected. I think this could help improve the knowledge of the developers who use these tools. They can learn about common accessibility problems and how to fix them.
 
-Many companies have design systems to help maintain consistency both in what the end users experience and how code is written. This seems like a good place to start with establishing a basic accessibility standard. Making changes there would have the widest impact. Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in out component library.
+Many companies have design systems to help maintain consistency both in what the end users experience and how code is written. This seems like a good place to start with establishing a basic level of accessibility. Making changes there would have the biggest impact. Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in a component library.
 
-There are definitely limitations to testing isolated components, but how I see it is similar to unit tests and end-to-end test in software development. Unit tests to ensure a small specific part of the code - unit works as intended. End-to-end tests are run when all these parts are combined to make up the end product. These tests are imitating what would happen when end users are using the product. I see these accessibility tests being run on isolated components being similar to unit tests - each one making sure that that particular element has no issues. Then when the components are used to make up a whole page there should already be fewer issues that need to be dealt with.
+There are limitations to testing isolated components, but how I see it is similar to unit tests and end-to-end tests in software development. Unit tests are used to ensure that a small specific part of the code - a unit works as intended. End-to-end tests are run when all these parts are combined to make up the end product and they should check if all these small parts also work well in combination with each other. These tests are imitating what would happen when end users are using the product.
 
-Many studies have been done that compare different accessibility testing tools \citep{Alsaeedi2020,Ismailova2022,Sane2021,Vigo2013,RybinKoob2022,Duran2017}. I will take a look at the results of these studies and test out enough tools on my own to find one that would be usable for my purposes, but I am not intending to compare them as a part of this work.
+I see the accessibility tests being run on isolated components as being similar to unit tests - each one making sure that that particular element has no issues. Then when the components are used to make up a whole page there should already be fewer issues that need to be dealt with and the next steps could be taken to ensure a high level of accessibility.
 
-I intend to test out and automated accessibility tool in my workplace on our React component library - Convention UI React (CUI). This will probably pose some limitations on the tool I can use. The selected tool should work with our current tooling and not disrupt the current development flow.
+Many studies have been done to compare different accessibility testing tools \citep{Alsaeedi2020, Ismailova2022, Sane2021, Vigo2013, RybinKoob2022, Duran2017}. I will take a look at the results of these studies and truly out enough tools on my own to find one that would be usable for my purposes, but I am not intending to compare them methodically as a part of this work. I will rely on the comparisons that have been made by others in the past.
+
+I intend to try out an automated accessibility tool in my workplace on our React component library - Convention UI React (CUI). This will probably pose some limitations on the tool I can use. The selected tool should work with our current tooling and not disrupt the current development flow.
 
 \subsection{Research questions}
 
 	\begin{RQlist}
 		\item How good is the knowledge about accessibility standards, tools and best practices in the company currently?
 		\item What kind of errors can be caught by running automated accessibility tests on a component library?
-		\item To what extent can integrating automated testing to a component library's development pipeline help improve its compliance with WCAG standards?
-		% This might be the most difficult questions to answer. There is not enough time to do another manual audit, but I can generate a new automatic report. What can I read into that? If the state is better now is it because of the automated accessibility tool integration or because we also did a manual audit? Maybe I can get some insights form the end questionnaire + reaching out to some dev-s who have used this tools during that period. Is this a one time fix and if now then what evidence do I have that it would have a wider impact.
-		\item What are the biggest problems of integrating automated accessibility testing to a component libraries' development workflow?
+		\item To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with WCAG standards?
+		% This might be the most difficult question to answer. There is not enough time to do another manual audit, but I can generate a new automatic report. What can I read into that? If the state is better now is it because of the automated accessibility tool integration or because we also did a manual audit? Maybe I can get some insights from the end questionnaire + reaching out to some devs who have used these tools during that period. Is this a one-time fix and if now then what evidence do I have that it would have a wider impact?
+		\item What are the biggest problems of integrating automated accessibility testing into a component libraries' development workflow?
 	\end{RQlist}
 
 \subsection{Methodology}
 
-% More general methodology here. Write about the methodologies use in the whole thesis - Lit review, case study, user centered research??,
+% More general methodology here. Write about the methodologies used in the whole thesis - Lit review, case study, user-centered research??,
 \todo{Write about methodology}
 
 \begin{list}{-}{}
@@ -38,9 +40,9 @@ I intend to test out and automated accessibility tool in my workplace on our Rea
 	\item Survey
 	\item Case study
 	\item Statistical analysis of survey and case study results
-	\item User centered research?
+	\item User-centered research? (this was suggested when I presented my proposal. Does it make sense now?)
 \end{list}
 
-% Should I only write about the general stuff or should manual testing methodology be moved here also.
+% Should I only write about the general stuff or should a manual testing methodology be moved here also?
 
 \end{document}

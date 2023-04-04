@@ -25,7 +25,7 @@ I prepared a comparison table from both results. For automated accessibility tes
 	\caption{All passed checks reported by addon-a11y and how many of them are valid. }
 	\label{fig:audit-passed}
 \end{figure}
-Passed issues were looked over to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed issues and 22 did not have any valid passed issues.
+Passed issues were looked over to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed checks and 22 did not have any valid passed issues.
 
 Looking at all the fails and passes gives an overview of what was checked for each component. Out of 53 components, only 2 did not get checked by addon-a11y at all. In addition, components that become visible only when triggered by another element, like modals and popups that are currently in our library displayed with a button as a trigger, don't get tested. These components are seen in figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark} - 27 overall. This means 29 components were not tested but this tool and the rest of the components had passed or failed issues, but often not both.
 
