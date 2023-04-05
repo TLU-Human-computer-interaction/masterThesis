@@ -24,7 +24,7 @@ Pipedrive has been developing a sales CRM using mostly typescript and React. Acc
 
 This should not be taken as a way to solve all accessibility problems but as a good first step to getting started. Making changes in a reusable UI library should have a wide impact on the product's overall accessibility and without reaching some basic level there first it could be hard to start testing views in the final product.
 
-\subsection{Current state of awareness about accessibility in the company}
+\subsection{Current state of awareness about accessibility in Pipedrive}
 
 First I sent out a survey in our company Slack channels (see figure \ref{fig:slack-message}) to understand what is the knowledge and general approach to web accessibility in the company. It was shared in 4 channels to reach people who are most likely to be dealing with accessibility, our component library and who are invested in accessibility (see more details in table \ref{table:survey-shared}).
 
@@ -93,7 +93,7 @@ To show a component you need to write a story - this means use it the way you wo
 
 Storybook has a wide ecosystem of add-ons and one of them is addon-a11y (see figure \ref{fig:addon-a11y} ). It uses Deque's axe-core to audit the HTML rendered for an isolated component \citep{addon-a11y}.
 
-Axe-core is an accessibility testing engine for websites and other HTML-based user interfaces. It includes WCAG 2.0 and 2.1 on levels A and AA and it has a coverage of about 20-30\% if you calculate it in a commonly used way, but they claim it to be 57\% according to their new and improved calculation method.\citep{Deque2023} This has been explained in more detail in the Automated accessibility testing chapter.
+Axe-core is an accessibility testing engine for websites and other HTML-based user interfaces \citep{Deque2023}. It includes WCAG 2.0 and 2.1 on levels A and AA and it has a coverage of about 20-30\% if you calculate it in a commonly used way, but they claim it to be 57\% according to their new and improved calculation method. This has been explained in more detail in the Automated accessibility testing chapter.
 
 This seemed like the best solution in our situation so addon-a11y was added to our component library’s storybook. The tool is visible in the sidebar of every example. It shows all the checks that it has passed, all the violations that were found and any issues that could not be checked and might need manual testing. Every rule listed there also has reference to the HTML node that had the violation, explanation and links to the Deque webpage with examples. This should be very useful in understanding and fixing these issues.
 
