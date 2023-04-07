@@ -62,12 +62,9 @@
 
 % \setmainfont{Atkinson_Hyperlegible}
 
-
 % Formatting
 % Font. The preferred font is Times New Roman, 12 points, with 1,5 spacing.
 \RequirePackage[]{times}
-
-
 % line spacing to 1.5
 \RequirePackage{setspace}
 \onehalfspacing
@@ -76,6 +73,26 @@
 % The major level subsections (heading 1 level) start from a new page.
 \AddToHook{cmd/section/before}{\clearpage}
 
+% LISTS
+\usepackage[titles]{tocloft}
+
+% List of Figures
+\newlength{\figNumLen}
+\renewcommand\cftfigindent{0pt}  % no indentation
+\renewcommand\cftfigpresnum{Figure~}   % prefix "(" before figure number
+\renewcommand\cftfigaftersnum{.} % affix ")" after figure number
+\settowidth{\figNumLen}{\cftfigpresnum\cftfigaftersnum0}
+\renewcommand{\cftfignumwidth}{\figNumLen}
+
+% List of Tables
+\newlength{\tabNumLen}
+\renewcommand\cfttabindent{0pt}  % no indentation
+\renewcommand\cfttabpresnum{Table~}   % prefix before figure number
+\renewcommand\cfttabaftersnum{.} % affix after tabure number
+\settowidth{\tabNumLen}{\cfttabpresnum\cfttabaftersnum0}
+\renewcommand{\cfttabnumwidth}{\tabNumLen}
+
+
 % Paragraph style. If you do not use indentation there should be a space between the paragraphs. No mixing of the two styles is permitted within the same paper.
 
 % Justifying. The text must be justified from both left and right margin.
@@ -83,7 +100,6 @@
 % The page numbers of a thesis are placed at the bottom of a page, in the centre. The title page does not have a page number although it is counted (i.e. the page numbers start from the page after the title page and with two).
 
 % Headings. It should be remembered that the space between the last paragraph of a chapter and the new heading should be larger than between the heading and the following paragraph. Even though the text should be justified from both sides the titles should commonly be set to left margin. If the title is on a separate row there is no full stop after it.
-
 
 % CUSTOM COMMANDS
 
