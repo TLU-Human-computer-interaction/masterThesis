@@ -1,14 +1,73 @@
 \documentclass{master_thesis}
-%  this needs to be here so that IntelliSense works for citations
+
+%  This needs to be here so that IntelliSense works for citations
 
 \addbibresource{refs.bib}
 
 \begin{document}
 
-% \renewcommand*\contentsname{Table of Contents}
-\tableofcontents
+
+%===BEGIN TITLE PAGE
+\thispagestyle{empty}
+\begin{center}
+
+\large
+\iflanguage{english}{%
+Tallinn University\\
+% School of Digital Technologies\\
+MSc Human-Computer Interaction\\
+}{%\iflanguage
+Tallinna Ülikool\\
+% Digitehnoloogiate instituut\\
+Inimese ja arvuti interaktsioon\\
+}%\iflanguage
+
+\vspace*{\stretch{5}}
 
 % title of the thesis must be capitalized like this https://capitalizemytitle.com/
+\huge \textbf{Improving Web Accessibility by Integrating Continuous Evaluation to Development Workflow}
+% \huge \textbf{Improving web accessibility by integrating continuous evaluation to development workflow}
+
+\vspace{10mm}
+
+\Large
+\iflanguage{english}{Master’s Thesis}{Magistritöö}
+
+\end{center}
+
+\vspace{2mm}
+
+\begin{flushright}
+ {
+ \setlength{\extrarowheight}{5pt}
+ \begin{tabular}{r l}
+	\iflanguage{english}{Author}{Autor}: &
+	Mariann Tapfer \\
+   \iflanguage{english}{Supervisor(s)}{Juhendaja(d)}: &
+   Mustafa Can Özdemir, MSc \\
+    & Mari-Ell Mets, MSc
+ \end{tabular}
+ }
+\end{flushright}
+
+\vspace*{\stretch{3}}
+
+\vfill
+\centerline{\large Tallinn \the\year}
+
+%===END TITLE PAGE
+
+% Remove this before you submit a final paper
+\listoftodos[Notes (this will be removed from final paper)]
+
+\tableofcontents
+
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+
 \addcontentsline{toc}{section}{Introduction}
 \section*{Introduction}
 % Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers and testing with real users.
@@ -26,16 +85,14 @@
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
-% with this all references in ref.bib file are listed. without only the ones that are actually used
+% With this all references in ref.bib file are listed. without only the ones that are actually used
 % \nocite{*}
 \printbibliography
 \addcontentsline{toc}{section}{References}
+
 \section*{Appendices}
 \addcontentsline{toc}{section}{Appendices}
-\listoffigures
-\addcontentsline{toc}{section}{List of Figures}
-\listoftables
-\addcontentsline{toc}{section}{List of Tables}
+
 \subfile{images_tables.tex}
 
 \end{document}
