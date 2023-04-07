@@ -3,6 +3,7 @@
 \addbibresource{refs.bib}
 
 \begin{document}
+
 \section{Research}
 
 The research conducted for this thesis can be divided into 6 steps:
@@ -24,11 +25,11 @@ Pipedrive has been developing a sales CRM using mostly typescript and React. Acc
 
 This should not be taken as a way to solve all accessibility problems but as a good first step to getting started. Making changes in a reusable UI library should have a wide impact on the product's overall accessibility and without reaching some basic level there first it could be hard to start testing views in the final product.
 
-\subsection{Current state of awareness about accessibility in the company}
+\subsection{Current state of awareness about accessibility in Pipedrive}
 
 First I sent out a survey in our company Slack channels (see figure \ref{fig:slack-message}) to understand what is the knowledge and general approach to web accessibility in the company. It was shared in 4 channels to reach people who are most likely to be dealing with accessibility, our component library and who are invested in accessibility (see more details in table \ref{table:survey-shared}).
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|}
 		\hline
@@ -49,7 +50,7 @@ First I sent out a survey in our company Slack channels (see figure \ref{fig:sla
 
 Some people might also be on more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and who would be likely contributors to the library. There were 7 questions and some of them also included a field for free text to give more details on the subject if they wanted.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	% \centering
 	\includegraphics[width=\textwidth]{img/survey.png}
 	\caption{Message in company Slack announcing adding accessibility tool and inviting people to reply to the survey.}
@@ -58,22 +59,25 @@ Some people might also be on more than one of these channels. The aim was to rea
 
 In total 20 people replied to the survey - 6 designers and 14 developers, including one engineering manager. This does not give a full overview of the company, but it should give a good insight into what general opinions regarding accessibility might be. Likely, developers and designers that are more involved with our component library and/or interested in accessibility were more likely to respond.
 
-\begin{figure}[h!]
-	\includegraphics[width=\textwidth]{img/a11y-knowledge.png}
-	\caption{Results to pre-case study survey question: How much do you know about accessibility (standards, best practices, importance, testing)? 1- "Almost no knowledge" to 5 - "I have very good knowledge" }
-	\label{fig:a11y-knowledge}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/a11y-knowledge.png}
+    \caption{Results to pre-case study survey question: How much do you know about accessibility (standards, best practices, importance, testing)? 1- "Almost no knowledge" to 5 - "I have very good knowledge" }
+    \label{fig:a11y-knowledge}
 \end{figure}
 
-\begin{figure}[h!]
-	\includegraphics[width=\textwidth]{img/a11y-resources.png}
-	\caption{Results to pre-case study survey question: Do you know where to find resources about accessibility standards? }
-	\label{fig:a11y-resources}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/a11y-resources.png}
+    \caption{Results to pre-case study survey question: Do you know where to find resources about accessibility standards? }
+    \label{fig:a11y-resources}
 \end{figure}
 
-\begin{figure}[h!]
-	\includegraphics[width=\textwidth]{img/a11y-priority.png}
-	\caption{Results to pre-case study survey question: Do you think we should prioritize following accessibility standards (like WCAG, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
-	\label{fig:a11y-priority}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/a11y-priority.png}
+    \caption{Results to pre-case study survey question: Do you think we should prioritize following accessibility standards (like WCAG, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
+    \label{fig:a11y-priority}
 \end{figure}
 
 The results show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average (see figure \ref{fig:a11y-knowledge}). 35\% of responders know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (see figure \ref{fig:a11y-resources}). They don't see that accessibility as a high priority in the company currently, but at the same time, 40\% of the people who responded think that following accessibility standards should be prioritized (see figure \ref{fig:a11y-priority}). There were several comments in the free text sections expressing saying they appreciate this subject being opened.
@@ -85,7 +89,7 @@ We use Storybook as the component explorer for our reusable component libraries 
 
 To show a component you need to write a story - this means use it the way you would use it in the real world, and it will be rendered in a browser inside Storybook UI. It also has a sidebar for navigating between different examples, and controls for additional tools and documentation. This means we can't use a browser extension for accessibility tests because that would also test the UI around the actual relevant example.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\includegraphics[width=\textwidth]{img/addon-a11y.png}
 	\caption{Accessibility add-on for Storybook (addon-a11y)}
 	\label{fig:addon-a11y}
@@ -93,7 +97,7 @@ To show a component you need to write a story - this means use it the way you wo
 
 Storybook has a wide ecosystem of add-ons and one of them is addon-a11y (see figure \ref{fig:addon-a11y} ). It uses Deque's axe-core to audit the HTML rendered for an isolated component \citep{addon-a11y}.
 
-Axe-core is an accessibility testing engine for websites and other HTML-based user interfaces. It includes WCAG 2.0 and 2.1 on levels A and AA and it has a coverage of about 20-30\% if you calculate it in a commonly used way, but they claim it to be 57\% according to their new and improved calculation method.\citep{Deque2023} This has been explained in more detail in the Automated accessibility testing chapter.
+Axe-core is an accessibility testing engine for websites and other HTML-based user interfaces \citep{Deque2023}. It includes WCAG 2.0 and 2.1 on levels A and AA and it has a coverage of about 20-30\% if you calculate it in a commonly used way, but they claim it to be 57\% according to their new and improved calculation method. This has been explained in more detail in the Automated accessibility testing chapter.
 
 This seemed like the best solution in our situation so addon-a11y was added to our component library’s storybook. The tool is visible in the sidebar of every example. It shows all the checks that it has passed, all the violations that were found and any issues that could not be checked and might need manual testing. Every rule listed there also has reference to the HTML node that had the violation, explanation and links to the Deque webpage with examples. This should be very useful in understanding and fixing these issues.
 
@@ -114,7 +118,7 @@ To get some data that could be compared with the results from manual testing I w
 
 \subsection{Manual accessibility audit}
 
-The second part is conducting a manual accessibility audit in the same library to get abetter overview of all the issues. This will also allow me to compare the results with the automatically generated test report results to determine what are its strengths and weaknesses and if testing isolated components pose any limitations.
+The second part is conducting a manual accessibility audit in the same library to get a better overview of all the issues. This will also allow me to compare the results with the automatically generated test report results to determine what are its strengths and weaknesses and if testing isolated components pose any limitations.
 
 \subsubsection{Methodology for manual audit}
 We used Storybook to render an isolated preview of each component.
