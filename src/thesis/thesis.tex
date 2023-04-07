@@ -1,6 +1,11 @@
 \documentclass{master_thesis}
 
+%  This needs to be here so that IntelliSense works for citations
+
+\addbibresource{refs.bib}
+
 \begin{document}
+
 
 %===BEGIN TITLE PAGE
 \thispagestyle{empty}
@@ -55,6 +60,12 @@ Inimese ja arvuti interaktsioon\\
 % Remove this before you submit a final paper
 \listoftodos[Notes (this will be removed from final paper)]
 
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+
 \tableofcontents
 
 \addcontentsline{toc}{section}{Introduction}
@@ -78,12 +89,10 @@ Inimese ja arvuti interaktsioon\\
 % \nocite{*}
 \printbibliography
 \addcontentsline{toc}{section}{References}
+
 \section*{Appendices}
 \addcontentsline{toc}{section}{Appendices}
-\listoffigures
-\addcontentsline{toc}{section}{List of Figures}
-\listoftables
-\addcontentsline{toc}{section}{List of Tables}
+
 \subfile{images_tables.tex}
 
 \end{document}
