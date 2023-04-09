@@ -6,14 +6,17 @@
 \subsection{Research goal}
 
 \info{Research Problem and Significance: What is the problem you are addressing? Why is this a problem? Why is this important to HCI? Supported scientific references? ate 3 4 ½ page max}
+\info{Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
 
-According to WHO 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications. There is proof that focusing on accessibility has a profound effect on the overall quality of products and services and therefore provides a big business value \citep{Miesenberger2020}.
+According to WHO 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications. All users will benefit from focusing on accessibility because it can have a profound effect on the overall usability and user experience \citep{Miesenberger2020}.
 
 Developers find it hard to maintain a high level of accessibility over time as it is considered more at the first release of the product \citep{Paterno2020}. Continuous integration is used to speed up development and maintain general code quality \citep{Zhao2017} and it could also help in maintaining a high level of accessibility by testing the added code against predefined accessibility requirements. There is some initial research into the current state of accessibility testing in continuous integration (CI), but it could be improved by doing a case study for an organization \citep{Sane2021}.
 
-\info{Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
+Design systems are an increasingly common way to build websites because they help in producing a consistent user experience \citep{Yew2020}. Influencing how these are built is important in the field of HCI because it will allow us to play a role in shaping the future of User Interfaces.
 
-Many companies have design systems to help maintain consistency both in what the end users experience and how code is written. This is a good place to start with establishing a basic level of accessibility. Making changes there will have the widest impact and will build a solid foundation. Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in a component library. Some aspects of accessibility, like correct usage of page headers or page language, can only be evaluated on the full page. I draw parallels between isolated component testing and unit tests in software development.
+% Many companies have design systems to help maintain consistency both in what the end users experience and how code is written. This is a good place to start with establishing a basic level of accessibility. Making changes there will have the widest impact and will build a solid foundation.
+
+Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in a component library. Some aspects of accessibility, like correct usage of page headers or page language, can only be evaluated on the full page. I draw parallels between isolated component testing and unit tests in software development.
 
 The goal of unit tests is to verify that individual units of code function as intended. Similarly, component testing should ensure that this specific component does not have any issues related to accessibility. The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
 
