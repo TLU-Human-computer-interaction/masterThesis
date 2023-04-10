@@ -5,20 +5,21 @@
 \section{Research goal and methodology}
 \subsection{Research goal}
 
-\info{Research Problem and Significance: What is the problem you are addressing? Why is this a problem? Why is this important to HCI? Supported scientific references? ate 3 4 ½ page max}
-\info{Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
+\info{
+	 Research Problem and Significance: What is the problem you are addressing? Why is this a problem? Why is this important to HCI? Supported scientific references? ate 3 4 ½ page max \\
+	 Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
 
-According to WHO 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications. All users will benefit from focusing on accessibility because it can have a profound effect on the overall usability and user experience \citep{Miesenberger2020}.
+According to WHO 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications and focusing on accessibility can greatly enhance the overall usability and user experience for all users \citep{Miesenberger2020}.
 
 Developers find it hard to maintain a high level of accessibility over time as it is considered more at the first release of the product \citep{Paterno2020}. Continuous integration is used to speed up development and maintain general code quality \citep{Zhao2017} and it could also help in maintaining a high level of accessibility by testing the added code against predefined accessibility requirements. There is some initial research into the current state of accessibility testing in continuous integration (CI), but it could be improved by doing a case study for an organization \citep{Sane2021}.
 
-Design systems are an increasingly common way to build websites because they help in producing a consistent user experience \citep{Yew2020}. Influencing how these are built is important in the field of HCI because it will allow us to play a role in shaping the future of User Interfaces.
+Design Systems are an increasingly common way to build websites because they help in producing a consistent user experience \citep{Yew2020}. Influencing how these are built is important in the field of HCI because it will allow us to play a role in shaping the future of User Interfaces.
 
 % Many companies have design systems to help maintain consistency both in what the end users experience and how code is written. This is a good place to start with establishing a basic level of accessibility. Making changes there will have the widest impact and will build a solid foundation.
 
-Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in a component library. Some aspects of accessibility, like correct usage of page headers or page language, can only be evaluated on the full page. I draw parallels between isolated component testing and unit tests in software development.
+Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in a component library because that's a key part of most Design Systems \citep{Yew2020}. Some aspects of accessibility, like correct usage of page headers or page language, can only be evaluated on the full page. I draw parallels between isolated component testing and unit tests in software development. The goal of unit tests is to verify that small pieces of code function properly \citep[p.60]{Humble2010}. Similarly, component testing should ensure that this specific component does not have any issues related to accessibility.
 
-The goal of unit tests is to verify that individual units of code function as intended. Similarly, component testing should ensure that this specific component does not have any issues related to accessibility. The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
+The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
 
 My research goal is to test an automated accessibility tool in Pipedrive's component library to explore the potential pros and cons of accessibility testing in the CI of a component library.
 
@@ -43,7 +44,8 @@ My research goal is to test an automated accessibility tool in Pipedrive's compo
 	\end{RQlist}
 
 \subsection{Methodology}
-% Methodology – The overall strategy to conduct the research, e.g. experimental, quasi-experimental, correlational, descriptive, action research, design research, ethnography – Determined by the research question
+
+\info{Methodology – The overall strategy to conduct the research, e.g. experimental, quasi-experimental, correlational, descriptive, action research, design research, ethnography – Determined by the research question - summarise the research strategy and methodology for conducting the research.}
 
 % Methodologies:
 %̶ S̶u̶r̶v̶e̶y̶ R̶e̶s̶e̶a̶r̶c̶h̶
@@ -58,49 +60,29 @@ My research goal is to test an automated accessibility tool in Pipedrive's compo
 % • e.g. interview, questionnaire, observations, tests
 % – Determined by the Methodology and Question
 
-\todo{Write about methodology}
-
-\begin{list}{-}{}
-	\item Literature review
-	\item Survey
-	\item Case study
-	\item Statistical analysis of survey and case study results
-	\item User-centered research? (this was suggested when I presented my proposal. Does it make sense now?)
-\end{list}
-
 \subsubsection{Literature review}
 
-% Many studies have been done to compare different accessibility testing tools \citep{Alsaeedi2020, Ismailova2022, Sane2021, Vigo2013, RybinKoob2022, Duran2017}. I will take a look at the results of these studies and truly out enough tools on my own to find one that would be usable for my purposes, but I am not intending to compare them methodically as a part of this work. I will rely on the comparisons that have been made by others in the past.
-
-A literature review is a critical analysis of existing research and scholarly literature on a particular topic. It involves systematically reviewing, evaluating, and synthesizing existing knowledge and research findings in a specific field to identify gaps in the current knowledge and identify avenues for further research. \todo{find citation}
-
-% A literature review typically involves the following steps:
-
-% Defining the research question or topic: The first step is to clearly define the research question or topic that you want to explore.
+A literature review is a critical analysis of existing research and scholarly literature on a particular topic. It involves systematically reviewing, evaluating, and synthesizing existing knowledge and research findings in a specific field to identify gaps in the current knowledge and identify topics for further research \citep{Luft2022}.
 
 In my work literature review was needed to understand the current landscape of automated accessibility testing. These kinds of tools have been available for a long time and I wanted to understand how much we already know about their strengths and weaknesses. Have they been tested in real-world situations and what are the results? What is the difference between these tools? Have some been proven to be better than others?
 
+My method for finding relevant scientific articles was to use EBESCO discovery service for Academic Library of Tallinn University to find any articles with keywords accessibility, automated evaluation and continuous integration. I also conducted a similar search on Google to find any nonscientific articles about the subject. I went through the references in all of these articles to identify any relevant research that I should also include.
 
-% Identifying relevant literature: The next step is to identify relevant literature that relates to the research question or topic. This involves searching electronic databases, academic journals, books, and other resources for articles, studies, and research papers.
+This gave me pretty solid results and very soon I started to see the conclusion references in the articles I read repeat themselves. The tools that are used evolve fast and this would make older articles irrelevant to the current state of continuous accessibility testing. As a general rule, I focused on articles published in the last 10 years and only looked at old ones when they gave more high-level overviews or methods and did not focus on comparing specific tools.
 
-I will look through any research papers on the subject of automated accessibility testing and also any relevant articles or blog posts. Things change fast in software development and I am not expecting to find the most up-to-date information from scientific publications. That's why I think it is also necessary to include resources that have been published only on reputable sites.
+I looked through any research papers on the subject of automated accessibility testing and also any relevant articles or blog posts. Things change fast in software development and I was not expecting to find the most up-to-date information from scientific publications. That's why I thought that it was necessary to also include resources that have been published on reputable sites.
 
-% Evaluating the literature: Once the relevant literature has been identified, it is important to critically evaluate it to determine the quality, relevance, and reliability of the sources. This includes assessing the research methods, findings, and conclusions of each study.
-
-% Synthesizing the literature: The final step involves synthesizing the findings of the literature review to draw conclusions and identify the gaps in the existing knowledge. This involves identifying common themes and patterns in the literature, as well as areas where more research is needed.
-
-% Overall, a literature review is an important part of the research process that helps to provide a comprehensive overview of the existing knowledge and research findings in a specific field. It helps to identify gaps in the current knowledge and provides a foundation for further research.
-
+Many studies have been done to compare different accessibility testing tools \citep{Alsaeedi2020, Ismailova2022, Sane2021, Vigo2013, RybinKoob2022, Duran2017}. I took a look at the results of these studies and tried out enough tools on my own to find one that would be usable for my purposes, but my intention was not to compare them methodically as a part of this work. I will rely on the comparisons that have been made by others in the past.
 
 \subsubsection{Case study}
 
-A case study is an in-depth analysis of a bounded system \citep{Range2023}. It involves multiple forms of data collection like observations, interviews, documents, reports and analysis. The case can be a specific individual, group, community, business, organization, event or phenomenon. It can be chosen because of its uniqueness or typicality. The goal of using case study methodology is to investigate something that is contemporary in its real-life context.
+A case study is an in-depth analysis of a bounded system \citep{Range2023}. It involves multiple forms of data collection like observations, interviews, documents, reports and analysis. The case can be a specific individual, group, community, business, organization, event or phenomenon. It can be chosen because of its uniqueness or typicality. The goal of using case study methodology is to investigate something contemporary in its real-life context.
 
 The results of a single case study might be very subjective to that particular case and to the biased opinions of the researcher and can't always be generalized and applied to other similar situations \citep{Range2023}. The richness of detail they provide makes them fascinating and often there is a lot to learn from them. Sometimes these insights can be applied to other similar cases. It is a good method for exploratory or critical and unusual cases.
 
 I chose this method to explore the possibilities of automated testing. I conducted an organizational case study that focused on the process of evaluating and improving the accessibility of CRM (customer relationship management) tool called Pipedrive. In the scope of this study, I added an automated accessibility evaluation tool in our component library and conducted a manual accessibility evaluation of the same library together with 3 designers working in the company.
 
-Before implementing the new tool I sent out a questionnaire to understand the knowledge about and approaches towards the subject of web accessibility in the company among people who are most likely to be doing work related to it. At the end of my research, I sent out another questionnaire with a focus on gaining information from people in the organization who use the tool that I added during that period. I wanted to know if it was helpful and if they had any issues using it and what other opinions they might have about it. The goal of both of these was to get more detailed information about the real user's experience.
+Before implementing the new tool I sent out a questionnaire to understand the knowledge about and approaches towards the subject of web accessibility in the company among people who are most likely to be doing work related to it. At the end of my research, I sent out another questionnaire with a focus on gaining information from people in the organization who use the tool that I added during that period. I wanted to know if it was helpful and if they had any issues using it and what other opinions they might have about it. The goal of both of these was to get more detailed information about the experience of the real users of the tool.
 
 I organized the data collected from automated and manual testing to make it comparable. I used statistical analysis to gain valuable insight into how well these two methods work and how they might differ from one another.
 

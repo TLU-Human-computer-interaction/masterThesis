@@ -120,16 +120,14 @@
 \definecolor{yellow}{HTML}{F6E199}
 \definecolor{darkBlue}{HTML}{233658}
 \definecolor{lightBlue}{HTML}{BFD5EB}
+\definecolor{orange}{HTML}{F5A26F}
 
-% \newcommand{\todo}[1][\textcolor{darkRed}]{\textcolor{brightRed}{\textbf{TODO:} }#1}
-% \newcommand{\comment}[1][\textcolor{darkRed}]{\textcolor{brightRed}{\textbf{Comment:} }#1}
-
-% Nice todo notes backgroundcolor=lightBlue!25
-\RequirePackage[backgroundcolor=yellow, bordercolor=yellow, textcolor=darkBlue]{todonotes}
+% Nice todo notes (backgroundcolor=lightBlue!25)
+\RequirePackage[backgroundcolor=yellow, bordercolor=yellow, textcolor=darkBlue, colorinlistoftodos]{todonotes}
 \setuptodonotes{inline}
 \RequirePackage{xargs} % Use more than one optional parameter in a new commands
 
 \newcommandx{\info}[2][1=]{\todo[backgroundcolor=lightBlue,bordercolor=lightBlue,#1]{#2}}
-% \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcommandx{\problem}[2][1=]{\todo[backgroundcolor=orange,bordercolor=orange,#1]{#2}}
 
 \RequirePackage{subfiles} % Best loaded last in the preamble
