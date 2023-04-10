@@ -104,6 +104,78 @@
 
 % Headings. It should be remembered that the space between the last paragraph of a chapter and the new heading should be larger than between the heading and the following paragraph. Even though the text should be justified from both sides the titles should commonly be set to left margin. If the title is on a separate row there is no full stop after it.
 
+% List of Abbreviation
+
+\RequirePackage{acro}
+\DeclareAcronym{usa}{
+  short=USA,
+  long=United States of America,
+}
+\DeclareAcronym{eu}{
+  short=EU,
+  long=European Union,
+}
+\DeclareAcronym{who}{
+  short=WHO,
+  long=World Health Organization,
+}
+\DeclareAcronym{ci}{
+  short=CI,
+  long=Continuous Integration,
+}
+\DeclareAcronym{ui}{
+  short=UI,
+  long=User Interface,
+}
+\DeclareAcronym{act}{
+  short=ACT,
+  long=Accessibility Conformance Testing,
+}
+% \DeclareAcronym{}{
+%   short=,
+%   long=,
+% }
+\DeclareAcronym{ux}{
+  short=UX,
+  long=user experience,
+}
+\DeclareAcronym{dom}{
+  short=DOM,
+  long=Document Object Model,
+}
+\DeclareAcronym{cli}{
+  short=CLI,
+  long=command-line interface,
+}
+\DeclareAcronym{api}{
+  short=API,
+  long=application programming interfaces,
+}
+\DeclareAcronym{html}{
+  short=HTML,
+  long=HyperText Markup Language,
+}
+\DeclareAcronym{wai}{
+  short=WAI,
+  long=Web Accessibility Initiative,
+}
+\DeclareAcronym{w3c}{
+  short=W3C,
+  long=World Wide Web Consortium,
+}
+\DeclareAcronym{cdd}{
+  short=CDD,
+  long=Component Driven Development,
+}
+\DeclareAcronym{wcag}{
+  short=WCAG,
+  long=Web Content Accessibility Guidelines,
+}
+\DeclareAcronym{crm}{
+  short=CRM,
+  long=Customer Relationship Management
+}
+
 % CUSTOM COMMANDS
 
 % custom command for listing research questions
