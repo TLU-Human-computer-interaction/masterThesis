@@ -61,21 +61,28 @@ Inimese ja arvuti interaktsioon\\
 % Remove this before you submit a final paper
 \listoftodos[Notes]
 
+\section*{Abstract}
+
+\section*{Acknowledgements}
+
 \tableofcontents
 
 \listoffigures
-\addcontentsline{toc}{section}{List of Figures}
+% \addcontentsline{toc}{section}{List of Figures}
 
 \listoftables
-\addcontentsline{toc}{section}{List of Tables}
+% \addcontentsline{toc}{section}{List of Tables}
 
-\addcontentsline{toc}{section}{Introduction}
+\section*{List of Abbreviation}
+
 \section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
 % Accessibility is important, but not easy to maintain. Implementing truly accessible solutions demands good cooperation between designers and developers and testing with real users.
 \info{Overview of the entire thesis.  It ends by describing the organization of this document.}
 \problem{you need an Abstract}
 \problem{you need Acknowledgements}
 \problem{you need a system for List of Abbreviation}
+
 
 \subfile{1_goal_and_methodology.tex}
 
@@ -92,13 +99,10 @@ Inimese ja arvuti interaktsioon\\
 
 % With this all references in ref.bib file are listed. without only the ones that are actually used
 % \nocite{*}
-\printbibliography
-\addcontentsline{toc}{section}{References}
+\emergencystretch=1em
+\printbibliography[heading=bibintoc]
 
-\section*{Appendices}
-\addcontentsline{toc}{section}{Appendices}
-
-\subfile{images_tables.tex}
+\subfile{appendices.tex}
 
 \end{document}
 

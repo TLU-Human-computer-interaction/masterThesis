@@ -21,7 +21,7 @@
 
 \RequirePackage[estonian, english]{babel}
 
-\RequirePackage{microtype}
+\RequirePackage[final]{microtype}
 \RequirePackage{csquotes}
 
 \RequirePackage{tabularx}
@@ -29,8 +29,11 @@
 % embed jpeg png
 \RequirePackage{graphicx}
 
+% TABLE OF CONTENTS
+\RequirePackage[notlof, nottoc, notlot, numbib]{tocbibind}
+
 % this will make table of contents hypelinks and will allow to use hyperlinks in refs
-\usepackage[]{hyperref}
+\RequirePackage[]{hyperref}
     \hypersetup{hidelinks}
 
 % BIBLIOGRAPHY
@@ -74,7 +77,7 @@
 \AddToHook{cmd/section/before}{\clearpage}
 
 % LISTS
-\usepackage[titles]{tocloft}
+\RequirePackage[titles]{tocloft}
 
 % List of Figures
 \newlength{\figNumLen}
