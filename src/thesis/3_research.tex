@@ -21,9 +21,9 @@ The first thing was to look at different automated accessibility tools that are 
 
 In parallel to observing how the tool is being used we performed a manual accessibility audit in the same component library. These results were then compared with the automated testing results that we got from the same version of the library. As the last step, I sent out a questionnaire to gather information about how the tool has been adopted. To get more details I also did some interviews with developers and designers I knew had used the tool during that period.
 
-Pipedrive has been developing a sales CRM using mostly typescript and React. Accessibility has never been a high priority and at this point, it is not very easy to get started. We have a design system and a React-based component library to keep the look and UX consistent. This seems like a good place to start with solving accessibility issues. The library is used widely in the company and developers from different teams contribute to it. If a button in the reusable library gets fixed most of the buttons in the web app that our customers use should be improved.
+Pipedrive has been developing a sales \ac{crm} using mostly typescript and React. Accessibility has never been a high priority and at this point, it is not very easy to get started. We have a design system and a React-based component library to keep the look and \ac{ux} consistent. This seems like a good place to start with solving accessibility issues. The library is used widely in the company and developers from different teams contribute to it. If a button in the reusable library gets fixed most of the buttons in the web app that our customers use should be improved.
 
-This should not be taken as a way to solve all accessibility problems but as a good first step to getting started. Making changes in a reusable UI library should have a wide impact on the product's overall accessibility and without reaching some basic level there first it could be hard to start testing views in the final product.
+This should not be taken as a way to solve all accessibility problems but as a good first step to getting started. Making changes in a reusable \ac{ui} library should have a wide impact on the product's overall accessibility and without reaching some basic level there first it could be hard to start testing views in the final product.
 
 \subsection{Current state of awareness about accessibility in Pipedrive}
 
@@ -76,7 +76,7 @@ In total 20 people replied to the survey - 6 designers and 14 developers, includ
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{img/a11y-priority.png}
-    \caption{Results to pre-case study survey question: Do you think we should prioritize following accessibility standards (like WCAG, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
+    \caption{Results to pre-case study survey question: Do you think we should prioritize following accessibility standards (like \ac{wcag}, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
     \label{fig:a11y-priority}
 \end{figure}
 
@@ -85,9 +85,9 @@ The results show that 10\% of people who responded think their knowledge of acce
 \subsection{Adding automated accessibility tests to component library}
 The next step was adding some automated tests to our component library development workflow and observing their usefulness. The aim was to find something that we can integrate easily and that does not have a steep learning curve or add unnecessary complexity.
 
-We use Storybook as the component explorer for our reusable component libraries development. It is an open-source software for UI development tool that allows you to work on one component at a time \citep{storybook}. It allows us to render isolated UI components without integrating them into the final product right away. Our developers use it to test out the components they are developing locally. We also have a version of Storybook available for anyone in the company to see with all the components. If this is the first place where elements will be rendered it seems logical to try to find a way to start testing them there.
+We use Storybook as the component explorer for our reusable component libraries development. It is an open-source software for \ac{ui} development tool that allows you to work on one component at a time \citep{storybook}. It allows us to render isolated \ac{ui} components without integrating them into the final product right away. Our developers use it to test out the components they are developing locally. We also have a version of Storybook available for anyone in the company to see with all the components. If this is the first place where elements will be rendered it seems logical to try to find a way to start testing them there.
 
-To show a component you need to write a story - this means use it the way you would use it in the real world, and it will be rendered in a browser inside Storybook UI. It also has a sidebar for navigating between different examples, and controls for additional tools and documentation. This means we can't use a browser extension for accessibility tests because that would also test the UI around the actual relevant example.
+To show a component you need to write a story - this means use it the way you would use it in the real world, and it will be rendered in a browser inside Storybook \ac{ui}. It also has a sidebar for navigating between different examples, and controls for additional tools and documentation. This means we can't use a browser extension for accessibility tests because that would also test the \ac{ui} around the actual relevant example.
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{img/addon-a11y.png}
@@ -95,15 +95,15 @@ To show a component you need to write a story - this means use it the way you wo
 	\label{fig:addon-a11y}
 \end{figure}
 
-Storybook has a wide ecosystem of add-ons and one of them is addon-a11y (see figure \ref{fig:addon-a11y} ). It uses Deque's axe-core to audit the HTML rendered for an isolated component \citep{addon-a11y}.
+Storybook has a wide ecosystem of add-ons and one of them is addon-a11y (see figure \ref{fig:addon-a11y} ). It uses Deque's axe-core to audit the \ac{html} rendered for an isolated component \citep{addon-a11y}.
 
-Axe-core is an accessibility testing engine for websites and other HTML-based user interfaces \citep{Deque2023}. It includes WCAG 2.0 and 2.1 on levels A and AA and it has a coverage of about 20-30\% if you calculate it in a commonly used way, but they claim it to be 57\% according to their new and improved calculation method. This has been explained in more detail in the Automated accessibility testing chapter.
+Axe-core is an accessibility testing engine for websites and other \ac{html}-based user interfaces \citep{Deque2023}. It includes \ac{wcag} 2.0 and 2.1 on levels A and AA and it has a coverage of about 20-30\% if you calculate it in a commonly used way, but they claim it to be 57\% according to their new and improved calculation method. This has been explained in more detail in the Automated accessibility testing chapter.
 
-This seemed like the best solution in our situation so addon-a11y was added to our component library’s storybook. The tool is visible in the sidebar of every example. It shows all the checks that it has passed, all the violations that were found and any issues that could not be checked and might need manual testing. Every rule listed there also has reference to the HTML node that had the violation, explanation and links to the Deque webpage with examples. This should be very useful in understanding and fixing these issues.
+This seemed like the best solution in our situation so addon-a11y was added to our component library’s storybook. The tool is visible in the sidebar of every example. It shows all the checks that it has passed, all the violations that were found and any issues that could not be checked and might need manual testing. Every rule listed there also has reference to the \ac{html} node that had the violation, explanation and links to the Deque webpage with examples. This should be very useful in understanding and fixing these issues.
 
 It does not generate a report of all the issues found across the whole library for this another tool was used that will go through all the examples and generate a summary of all the violations found.
 
-The rules format that axe-core uses is developed by Deque Systems and is an adoption of the ACT rules format developed by WAI \citep{Fiers2017}. They have a set WCAG that can be evaluated in a fully automated way. They are divided by WCAG standards version (2.0, 2.1, 2.2) and Level (A \& AA, AAA) and they also have some rules for best practices in the industry that improve the user experience but might not conform to WCAG success criterion \citep{Fiers2023}.
+The rules format that axe-core uses is developed by Deque Systems and is an adoption of the \ac{act} rules format developed by \ac{wai} \citep{Fiers2017}. They have a set \ac{wcag} that can be evaluated in a fully automated way. They are divided by \ac{wcag} standards version (2.0, 2.1, 2.2) and Level (A \& AA, AAA) and they also have some rules for best practices in the industry that improve the user experience but might not conform to \ac{wcag} success criterion \citep{Fiers2023}.
 
 I used another tool to generate a report of all the violations in the whole component library. It goes through all the examples and runs the same tests as addon-a11y, but it combines them in one document. The final report links back to each component story where you can see the example and addon panel with all the information I mentioned before.
 

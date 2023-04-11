@@ -9,9 +9,9 @@
 	 Research Problem and Significance: What is the problem you are addressing? Why is this a problem? Why is this important to HCI? Supported scientific references? ate 3 4 ½ page max \\
 	 Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
 
-According to WHO 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications and focusing on accessibility can greatly enhance the overall usability and user experience for all users \citep{Miesenberger2020}.
+According to \ac{who} 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications and focusing on accessibility can greatly enhance the overall usability and user experience for all users \citep{Miesenberger2020}.
 
-Developers find it hard to maintain a high level of accessibility over time as it is considered more at the first release of the product \citep{Paterno2020}. Continuous integration is used to speed up development and maintain general code quality \citep{Zhao2017} and it could also help in maintaining a high level of accessibility by testing the added code against predefined accessibility requirements. There is some initial research into the current state of accessibility testing in continuous integration (CI), but it could be improved by doing a case study for an organization \citep{Sane2021}.
+Developers find it hard to maintain a high level of accessibility over time as it is considered more at the first release of the product \citep{Paterno2020}. \ac{ci} is used to speed up development and maintain general code quality \citep{Zhao2017} and it could also help in maintaining a high level of accessibility by testing the added code against predefined accessibility requirements. There is some initial research into the current state of accessibility testing in \ac{ci}, but it could be improved by doing a case study for an organization \citep{Sane2021}.
 
 Design Systems are an increasingly common way to build websites because they help in producing a consistent user experience \citep{Yew2020}. Influencing how these are built is important in the field of HCI because it will allow us to play a role in shaping the future of User Interfaces.
 
@@ -21,7 +21,7 @@ Most accessibility checkers are intended to be used for the whole page or websit
 
 The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
 
-My research goal is to test an automated accessibility tool in Pipedrive's component library to explore the potential pros and cons of accessibility testing in the CI of a component library.
+My research goal is to test an automated accessibility tool in Pipedrive's component library to explore the potential pros and cons of accessibility testing in the \ac{ci} of a component library.
 
 % In this thesis, I have explored if automated accessibility tests can help improve overall accessibility and awareness about it. Most testing tools also provide descriptions of the issue and its importance and instructions on how to solve it. This can work as a learning tool that helps understand accessibility-related problems better.
 
@@ -38,7 +38,7 @@ My research goal is to test an automated accessibility tool in Pipedrive's compo
 	\begin{RQlist}
 		\item How good is the knowledge about accessibility standards, tools and best practices in the company currently?
 		\item What kind of errors can be caught by running automated accessibility tests on a component library?
-		\item To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with WCAG?
+		\item To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}?
 		% This might be the most difficult question to answer. There is not enough time to do another manual audit, but I can generate a new automatic report. What can I read into that? If the state is better now is it because of the automated accessibility tool integration or because we also did a manual audit? Maybe I can get some insights from the end questionnaire + reaching out to some devs who have used these tools during that period. Is this a one-time fix and if now then what evidence do I have that it would have a wider impact?
 		\item What are the biggest problems of integrating automated accessibility testing into a component libraries' development workflow?
 	\end{RQlist}
@@ -80,7 +80,7 @@ A case study is an in-depth analysis of a bounded system \citep{Range2023}. It i
 
 The results of a single case study might be very subjective to that particular case and to the biased opinions of the researcher and can't always be generalized and applied to other similar situations \citep{Range2023}. The richness of detail they provide makes them fascinating and often there is a lot to learn from them. Sometimes these insights can be applied to other similar cases. It is a good method for exploratory or critical and unusual cases.
 
-I chose this method to explore the possibilities of automated testing. I conducted an organizational case study that focused on the process of evaluating and improving the accessibility of CRM (customer relationship management) tool called Pipedrive. In the scope of this study, I added an automated accessibility evaluation tool in our component library and conducted a manual accessibility evaluation of the same library together with 3 designers working in the company.
+I chose this method to explore the possibilities of automated testing. I conducted an organizational case study that focused on the process of evaluating and improving the accessibility of \ac{crm} tool called Pipedrive. In the scope of this study, I added an automated accessibility evaluation tool in our component library and conducted a manual accessibility evaluation of the same library together with 3 designers working in the company.
 
 Before implementing the new tool I sent out a questionnaire to understand the knowledge about and approaches towards the subject of web accessibility in the company among people who are most likely to be doing work related to it. At the end of my research, I sent out another questionnaire with a focus on gaining information from people in the organization who use the tool that I added during that period. I wanted to know if it was helpful and if they had any issues using it and what other opinions they might have about it. The goal of both of these was to get more detailed information about the experience of the real users of the tool.
 
