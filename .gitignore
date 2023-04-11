@@ -30,7 +30,6 @@ src/thesis/aux/automated_testing.pdf
 src/thesis/aux/case_study.pdf
 src/thesis/aux/appendix.pdf
 src/tutorial/aux/latex_tutorial.pdf
-src/thesis/aux/images_tables.pdf
 src/thesis/aux/accessibility.pdf
 src/thesis/audit_compared.tex
 src/thesis/aux/audit_compared.pdf
@@ -47,3 +46,4 @@ src/thesis/helpers/The Style Sheet for BA and MA Thesis at the School of Humanit
 src/thesis/aux/goal_and_methodology.pdf
 src/thesis/helpers/AtkinsonHyperlegible/*
 src/thesis/aux/thesis.tdo
+src/thesis/aux/appendices.pdf
