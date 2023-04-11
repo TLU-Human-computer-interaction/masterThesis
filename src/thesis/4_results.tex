@@ -11,7 +11,7 @@
 
 \subsection{Comparing results from manual audit and automated report}
 
-To get the whole list including all components a report was created that included the violations caught in each example of each component. This report was generated at the beginning of the manual audit, so the results obtained from both methods are based on the same source code.
+To get the whole list including all components, a report was created that included the violations caught in each example of each component. This report was generated at the beginning of the manual audit, so the results obtained from both methods are based on the same source code.
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{img/audit-failed.png}
 	\caption{All violations found by addon-a11y and how many of them are valid.}
@@ -25,9 +25,9 @@ I prepared a comparison table from both results. For automated accessibility tes
 	\caption{All passed checks reported by addon-a11y and how many of them are valid. }
 	\label{fig:audit-passed}
 \end{figure}
-Passed issues were looked over to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed checks and 22 did not have any valid passed issues.
+Passed issues were reviewed to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed checks and 22 did not have any valid passed issues.
 
-Looking at all the fails and passes gives an overview of what was checked for each component. Out of 53 components, only 2 did not get checked by addon-a11y at all. In addition, components that become visible only when triggered by another element, like modals and popups that are currently in our library displayed with a button as a trigger, don't get tested. These components are seen in figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark} - 27 overall. This means 29 components were not tested but this tool and the rest of the components had passed or failed issues, but often not both.
+Looking at all the fails and passes gives an overview of what was checked for each component. Out of 53 components, only 2 did not get checked by addon-a11y at all. In addition, components that become visible only when triggered by another element, like modals and popups that are currently in our library displayed with a button as a trigger, did not get tested. \review{Mari-Ell: Do you have a solution on how to get them tested as well? Somehow display them without the need of the trigger? - Test out play functions with Storybook 7 and the built in test runner.} These components are seen in figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark} - 27 overall. This means 29 components were not tested but this tool and the rest of the components had passed or failed issues, but often not both.
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{img/audit-all.png}

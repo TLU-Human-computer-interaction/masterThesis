@@ -9,13 +9,13 @@
 	 Research Problem and Significance: What is the problem you are addressing? Why is this a problem? Why is this important to HCI? Supported scientific references? ate 3 4 ½ page max \\
 	 Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
 
-According to \ac{who} 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They need accessible web applications and focusing on accessibility can greatly enhance the overall usability and user experience for all users \citep{Miesenberger2020}.
+According to \ac{who} 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They may not be able to use websites and mobile applications in a conventional way. To provide equal possibilities, digital environments need to be made accessible. There is proof that focusing on accessibility has a profound effect on the overall quality of products and services and therefore provides a big business value \citep{Miesenberger2020}.
 
 Developers find it hard to maintain a high level of accessibility over time as it is considered more at the first release of the product \citep{Paterno2020}. \ac{ci} is used to speed up development and maintain general code quality \citep{Zhao2017} and it could also help in maintaining a high level of accessibility by testing the added code against predefined accessibility requirements. There is some initial research into the current state of accessibility testing in \ac{ci}, but it could be improved by doing a case study for an organization \citep{Sane2021}.
 
 Design Systems are an increasingly common way to build websites because they help in producing a consistent user experience \citep{Yew2020}. Influencing how these are built is important in the field of HCI because it will allow us to play a role in shaping the future of User Interfaces.
 
-% Many companies have design systems to help maintain consistency both in what the end users experience and how code is written. This is a good place to start with establishing a basic level of accessibility. Making changes there will have the widest impact and will build a solid foundation.
+Many companies have design systems to help maintain consistency both in what the end users experience and how the code is written. This is a good place to start with establishing a basic level of accessibility. Making changes there will have the widest impact and will build a solid foundation. Most automated accessibility testing tools are intended to be used for the whole page or website. I want to run accessibility tests on the individual components in a component library. However some aspects of accessibility, like correct usage of headers or page language, can only be evaluated on a full page. I draw parallels between isolated component testing and unit tests in software development.
 
 Most accessibility checkers are intended to be used for the whole page or website. I want to run these tests on the individual components in a component library because that's a key part of most Design Systems \citep{Yew2020}. Some aspects of accessibility, like correct usage of page headers or page language, can only be evaluated on the full page. I draw parallels between isolated component testing and unit tests in software development. The goal of unit tests is to verify that small pieces of code function properly \citep[p.60]{Humble2010}. Similarly, component testing should ensure that this specific component does not have any issues related to accessibility.
 
@@ -36,11 +36,11 @@ My research goal is to test an automated accessibility tool in Pipedrive's compo
 \subsection{Research questions}
 
 	\begin{RQlist}
-		\item How good is the knowledge about accessibility standards, tools and best practices in the company currently?
+		\item How good is the knowledge about accessibility standards, tools and best practices in the company before integrating the accessibility testing tool?
 		\item What kind of errors can be caught by running automated accessibility tests on a component library?
 		\item To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}?
 		% This might be the most difficult question to answer. There is not enough time to do another manual audit, but I can generate a new automatic report. What can I read into that? If the state is better now is it because of the automated accessibility tool integration or because we also did a manual audit? Maybe I can get some insights from the end questionnaire + reaching out to some devs who have used these tools during that period. Is this a one-time fix and if now then what evidence do I have that it would have a wider impact?
-		\item What are the biggest problems of integrating automated accessibility testing into a component libraries' development workflow?
+		\item What are the biggest problems of integrating automated accessibility testing into a component library's development workflow?
 	\end{RQlist}
 
 \subsection{Methodology}
