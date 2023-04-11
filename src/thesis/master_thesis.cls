@@ -175,6 +175,10 @@
   short=CRM,
   long=Customer Relationship Management
 }
+\DeclareAcronym{iaap}{
+  short=IAAP,
+  long=International Association of Accessibility Professionals
+}
 
 % CUSTOM COMMANDS
 
@@ -196,6 +200,7 @@
 \definecolor{darkBlue}{HTML}{233658}
 \definecolor{lightBlue}{HTML}{BFD5EB}
 \definecolor{orange}{HTML}{F5A26F}
+\definecolor{lilac}{HTML}{C5AECF}
 
 % Nice todo notes (backgroundcolor=lightBlue!25)
 \RequirePackage[backgroundcolor=yellow, bordercolor=yellow, textcolor=darkBlue, colorinlistoftodos]{todonotes}
@@ -204,5 +209,6 @@
 
 \newcommandx{\info}[2][1=]{\todo[backgroundcolor=lightBlue,bordercolor=lightBlue,#1]{#2}}
 \newcommandx{\problem}[2][1=]{\todo[backgroundcolor=orange,bordercolor=orange,#1]{#2}}
+\newcommandx{\review}[2][1=]{\todo[backgroundcolor=lilac,bordercolor=lilac,#1]{#2}}
 
 \RequirePackage{subfiles} % Best loaded last in the preamble
