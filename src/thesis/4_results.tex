@@ -12,29 +12,66 @@
 \subsection{Comparing results from manual audit and automated report}
 
 To get the whole list including all components, a report was created that included the violations caught in each example of each component. This report was generated at the beginning of the manual audit, so the results obtained from both methods are based on the same source code.
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{img/audit-failed.png}
-	\caption{All violations found by addon-a11y and how many of them are valid.}
+
+I prepared a comparison table from both results. For automated accessibility tests, I recorded the number of examples that included violations, the number of different violations and the number of passed checks for each component. In most cases, there were more examples with violations because the same thing was reported in more than one example (see figure \ref{fig:audit-failed}). Addon-a11y did not report any issues for 27 (51\%) components out of 53 components after verifying the validity of these issues the number goes up to 31 (58\%).
+
+Passed checks were reviewed to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed checks and 22 did not have any valid passed checks. This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results.
+
+\begin{figure}[h]
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[width=\textwidth]{img/sb-button-trigger.png}
+	\caption{Inital view of example. This is tested by addon-a11y.}
+	\label{fig:sb-button-trigger-1}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[width=\textwidth]{img/sb-button-trigger-open.png}
+	\caption{Example after clicking the button and revealing the actual component.}
+	\label{fig:sb-button-trigger-2}
+	\end{subfigure}
+\caption{Storybook example for Dialog component using button trigger}
+\label{fig:sb-button-trigger}
+\end{figure}
+
+Looking at all the fails and passes gives an overview of how many tests were run for each component. Out of 53 components, only 2 (4\%) did not get checked by addon-a11y at all, but after validating the results this number changes to 20 (38\%). This includes components that become visible only when triggered by another element, like modals and popups that are currently displayed with a button as a trigger in the Storybook examples (see Figure \ref{fig:sb-button-trigger}). These components are seen in figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark} - 11 overall. The rest of the components that did not get tested by the addon included very simple components for spacing and visuals. These need further testing when they are being used in context to make sure that the visual info they are conveying is also included in text form. The results from manual testing did not reveal any further issues for 6 of these components. The components that have a trigger button in the example had the most additional issues. This is expected as due to the limitation of the examples the correct component was not evaluated by the tool. The remainder of the components had passed or failed issues, but often not both.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\textwidth]{img/failed-tests.png}
+	\caption{How many of the detected violations are valid?}
+	\label{fig:checks-validity-failed}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\textwidth]{img/passed-tests.png}
+	\caption{How many of the checks passed are valid?}
+	\label{fig:checks-validity-passed}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\textwidth]{img/all-test-results.png}
+	\caption{How many of all tests are valid?}
+	\label{fig:checks-validity-all}
+	\end{subfigure}
+\caption{Valididty of tests performed by addon-a11y}
+\label{fig:checks-validity}
+\end{figure}
+
+Analyzing the validity of checks further performed by addon-a11y shows from all passes and fails together a bit more than half are valid while only 38\% of detected violations are correct and 58\% of passed checks were confirmed to be relevant (see Figure \ref{fig:checks-validity}).
+
+\review{Mari-Ell: Do you have a solution on how to get them tested as well? Somehow display them without the need of the trigger? - Test out play functions with Storybook 7 and the built-in test runner.}
+
+\begin{figure}[h]
+	\begin{subfigure}{0.45\textwidth}
+	\includegraphics[height=0.9\textheight]{img/audit-failed.png}
+	\caption{All violations reported by addon-a11y and how many of them are valid.}
 	\label{fig:audit-failed}
-\end{figure}
-
-I prepared a comparison table from both results. For automated accessibility tests, I recorded the number of examples that included violations, the number of different violations and the number of passed checks for each component. In most cases, there were more examples with violations because the same thing was reported in more than one example (see figure \ref{fig:audit-failed}). Addon-a11y did not report any issues for 27 components out of 53 components.
-
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{img/audit-passed.png}
-	\caption{All passed checks reported by addon-a11y and how many of them are valid. }
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+	\includegraphics[height=0.9\textheight]{img/audit-passed.png}
+	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
 	\label{fig:audit-passed}
+	\end{subfigure}
+\caption{All issues checked by addon-a11y}
+\label{fig:audit-passed-failed}
 \end{figure}
-Passed issues were reviewed to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed checks and 22 did not have any valid passed issues.
-
-Looking at all the fails and passes gives an overview of what was checked for each component. Out of 53 components, only 2 did not get checked by addon-a11y at all. In addition, components that become visible only when triggered by another element, like modals and popups that are currently in our library displayed with a button as a trigger, did not get tested. \review{Mari-Ell: Do you have a solution on how to get them tested as well? Somehow display them without the need of the trigger? - Test out play functions with Storybook 7 and the built in test runner.} These components are seen in figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark} - 27 overall. This means 29 components were not tested but this tool and the rest of the components had passed or failed issues, but often not both.
-
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{img/audit-all.png}
-	\caption{All issues that were tested by addon-a11y. This means both passed and failed issues combined.}
-	\label{fig:audit-all}
-\end{figure}
-
-In some cases, there were 0 violations detected, and 0 valid checks passed – this means that the automated testing was not effective (\todo{Make chart or table for this}).
 
 \end{document}

@@ -15,9 +15,11 @@
 
 \usepackage[T1]{fontenc} %Absolutely critical for *hyphenation* of words with non-ASCII letters.
 
-% Form images
+% For images
 \RequirePackage{graphicx}
 \RequirePackage{float}
+\RequirePackage{wrapfig}
+\RequirePackage{subcaption}
 
 \RequirePackage[estonian, english]{babel}
 
@@ -28,6 +30,8 @@
 
 % embed jpeg png
 \RequirePackage{graphicx}
+
+\RequirePackage[format=plain,font=it]{caption}
 
 % TABLE OF CONTENTS
 \RequirePackage[notlof, nottoc, notlot, numbib]{tocbibind}
