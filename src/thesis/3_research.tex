@@ -51,7 +51,7 @@ First, I sent out a survey in our company's Slack channels (see figure \ref{fig:
 Some people might also be on more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and contribute to the library. There were 7 questions and some of them also included a field for free text to give more details on the subject if they wanted.
 
 \begin{figure}[H]
-	% \centering
+	\centering
 	\includegraphics[width=\textwidth]{img/survey.png}
 	\caption{Message in company Slack announcing adding accessibility tool and inviting people to reply to the survey.}
 	\label{fig:slack-message}
@@ -61,28 +61,43 @@ In total, 20 people replied to the survey - 6 designers and 14 developers, inclu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/a11y-knowledge.png}
-    \caption{Results to pre-case study survey question: How much do you know about accessibility (standards, best practices, importance, testing)? 1- "Almost no knowledge" to 5 - "I have very good knowledge" }
+	\begin{subfigure}{0.55\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-knowledge.png}
+		\caption{Pre-case study survey: How much do you know about accessibility (standards, best practices, importance, testing)? 1- "Almost no knowledge" to 5 - "I have very good knowledge" }
+		\label{fig:a11y-knowledge-current}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-resources.png}
+		\caption{Do you know where to find resources
+		about accessibility standards? (no one chose the 4th option "No I don't think I need them") }
+    	\label{fig:a11y-resources}
+	\end{subfigure}
+	\caption{Accessibility knowledge in Pipedrive}
     \label{fig:a11y-knowledge}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{img/a11y-resources.png}
-    \caption{Results to pre-case study survey question: Do you know where to find resources about accessibility standards? }
-    \label{fig:a11y-resources}
-\end{figure}
-\review{Mari-Ell: The sector diagram is not accessible - sectors are only connected to the legend with colour. Also, white text on orange is not contrasted enough. Please change the diagram.}
+The results show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average (see Figure \ref{fig:a11y-knowledge-current}). 35\% of responders know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (see Figure \ref{fig:a11y-resources}).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/a11y-priority.png}
-    \caption{Results to pre-case study survey question: Do you think we should prioritize following accessibility standards (like \ac{wcag}, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-priority.png}
+		\caption{Do you think accessibility is a priority in our company? 1-No not at all to 5-Yes very much \\
+		\\
+		\\}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-goals.png}
+		\caption{Do you think we should prioritize following accessibility standards (like \ac{wcag}, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
+	\end{subfigure}
+	\caption{Priority of accessibility in Pipedrive}
     \label{fig:a11y-priority}
 \end{figure}
 
-The results show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average (see figure \ref{fig:a11y-knowledge}). 35\% of responders know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (see figure \ref{fig:a11y-resources}). They don't see that accessibility as a high priority in the company currently, but at the same time, 40\% of the people who responded think that following accessibility standards should be prioritized (see figure \ref{fig:a11y-priority}). There were several comments in the free text sections expressing saying they appreciate this subject being brought to attention.
-.
+Most people who replied to the survey don't think accessibility is being prioritized in Pipedrive and at the same time, most of them think we should be putting more focus on following common accessibility standards (see Figure \ref{fig:a11y-priority}). They elaborate a bit more about what they think the reasons behind this are. Accessibility has always been at the end of our priorities and there is no clear company-wide strategy on how to manage and improve it. There has never been a dedicated project manager to bring focus to it
+and right now developers and designers are the ones that seem to be responsible for it. Two people also mentioned that the priority might be low because as a private service, Pipedrive does not have a legal obligation to comply with any specific accessibility standard. Two people think that it would not affect Pipedrive's customers much.
+
+It seems like the biggest obstacle to improving the accessibility of Pipedrive is the lack of knowledge about the business impact. More knowledge would help prioritize solving these problems. There is a lot currently that could be improved, but in my opinion implementing a way of continuously testing for at least some basic issues from the beginning of all new developments would help to ensure that the technical debt related to accessibility would not grow to be even bigger. There were several comments in the free text sections expressing saying they appreciate this subject being brought to focus and even some offering to help.
 
 \subsection{Adding automated accessibility tests to component library}
 The next step was adding some automated tests to our component library's development workflow and observing their usefulness. The aim was to find something that we can integrate easily and that does not have a steep learning curve or add unnecessary complexity.
@@ -126,7 +141,7 @@ The accessibility add-on had already been installed, and we looked at the violat
 
 Everyone worked individually and each morning we had a quick meeting to discuss any questionable issues. Each evaluator checked violations in the accessibility add-on panel, using a keyboard, and also a screen reader to navigate. Each component had 1 or more examples and we looked at as many as we thought relevant to get a good overview.
 
-At the beginning of the audit, we tested an add-on in Storybook for mocking a screen reader\citep{Lara}. It had the option to show the output that the screen reader would play as audio, as text. Initially, it seemed like a convenient solution with rather reliable results, but further investigation revealed that the output was very different from what an actual screen reader would say.
+At the beginning of the audit, we tested an add-on in Storybook for mocking a screen reader \citep{Lara}. It had the option to show the output that the screen reader would play as audio, as text. Initially, it seemed like a convenient solution with rather reliable results, but further investigation revealed that the output was very different from what an actual screen reader would say.
 
 For the rest of the audit, we used VoiceOver - the built-in screen reader for Apple products, because our work computers are MacBooks and VoiceOver was conveniently available for us to use. There was an initial learning curve, but after that, it went quite smoothly. All the components that had already been tested with the faulty add-on were reviewed again using VoiceOver.
 
@@ -134,15 +149,13 @@ The audit results were documented in a table. We used the barrier walkthrough me
 \begin{enumerate}
 	\item Mouse user issues - using a mouse to interact with the page
 	\item Keyboard user issues - using only a keyboard to do the same things
-
 	\item Screen reader user issues - trying to do the same things and getting the same information while only using a screen reader
 \end{enumerate}
 
 We see this separation as a good way to prioritize fixing the issues in the future. The mouse user is the user we are considering in all of our development currently. The issues they would encounter should be the most critical. This category includes a lot of visual, color contrast, and click target size issues.
 
 The second type of user would encounter all the issues from the first category plus everything that is unusable for them by using a keyboard. We took the functionalities that the user should be able to use with a mouse and tried to use them with a keyboard only.
-\review{Mari-Ell: But it is OFTEN the case that screen reader works better than keyboard
-}
+\review{Mari-Ell: But it is OFTEN the case that screen reader works better than keyboard}
 
 The third user was imitated using a screen reader. The prerequisite for this was keyboard accessibility - if it was not usable with a keyboard then most likely it would not be usable by a screen reader.
 

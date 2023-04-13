@@ -6,7 +6,7 @@
 
 \subsection{Web accessibility}
 
-Accessibility is about providing equal access to goods and services to everyone regardless of age, gender, knowledge or disabilities. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. A report published by the European Commission in \citeyear{Grammenos2020} estimates that about 7\% of people aged 16 and over who live in one of the European Union member countries declare a strong disability and about 17.5\% declare a moderate disability \citep{Grammenos2020}. This number gets significantly higher when people get older. Disability prevalence among people aged 65 and over is about 47.8\%.  Disability is a part of being human and persons with disabilities have very different needs. We can also talk about temporary disability - this might be a mother who can only use one hand because she is holding a child in the other or someone who broke an arm and can't use it until it heals. The experiences during a temporary disability may be very similar to a permanent condition. Everyone who designs the physical and virtual environment around us should consider these different limitations.
+Accessibility is about providing equal access to goods and services to everyone regardless of age, gender, knowledge or disabilities. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. A report published by the European Commission in \citeyear{Grammenos2020} estimates that about 7\% of people aged 16 and over who live in the European Union have a strong disability and about 17.5\% a moderate disability \citep{Grammenos2020}. This number gets significantly higher when people get older. Disability prevalence among people aged 65 and over is about 47.8\%.  Disability is a part of being human and persons with disabilities have very different needs. We can also talk about temporary disability - this might be a mother who can only use one hand because she is holding a child in the other or someone who broke an arm and can't use it until it heals. The experiences during a temporary disability may be very similar to a permanent condition. Everyone who designs the physical and virtual environment around us should consider these different limitations.
 
 Accessibility principles can be applied to various fields. For example, in architecture, it could be designing buildings in a way that can be accessed by people who can walk as well as the ones who need to use a wheelchair. In digital products, it is more often related to the senses we use to consume content and navigate. Everything should be equally accessible regardless of the sense someone wants or need to use for consuming the information.
 
@@ -66,21 +66,35 @@ The results can be presented as a report in HTML, CVS, PDF, XML or other formats
 
 Browser extensions and online tools usually evaluate one page at a time. This might work well for small websites and one-time audits but can be quite ineffective to use as a continuous long-term solution. \Ac{cli} tools need more setup, but can potentially be seamlessly integrated into the development workflow.
 
-Authoring tool plugins for Figma that check if the colors used in the design conform with \ac{wcag} requirements or plugins for integrated development environments that provide immediate feedback to a developer in their working environment when they miss something related to accessibility in their code.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/figma plugin-color-contrast-fail.png}
+		\caption{Color contrast test failing}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/figma plugin-color-contrast-pass.png}
+		\caption{Color contrast test passing}
+	\end{subfigure}
+\caption{Figma plugin for testing color contrast compliance with \ac{wcag}}
+\label{fig:figma-plugin}
+\end{figure}
+
+Authoring tool plugins for Figma that check if the colors used in the design conform with \ac{wcag} requirements (see Figure \ref{fig:figma-plugin}) or plugins for integrated development environments that provide immediate feedback to a developer in their working environment when they miss something related to accessibility in their code.
 
 Some tools do a very specific task or work inside a very certain tool and others try to tackle accessibility as thoroughly as possible. In most cases, using many different tools in combination will give the best result.
 
-\subsubsection{Automated accessibility testing}
-
-In this thesis, any computer program that can be set up to perform checks automatically with minimal manual effort will be called automated accessibility testing. It is important to differentiate these kinds of tools from the wide range of other tools described in the previous chapter. This would leave out browser extensions because these would require extra steps to run the checks every time. Automated tests should be triggered each time a change has been made. The earlier in the development process it can be triggered, the better.
-
-Mostly these are \ac{cli} tools that can be integrated to run together with other tests. The \ac{dom} is the data representation of the objects that comprise the structure and content of a document on the web \citep{MDN2023}. These programs scan the rendered \ac{dom} of a website against accessibility standards like \ac{wcag} to find violations. These errors are reported back with a reference to the code that produced the error.
+\subsubsection{Continious accessibility testing}
 
 \Ac{ci} is a software development practice where members of the team integrate their work frequently and each integration is verified with an automated build that includes tests to detect errors as quickly as possible \citep{Fowler2006}. This is believed to help develop high-quality software more rapidly. One of the practices in \ac{ci} is making your code Self-Testing - adding a suite of automated tests that can check a large part of the codebase for bugs. These tests need to be easy to trigger and indicate any failures.
 
 This last principle could be applied well to accessibility evaluation. This practice would follow modern software development principles. The automated tests will not catch everything, but they will catch enough to make it worthwhile. After the initial setup, they should not need a lot of maintenance and will be run every time someone contributes to the codebase. This can act as a very effective gatekeeper for any potential accessibility issues.
 
-According to the survey conducted by Level Access about the state of digital accessibility 67\% of organizations that practice continuous integration also include accessibility tests \citep{LevelAccess}. This has gone up from 56\% reported in 2021. Organizations that have an accessibility program that is in the early stages (2-6 years) or who have \ac{iaap}-certified personnel are more likely than average to have implemented a \ac{ci} testing process that includes accessibility.
+Tools that can be set up to perform checks every time changes have been made automatically with minimal manual effort can be used for continuous accessibility testing. The earlier in the development process these can be triggered, the better. Not all of the tools described in the previous chapter can be used for that. Browser extensions and plugins in authoring tools need to be manually triggered to perform checks.
+
+\ac{cli} based tools are most suitable for this purpose. They can be customized to specific needs and integrated to run together with other tests. The \ac{dom} is the data representation of the objects that comprise the structure and content of a document on the web \citep{MDN2023}. These programs scan the rendered \ac{dom} of a website against accessibility standards like \ac{wcag} to find violations. These errors are reported back with a reference to the code that produced the error.
+
+According to the survey conducted by Level Access about the state of digital accessibility 67\% of organizations that practice \ac{ci} also include accessibility tests \citep{LevelAccess}. This has gone up from 56\% reported in 2021. 91\% of all organizations that participated in the survey say they use accessibility testing tools and most of them prefer the free options available. Browser extensions are by far the most popular tool with 82.4\% of organizations using them. 23.4\% has reported that they use testing technology that integrates with their \ac{ci} tool and 22.7\% uses testing technology that is compatible with their test framework. Organizations that have an accessibility program in its early stages (2-6 years) or have \ac{iaap}-certified personnel are more likely than the average to have implemented a \ac{ci} testing process.
 
 It is important to mention that automated tests can detect only a part of all the possible violations. The UK Government Digital Service Accessibility team compared 13 automated tools' performance in \citeyear{GAT2018} on a page that had 142 deliberately introduced accessibility issues and found the automated tools were able to detect 13-40\% of issues. \citeauthor{Abbott2021} compared the two most popular accessibility tools that can be used in \ac{ci} using the same deliberately inaccessible site in \citeyear{Abbott2021} and reported that axe-core caught 27\% and pa11y 20\% \citep{Abbott2021}. \citeauthor{Vigo2013} compared 6 different tools in \citeyear{Vigo2013} and found that they were able to detect 23-50\% of  \ac{wcag} 2.0 Success Criteria \citep{GAT2018, Abbott2021, Vigo2013}.
 
@@ -90,8 +104,8 @@ Axe-core accessibility testing engine promises to find on average 57\% issues, w
 
 They also say that looking at the results with current, in their opinion, inaccurate, definition of coverage would be in the range of 20-30\% \citep{DequeSystems2021report}. I did not find any studies about other tools that would use the same method for calculating the coverage so for this paper we will still compare the tools according to the most widely used coverage calculation method.
 
-There is still a limit to what can be detected no matter how we define the coverage. \review{Mari-Ell: Add something here about the fact that it is not that the tools are BAD, they just cannot interpret things that need human opinion. However, many things that in my opinion could be tested with tools, for some reason, cannot - image alt texts that are just "object" or "image" are usually nor marked as error, and icons and input fields that are almost invisible, are also not marked as errors.} Manual testing will always be required to ensure that the content is fully accessible. The main strength of automated tests is that they can be set up to run automatically, and they provide measurable results. Therefore, it is a good way to monitor compliance with \ac{wcag} rules consistently without much extra effort. This can help avoid unwanted changes and highlight issues in code that should be straightforward to fix.
-
-% WCAG 2.0 was made in a way that works better for automated testing. \todo{Find citation}
+There is still a limit to what can be detected no matter how we define the coverage.
+\review{Mari-Ell: Add something here about the fact that it is not that the tools are BAD, they just cannot interpret things that need human opinion. However, many things that in my opinion could be tested with tools, for some reason, cannot - image alt texts that are just "object" or "image" are usually nor marked as error, and icons and input fields that are almost invisible, are also not marked as errors.}
+Manual testing will always be required to ensure that the content is fully accessible. The main strength of automated tests is that they can be set up to run automatically, and they provide measurable results. Therefore, it is a good way to monitor compliance with \ac{wcag} rules consistently without much extra effort. This can help avoid unwanted changes and highlight issues in code that should be straightforward to fix.
 
 \end{document}
