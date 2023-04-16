@@ -135,10 +135,6 @@
   short=ACT,
   long=Accessibility Conformance Testing,
 }
-% \DeclareAcronym{}{
-%   short=,
-%   long=,
-% }
 \DeclareAcronym{ux}{
   short=UX,
   long=user experience,
@@ -182,6 +178,10 @@
 \DeclareAcronym{iaap}{
   short=IAAP,
   long=International Association of Accessibility Professionals
+}
+\DeclareAcronym{iaapwap}{
+  short=IAAP WAP,
+  long=International Association of Accessibility Professionals Web Accessibility Specialist
 }
 
 % CUSTOM COMMANDS
