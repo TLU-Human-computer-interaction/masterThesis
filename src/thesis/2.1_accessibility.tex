@@ -72,6 +72,7 @@ Browser extensions and online tools usually evaluate one page at a time. This mi
 		\includegraphics[width=\textwidth]{img/figma plugin-color-contrast-fail.png}
 		\caption{Color contrast test failing}
 	\end{subfigure}
+	\hspace{0.05\textwidth}
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{img/figma plugin-color-contrast-pass.png}
 		\caption{Color contrast test passing}
@@ -84,7 +85,7 @@ Authoring tool plugins for Figma that check if the colors used in the design con
 
 Some tools do a very specific task or work inside a very certain tool and others try to tackle accessibility as thoroughly as possible. In most cases, using many different tools in combination will give the best result.
 
-\subsubsection{Continious accessibility testing}
+\subsubsection{Continuous accessibility testing}
 
 \Ac{ci} is a software development practice where members of the team integrate their work frequently and each integration is verified with an automated build that includes tests to detect errors as quickly as possible \citep{Fowler2006}. This is believed to help develop high-quality software more rapidly. One of the practices in \ac{ci} is making your code Self-Testing - adding a suite of automated tests that can check a large part of the codebase for bugs. These tests need to be easy to trigger and indicate any failures.
 
