@@ -27,6 +27,49 @@ Pipedrive has been developing a sales \ac{crm} using mostly typescript and React
 
 This should not be taken as a way to solve all accessibility problems but as a good first step to get started. Making changes in a reusable \ac{ui} library should have a wide impact on the product's overall accessibility and without establishing a basic level of accessibility there, it would be difficult to start testing individual pages of the final product.
 
+\subsection{Research Methodology}
+
+\info{Methodology – The overall strategy to conduct the research, e.g. experimental, quasi-experimental, correlational, descriptive, action research, design research, ethnography – Determined by the research question - summarise the research strategy and methodology for conducting the research.}
+
+% Methodologies:
+%̶ S̶u̶r̶v̶e̶y̶ R̶e̶s̶e̶a̶r̶c̶h̶
+%̶ E̶x̶p̶e̶r̶i̶m̶e̶n̶t̶a̶l̶ R̶e̶s̶e̶a̶r̶c̶h̶
+%̶ D̶e̶s̶i̶g̶n̶ R̶e̶s̶e̶a̶r̶c̶h̶
+% Action Research
+% Case Studies
+
+%  Methods
+% – The tools and instruments that will be employed
+% to gather evidence (e.g. collect data)
+% • e.g. interview, questionnaire, observations, tests
+% – Determined by the Methodology and Question
+
+\subsubsection{Literature review}
+
+A literature review is a critical analysis of existing research and scholarly literature on a particular topic. It involves systematically reviewing, evaluating, and synthesizing existing knowledge and research findings in a specific field to identify gaps in the current knowledge and identify topics for further research \citep{Luft2022}.
+
+In my work literature review was needed to understand the current landscape of automated accessibility testing. These kinds of tools have been available for a long time and I wanted to understand how much we already know about their strengths and weaknesses. Have they been tested in real-world situations and what are the results? What is the difference between these tools? Have some been proven to be better than others?
+
+My method for finding relevant scientific articles was to use EBESCO discovery service for Academic Library of Tallinn University to find any articles with keywords accessibility, automated evaluation and continuous integration. I also conducted a similar search on Google to find any nonscientific articles about the subject. I went through the references in all of these articles to identify any relevant research that I should also include.
+
+This gave me pretty solid results and very soon I started to see the conclusion references in the articles I read repeat themselves. The tools that are used evolve fast and this would make older articles irrelevant to the current state of continuous accessibility testing. As a general rule, I focused on articles published in the last 10 years and only looked at old ones when they gave more high-level overviews or methods and did not focus on comparing specific tools.
+
+I looked through any research papers on the subject of automated accessibility testing and also any relevant articles or blog posts. Things change fast in software development and I was not expecting to find the most up-to-date information from scientific publications. That's why I thought that it was necessary to also include resources that have been published on reputable sites.
+
+Many studies have been done to compare different accessibility testing tools \citep{Alsaeedi2020, Ismailova2022, Sane2021, Vigo2013, RybinKoob2022, Duran2017}. I took a look at the results of these studies and tried out enough tools on my own to find one that would be usable for my purposes, but my intention was not to compare them methodically as a part of this work. I will rely on the comparisons that have been made by others in the past.
+
+\subsubsection{Case study}
+
+A case study is an in-depth analysis of a bounded system \citep{Range2023}. It involves multiple forms of data collection like observations, interviews, documents, reports and analysis. The case can be a specific individual, group, community, business, organization, event or phenomenon. It can be chosen because of its uniqueness or typicality. The goal of using case study methodology is to investigate something contemporary in its real-life context.
+
+The results of a single case study might be very subjective to that particular case and to the biased opinions of the researcher and can't always be generalized and applied to other similar situations \citep{Range2023}. The richness of detail they provide makes them fascinating and often there is a lot to learn from them. Sometimes these insights can be applied to other similar cases. It is a good method for exploratory or critical and unusual cases.
+
+I chose this method to explore the possibilities of automated testing. I conducted an organizational case study that focused on the process of evaluating and improving the accessibility of \ac{crm} tool called Pipedrive. In the scope of this study, I added an automated accessibility evaluation tool in our component library and conducted a manual accessibility evaluation of the same library together with 3 designers working in the company.
+
+Before implementing the new tool I sent out a questionnaire to understand the knowledge about and approaches towards the subject of web accessibility in the company among people who are most likely to be doing work related to it. At the end of my research, I sent out another questionnaire with a focus on gaining information from people in the organization who use the tool that I added during that period. I wanted to know if it was helpful and if they had any issues using it and what other opinions they might have about it. The goal of both of these was to get more detailed information about the experience of the real users of the tool.
+
+I organized the data collected from automated and manual testing to make it comparable. I used statistical analysis to gain valuable insight into how well these two methods work and how they might differ from one another.
+
 \subsection{Current state of awareness about accessibility in Pipedrive}
 
 First, I sent out a survey in our company's Slack channels (see figure \ref{fig:slack-message}) to understand what is the knowledge and general approach to web accessibility in the company. It was shared in 4 channels to reach people who are most likely to be dealing with accessibility, our component library and who are invested in accessibility (see more details in table \ref{table:survey-shared}).
