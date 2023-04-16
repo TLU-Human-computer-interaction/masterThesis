@@ -21,7 +21,9 @@
 \RequirePackage{wrapfig}
 \RequirePackage{subcaption}
 
-\RequirePackage[estonian, english]{babel}
+%===Choose the main language in thesis
+\usepackage[estonian, english]{babel} %the thesis is in English
+% \usepackage[english, estonian]{babel} %the thesis is in Estonian
 
 \RequirePackage[final]{microtype}
 \RequirePackage{csquotes}
@@ -207,6 +209,7 @@
 \definecolor{lilac}{HTML}{C5AECF}
 
 % Nice todo notes (backgroundcolor=lightBlue!25)
+\setlength {\marginparwidth }{2cm}
 \RequirePackage[backgroundcolor=yellow, bordercolor=yellow, textcolor=darkBlue, colorinlistoftodos]{todonotes}
 \setuptodonotes{inline}
 \RequirePackage{xargs} % Use more than one optional parameter in a new commands
