@@ -6,11 +6,13 @@
 
 \section{Theoretical Background}
 
+This chapter will give a short overview of web accessibility, accessibility evaluation and component libraries. The goal of this is to understand the context around accessibility, how it is regulated and defined and how it can be evaluated. The case study that has been done as a part of this thesis focuses on a component library's compliance with common accessibility standards. I will go over what a component library is and why are they used.
+
 \subsection{Web Accessibility}
 
 Accessibility is about providing equal access to goods and services to everyone regardless of age, gender, knowledge or disabilities. We all have different abilities, some run faster than others, some see more clearly and some might not be able to hear sounds. A report published by the European Commission in \citeyear{Grammenos2020} estimates that about 7\% of people aged 16 and over who live in the European Union have a strong disability and about 17.5\% a moderate disability \citep{Grammenos2020}. This number gets significantly higher when people get older. Disability prevalence among people aged 65 and over is about 47.8\%.  Disability is a part of being human and persons with disabilities have very different needs. We can also talk about temporary disability - this might be a mother who can only use one hand because she is holding a child in the other or someone who broke an arm and can't use it until it heals. The experiences during a temporary disability may be very similar to a permanent condition. Everyone who designs the physical and virtual environment around us should consider these different limitations.
 
-Accessibility principles can be applied to various fields. For example, in architecture, it could be designing buildings in a way that can be accessed by people who can walk as well as the ones who need to use a wheelchair. In digital products, it is more often related to the senses we use to consume content and navigate. Everything should be equally accessible regardless of the sense someone wants or need to use for consuming the information.
+Accessibility principles can be applied to various fields. For example, in architecture, it could be designing buildings in a way that can be accessed by people who can walk as well as the ones who need to use a wheelchair. In digital products, it is more often related to the senses we use to navigate and consume content. Everything should be equally accessible regardless of the sense someone wants or need to use for consuming the information.
 
 The biggest strength of the web lies in its availability to everyone. Tim Berners-Lee, \ac{wcag} Director and inventor of the World Wide Web said: "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect" \citep{WWWC1997}. The virtual world has the potential to be much more inclusive than the physical world.
 
@@ -22,9 +24,13 @@ The standards for considering people with different abilities and making web con
 
 The first version of \ac{wcag} (1.0) was published in 1998 \citep{Vanderheiden1998}. The current version is \ac{wcag} 2.1 and the next version 2.2 is scheduled to be finalized in May 2023 \citep{Henry2023}. All \ac{wcag} versions are backward compatible, meaning that all requirements that were in 2.0 are included in 2.1 and some new requirements are added. Version 2.2 is currently in the draft stage, but the planned changes also include some minor changes to the current guidelines.
 
-\ac{wai} gives an overview of the laws and policies around the world. 25 out of 40 listed on the page are based on \ac{wcag} 2.0 or \ac{wcag} 2.0 derivative \citep{Mueller2018}. Pipedrive operates in the US and European markets so the most notable and relevant ones for me are the accessibility standard in European Union EN 301 549 enforced by Web and Mobile Accessibility Directive \citep{MuellerEU2017} and Section 508 of the US Rehabilitation Act of 1973, as amended in the United States \citep{MuellerUS2017}. \ac{wcag} 2.0 AA level conformance has been incorporated into the law in the US and the European standards' latest version follows \ac{wcag} 2.1 AA \citep{LevelAccess2021}. In this thesis, I will test against \ac{wcag} 2.1, because it is the latest published version of the most widely used standard.
+Legally discrimination against disabled people is covered by different laws and directives around the world. Many of them are based on or derived from some version of \ac{wcag}. Pipedrive operates in the US and European markets so regulations there are most relevant to my case study.
 
-\todo{What would be a better resource for this overview? This seems to be outdated because another resource said the EU standard is referencing \ac{wcag} 2.1}
+In the \ac{usa} accessibility is addressed in two laws \citep{Siteimprove}. Amendment of Section 508 regulates accessibility related to Federal agencies and organizations that receive federal funds or are employed under contract with a federal agency and includes \ac{wcag}. Title III of the Americans with Disabilities Act ensures that public goods and services are equally accessible to everyone.
+
+\ac{eu} has two directives that outline what accessibility should look like and leave it to each member state to make national laws based on that. \ac{eu} Web Accessibility Directive states that the public sector should follow \ac{wcag} 2.1 Level AA and European Accessibility Act aims to ensure that essential products and services traded between \ac{eu} member states are equally accessible to everyone.
+
+\ac{wai} gives an overview of the laws and policies around the world. 25 out of 40 listed on the page are based on \ac{wcag} 2.0 or \ac{wcag} 2.0 derivative \citep{Mueller2018}. In this thesis, I will test against \ac{wcag} 2.1, because it is the latest published version of the most widely used standard.
 
 \ac{wcag} is intended for developers of web content, authoring tools or web accessibility evaluation tools and others who need a standard for accessibility \citep{Henry2023}. The 4 principles of accessibility addressed in the guidelines are:
 \begin{enumerate}
