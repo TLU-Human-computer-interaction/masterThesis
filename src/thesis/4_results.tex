@@ -14,9 +14,13 @@
 
 To get the whole list including all components, a report was created that included the violations caught in each example of each component. This report was generated at the beginning of the manual audit, so the results obtained from both methods are based on the same source code.
 
-I prepared a comparison table from both results. For automated accessibility tests, I recorded the number of examples that included violations, the number of different violations and the number of passed checks for each component. In most cases, there were more examples with violations because the same thing was reported in more than one example (see figure \ref{fig:audit-failed}). Addon-a11y did not report any issues for 27 (51\%) components out of 53 components after verifying the validity of these issues the number goes up to 31 (58\%).
+I prepared a comparison table from both results. For automated accessibility tests, I recorded the number of times it was mentioned in the report, the number of different violations and the number of passed checks for each component. In most cases, there were more examples with violations because the same thing was reported in more than one example (see figure \ref{fig:audit-failed}).
 
-Passed checks were reviewed to determine how many were valid (see figure \ref{fig:audit-passed}). 4 components did not have any passed checks and 22 did not have any valid passed checks. This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results.
+The next step was to go over all the violations as passes to verify if they are correct and relevant to the specific component. If a component uses another component inside it and that component has a violation or a pass reported then I did not count that.
+
+Addon-a11y did not report any violations for 27 (51\%) components out of 53 components after verifying the validity of these issues the number goes up to 31 (58\%) (see Figure \ref{fig:audit-failed}). On average the automated testing tool found 1 violation per component. The maximum number of violations for a single component was 7 and the maximum number of valid violations was 6.
+
+4 components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-passed}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes were detected for Form and Table component (18). After validating the number of passes changed to 9 for Table and 7 for Form. The average number of passes for each component was 5 before and 2 after validating the results.
 
 \begin{figure}[ht]
 	\begin{subfigure}{0.45\textwidth}
@@ -59,7 +63,7 @@ Looking at all the fails and passes gives an overview of how many tests were run
 \label{fig:checks-validity}
 \end{figure}
 
-Analyzing the validity of checks further performed by addon-a11y shows from all passes and fails together a bit more than half are valid while only 38\% of detected violations are correct and 58\% of passed checks were confirmed to be relevant (see Figure \ref{fig:checks-validity}).
+Analyzing the validity of checks performed by addon-a11y further shows that from all passes and fails together a bit more than half are valid while 68\% of detected violations are correct and 51\% of passed checks were confirmed to be relevant (see Figure \ref{fig:checks-validity}).
 
 \review{Mari-Ell: Do you have a solution on how to get them tested as well? Somehow display them without the need of the trigger? - Test out play functions with Storybook 7 and the built-in test runner.}
 

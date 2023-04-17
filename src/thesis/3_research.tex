@@ -170,12 +170,18 @@ The rules format that axe-core uses is developed by Deque Systems and is an adop
 I used Storybook-a11y-report \citep{Karube2020} to generate a report of all the violations in the whole component library. It went through all the examples and ran the same tests as addon-a11y to generate a summarized report. The final report links back to each component's story where you can see the example and addon panel with all the information mentioned before. \todo{add the report to Appendices and reference it here.}
 
 To get some data that could be compared with the results from manual testing, I went through all the examples and extracted the following info for each component:
-
+\todo{add the table to Appendices and reference it here }
 \begin{itemize}
-	\item How many occurrences of the component are there in the accessibility violations report? One issue might have been reported multiple times because most components have several examples and issues might be reported in each of them.
-	\item How many unique issues does the component have? Most components have more than one story. I opened the example and went through all the violations in all the stories and counted unique ones.
-	\item How many passed checks does the component have? This together with violations will show how many things were tested for each component. Same method as in the previous item - all unique passed checks in all the stories for that component.
-	\item How many of these checks are valid? I looked at the example and only counted passed issues that are valid and relevant to the component that the example is about.
+	\item \textbf{unique violations detected for component} - A list of unique violations visible in components Accessibility tab
+	\item \textbf{report\_violations} - Count of how many times the component was mentioned in the report that included all the components with all their examples. There might have been duplicates here when the same issue is visible in more than one example for the same component.
+	\item \textbf{violations} - Count of all unique violations detected for the component. One violation reported in many examples was only counted once.
+	\item \textbf{true\_violations} - Count of how many of these violations are valid and relevant to this component. I went through all the examples with violations and validated if they were relevant.  I excluded all violations that come for other components or are related to additional elements added just to illustrate the usage of the component better.
+	\item \textbf{passes detected for component} - A list of unique passes visible in components Accessibility tab
+	\item \textbf{passes} - Count of all unique passes detected for the component. One pass reported in many examples was only counted once.
+	\item \textbf{true\_passes} - Count of how many of these passes are valid and relevant to this component. I went through all the examples with violations and validated if they were relevant. I excluded all violations that come for other components or are related to additional elements added just to illustrate the usage of the component better.
+	\item \textbf{explanation of false violation and passes} - An explanation of why each false violation and pass was not considered relevant
+	\item \textbf{violations from manual testing for component} - A list of violations listed for each component in the manual audit report. Left out issues that were detected using addon-a11y, because these are listed in automated testing.
+	\item \textbf{manual\_count} - Count of these manually found violations
 \end{itemize}
 
 \subsection{Manual accessibility audit}
