@@ -193,23 +193,38 @@ Inaccurate results and missed issues indicated problems with how the component e
 
 \info{RQ3: To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}?  }
 
+One of the bonuses of using automated testing tools is improved observability or the state of accessibility. Multiple reports were generated in Pipedrive's component library to illustrate that. The report gives counts of different issues and the for the purpose of this study and for observing the process that was made over time the whole number of detected violations was compared over time (Figure \ref{fig:automted-reports}).
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/automated-audit-reports.png}
 	\caption{How much have automated audit report results improved since adding the tool?}
 	\label{fig:automted-reports}
 \end{figure}
-\todo{compare reports (beginning, after manual audit + now) + automated testing done in a good way can raise awareness about the importance of automated testing and with more awareness accessibility gets more priority. I also think that it is much more helpful in cases where these testing tools can be implemented from the start. make storybook examples that work for accessibility tests and research. It will help make dealing with accessibility issues easier, it seems like a big thing - no one really knows how much time is needed. daunting even.}
+
+Results over 5 months show that we reduced the highest number of accessibility issues while and just after doing the report. The reason this is logical is that the team involved that performed the audit had dedicated time to focus on solving these issues. It is also worth noting that several new components have been added to the library since and the number of accessibility issues has not increased.
+
+As discussed in previous chapters automated accessibility can't catch all issues. So the fact that no additional violations have not been added alone can't provide certainty that this component library is just as accessible as it was the last time the report was generated. It could be argued that the biggest value of using this in addition to finding certain kinds of accessibility violations has been bringing focus and attention to the subject of accessibility.
+
+\citeauthor{Paterno2020} said that developers find maintaining a high level of accessibility hard because it is then only considered after the first release of the product. Having a continuous way to monitor and detect issues should help keep the level that was reached in the phase where there was more time to focus on accessibility. The data collected in the short time that this automated accessibility tool has been in use in Pipedrive supports that theory.
+
+A good level of accessibility is easier to achieve when developers consider it from the start of the process. Fixing things, later on, is much harder to justify on the business side and might be more difficult than it would have been to build a component or a webpage keeping accessibility in mind from the beginning.
+
+With the data collected during this research, I can definitively say that implementing automated accessibility testing in a component library's development workflow will improve the accessibility of the end product where these elements are being used, but there is data to support that it is very likely that it could improve it to some extent.
+
+The experience of using these tools and conversations with other developers in the company has suggested that one big benefit of using tools like this is that it makes the whole subject of web accessibility a bit more measurable and less daunting. Having an easy familiar way of testing for and solving issues related to accessibility will make it more like for developers to take on solving these issues.
 
 \subsection{Limitations of Automated Accessibility Testing}
 \info{RQ4: What are the biggest problems of integrating automated accessibility testing into a component library's development workflow?}
-button issue, not possible to add to CI currently - easy to not notice
-\todo{Follow up survey + reach out to devs I know have used addon-a11y}
+
+\todo{Follow up survey + reach out to devs I know have used addon-a11y, button issue, not possible to add to CI currently - easy to not notice}
+
 The accessibility add-on in Storybook analyzes the examples that have been made for the component and unsuitable examples can cause false results. Like components triggered by a button described before. This is because the initial \ac{html} that the accessibility tests are being run on only has the button and the tests are not being run again after triggering the element. This could potentially be remedied with better examples.
 
 The biggest limitation of this tool currently is that it can only be viewed in Storybook. To see the number of passes and fails you need to open the accessibility tab for each component. I looked into ways of automating this so that the same checks could be run on every change to the library and added to the \ac{ci} workflow. In the current version of Storybook, there is no easy way to do this, but it will become much easier in the next major version.
 
 Upgrading our component library to that version would need some extra work to make it compatible, but I have tested out this solution on a test library, and it seems like it would be an improvement. Running the tests in \ac{ci} would ensure that they are run every time someone makes a change and not only when we choose to. We could also block changes that don't pass the required accessibility checks.
+
 
 \todo{Reasons for automated check not being effective}
 
