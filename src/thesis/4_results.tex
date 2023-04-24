@@ -6,17 +6,17 @@
 
 \section{Results}
 
-\subsection{Comparing Results from Manual Audit and Automated Tests}
+\subsection{Results from Manual Audit and Automated Tests}
 
 \info{RQ2: What kind of errors can be caught by running automated accessibility tests on a component library?}
 
-A summarized table from all violations and passes in automated tests and issues found in the manual audit was created. In this table, the results have been reduced to counts that can be analyzed using statistical methods (see Appendix \ref{appendix:results-table}).
+A summarized table from all violations and passes in automated tests and issues found in the manual audit was created. In this table, the results have been reduced to counts that can be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
 
 % summary of violations
 The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components after verifying the validity of these issues the number goes up to 31 (58\%) (Figure \ref{fig:audit-failed}). On average the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6.
 
 % summary of passes
-4 components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-passed}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes were detected for \textit{Form} and \textit{Table} components (18). After validating the number of passes changed to 9 for Table and 7 for Form. The average number of passes for each component was 5 before and 2 after validating the results.
+4 components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-passed}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes were detected for \textit{Form} and \textit{Table} components (18). After validating the number of passes changed to 9 for \textit{Table} and 7 for \textit{Form}. The average number of passes for each component was 5 before and 2 after validating the results.
 
 \begin{figure}[ht]
 	\begin{subfigure}{0.45\textwidth}
@@ -34,8 +34,24 @@ The results show that addon-a11y did not report any violations for 27 (51\%) com
 \label{fig:sb-button-trigger}
 \end{figure}
 
+\begin{figure}[H]
+	\begin{subfigure}{0.45\textwidth}
+	\includegraphics[height=0.9\textheight]{img/audit-failed.png}
+	\caption{All violations reported by addon-a11y and how many of them are valid.}
+	\label{fig:audit-failed}
+	\end{subfigure}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}{0.45\textwidth}
+	\includegraphics[height=0.9\textheight]{img/audit-passed.png}
+	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
+	\label{fig:audit-passed}
+	\end{subfigure}
+\caption{All issues checked by addon-a11y}
+\label{fig:audit-passed-failed}
+\end{figure}
+
 % summary of violations + passes
-Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of these included false violations or passes. After validating the results the number of components not tested became 20 (38\%). This included components that become visible only when triggered by another element, like modals and popups that were displayed with a button as a trigger in the Storybook examples (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
+Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of these included false violations or passes. After validating the results the number of components not tested is 20 (38\%). This included components that become visible only when triggered by another element, like modals and popups that were displayed with a button as a trigger in the Storybook examples (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
 
 The remainder of the components that did not get tested by the addon included very simple components for spacing and visuals. These need further testing when they are being used in context to make sure that the visual info they are conveying is also included in text form. The results from manual testing did not reveal any further issues for 6 of these components. The components that have a trigger button in the example had the most additional issues. This is expected as due to the limitation of the examples the correct component was not evaluated by the tool.
 
@@ -44,27 +60,27 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}{0.3\textwidth}
-	\includegraphics[width=\textwidth]{img/failed-tests.png}
+	\includegraphics[width=\textwidth]{img/violations.png}
 	\caption{How many of the detected violations are valid?}
 	\label{fig:checks-validity-failed}
 	\end{subfigure}
 	\hspace{0.03\textwidth}
 	\begin{subfigure}{0.3\textwidth}
-	\includegraphics[width=\textwidth]{img/passed-tests.png}
-	\caption{How many of the checks passed are valid?}
+	\includegraphics[width=\textwidth]{img/passes.png}
+	\caption{How many of the passes are valid?}
 	\label{fig:checks-validity-passed}
 	\end{subfigure}
 	\hspace{0.03\textwidth}
 	\begin{subfigure}{0.3\textwidth}
-	\includegraphics[width=\textwidth]{img/all-test-results.png}
-	\caption{How many of all tests are valid?}
+	\includegraphics[width=\textwidth]{img/violations+passes.png}
+	\caption{How many of all violations and tests combined are valid?}
 	\label{fig:checks-validity-all}
 	\end{subfigure}
 \caption{Valididty of tests performed by addon-a11y}
 \label{fig:checks-validity}
 \end{figure}
 
-\textbf{RQ2}: "What kind of errors can be caught by running automated accessibility tests on a component library?" can be answered based on these results and the results from manually evaluating the same components. The \ac{wcag} Success Criterion, correct usage of \ac{waiaria} and other best practices that proved to be reliably testable in Pipedrive's component library are:
+\textbf{RQ2}: "What kind of errors can be caught by running automated accessibility tests on a component library?" can be answered based on these results and the results from manually evaluating the same components. The \ac{wcag} Success Criterion, correct usage of \ac{wai-aria} and other best practices that proved to be reliably testable in Pipedrive's component library are:
 
 \begin{itemize}
 	\item Success Criterion 1.1.1 Non-text Content
@@ -76,7 +92,7 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 	\item Success Criterion 1.3.1 Info and Relationships
 	% https://www.w3.org/TR/WCAG21/#info-and-relationships
 	\begin{itemize}
-		\item Certain ARIA roles must contain particular children: Required ARIA children role not present: cell, columnheader, gridcell, rowheader
+		\item Certain ARIA roles must contain particular children
 	\end{itemize}
 
 	\item Success Criterion 1.4.3 Contrast (Minimum)
@@ -148,7 +164,7 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 	\end{itemize}
 \end{itemize}
 
-There might be other \ac{wcag} Success Criteria that the tool is also capable of testing, but that just was not represented by this certain component and examples. The most common valid test result was color contrast. 45,1\% of all violations and passes were tested for contrast.
+There might be other \ac{wcag} Success Criteria that the tool is also capable of testing, but that just was not represented by this certain set of components and examples. The most common valid test result was color contrast with 45,1\% of all violations and passes being color contrast issues. It is also important to note that this tool can reliably test for the existence of the alt attribute in an image, but it is not capable of judging how accurate the meaning is or even if the image is purely decorative and should have an empty alt value.
 
 From the additional issues found in the manual audit, it would appear that the following issues should be manually tested in most cases:
 \begin{itemize}
@@ -156,9 +172,11 @@ From the additional issues found in the manual audit, it would appear that the f
 	\item Navigating by using a keyboard
 	\item Navigating and interacting by using a screen reader
 	\item Recognizable color differences between semantically different variants of one component
-	\item Images and if they should have alt text
+	\item Images and what should be the value of their alt text
 	\item Svgs and if they should have an aria-label
 \end{itemize}
+
+Evaluating the accessibility of focus states with automated testing could be improved by writing better examples for components that would also display it in all relevant focus states.
 
 % What could be improved in component examples to make them more testable
 Inaccurate results and missed issues indicated problems with how the component examples have been written. The following things could be improved to improve the results of automated testing:
@@ -171,26 +189,17 @@ Inaccurate results and missed issues indicated problems with how the component e
 
 \review{Mari-Ell: Do you have a solution on how to get them tested as well? Somehow display them without the need of the trigger? - Test out play functions with Storybook 7 and the built-in test runner.}
 
-\begin{figure}[ht]
-	\begin{subfigure}{0.45\textwidth}
-	\includegraphics[height=0.9\textheight]{img/audit-failed.png}
-	\caption{All violations reported by addon-a11y and how many of them are valid.}
-	\label{fig:audit-failed}
-	\end{subfigure}
-	\hspace{0.05\textwidth}
-	\begin{subfigure}{0.45\textwidth}
-	\includegraphics[height=0.9\textheight]{img/audit-passed.png}
-	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
-	\label{fig:audit-passed}
-	\end{subfigure}
-\caption{All issues checked by addon-a11y}
-\label{fig:audit-passed-failed}
-\end{figure}
-
 \subsection{How Much Was Compliance with WCAG 2.1 Improved?}
 
 \info{RQ3: To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}?  }
-compare reports (beginning, after manual audit + now) + automated testing done in a good way can raise awareness about the importance of automated testing and with more awareness accessibility gets more priority. I also think that it is much more helpful in cases where these testing tools can be implemented from the start. make storybook examples that work for accessibility tests and research. It will help make dealing with accessibility issues easier, it seems like a big thing - no one really knows how much time is needed. daunting even.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/automated-audit-reports.png}
+	\caption{How much have automated audit report results improved since adding the tool?}
+	\label{fig:automted-reports}
+\end{figure}
+\todo{compare reports (beginning, after manual audit + now) + automated testing done in a good way can raise awareness about the importance of automated testing and with more awareness accessibility gets more priority. I also think that it is much more helpful in cases where these testing tools can be implemented from the start. make storybook examples that work for accessibility tests and research. It will help make dealing with accessibility issues easier, it seems like a big thing - no one really knows how much time is needed. daunting even.}
 
 \subsection{Limitations of Automated Accessibility Testing}
 \info{RQ4: What are the biggest problems of integrating automated accessibility testing into a component library's development workflow?}
