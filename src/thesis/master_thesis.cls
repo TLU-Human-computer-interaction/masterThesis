@@ -185,6 +185,10 @@
   short=IAAP WAP,
   long=International Association of Accessibility Professionals Web Accessibility Specialist
 }
+\DeclareAcronym{waiaria}{
+  short=WAI-ARIA,
+  long=Accessible Rich Internet Applications
+}
 
 % CUSTOM COMMANDS
 
