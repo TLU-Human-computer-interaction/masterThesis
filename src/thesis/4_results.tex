@@ -166,7 +166,7 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 
 There might be other \ac{wcag} Success Criteria that the tool is also capable of testing, but that just was not represented by this certain set of components and examples. The most common valid test result was color contrast with 45,1\% of all violations and passes being color contrast issues. It is also important to note that this tool can reliably test for the existence of the alt attribute in an image, but it is not capable of judging how accurate the meaning is or even if the image is purely decorative and should have an empty alt value.
 
-From the additional issues found in the manual audit, it would appear that the following issues should be manually tested in most cases:
+From the additional issues found in the manual audit, it could be concluded that the following issues should be manually tested:
 \begin{itemize}
 	\item Focus states
 	\item Navigating by using a keyboard
@@ -176,24 +176,23 @@ From the additional issues found in the manual audit, it would appear that the f
 	\item Svgs and if they should have an aria-label
 \end{itemize}
 
-Evaluating the accessibility of focus states with automated testing could be improved by writing better examples for components that would also display it in all relevant focus states.
+Evaluating the accessibility of focus states with automated testing could potentially be improved by using pseudo states add-on and writing better examples for components that would also display it in all relevant focus states.
 
 % What could be improved in component examples to make them more testable
-Inaccurate results and missed issues indicated problems with how the component examples have been written. The following things could be improved to improve the results of automated testing:
+Inaccurate results and missed issues indicated problems with how the component examples have been written. The following things could be improved to get better results from automated testing:
 \begin{itemize}
 	\item variants of components that are meant to be used on dark backgrounds should always be displayed on a dark background
-	\item Examples where the component gets triggered by a button should be avoided when possible
+	\item Examples where the component gets triggered by a button should be avoided when possible or made visible to the testing tool by writing interactions
 	\item pseudo-classes (like hover, focus etc) of interactive elements should be displayed in examples
 	\item Examples should be simple and display one component at a time to reduce the number of irrelevant tests being run
 \end{itemize}
-
-\review{Mari-Ell: Do you have a solution on how to get them tested as well? Somehow display them without the need of the trigger? - Test out play functions with Storybook 7 and the built-in test runner.}
 
 \subsection{How Much Was Compliance with WCAG 2.1 Improved?}
 
 \info{RQ3: To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}?  }
 
-One of the bonuses of using automated testing tools is improved observability or the state of accessibility. Multiple reports were generated in Pipedrive's component library to illustrate that. The report gives counts of different issues and the for the purpose of this study and for observing the process that was made over time the whole number of detected violations was compared over time (Figure \ref{fig:automted-reports}).
+One of the benefits of using automated testing tools is improved observability of the state of accessibility.
+Multiple reports were generated in Pipedrive's component library during the time that the usage of the automated testing tool was observed. The report counts different issues and the for the purpose of this study and for observing the overall process that was made over time the whole number of detected violations were compared. (Figure \ref{fig:automted-reports}).
 
 \begin{figure}[ht]
 	\centering
@@ -202,9 +201,9 @@ One of the bonuses of using automated testing tools is improved observability or
 	\label{fig:automted-reports}
 \end{figure}
 
-Results over 5 months show that we reduced the highest number of accessibility issues while and just after doing the report. The reason this is logical is that the team involved that performed the audit had dedicated time to focus on solving these issues. It is also worth noting that several new components have been added to the library since and the number of accessibility issues has not increased.
+Results over 5 months show that we reduced the highest number of accessibility issues while and just after conducting the manual accessibility audit. This logical because the team involved in performing the audit also had dedicated time to focus on solving these issues. It is also worth noting that several new components have been added to the library during this time and the number of accessibility issues has not increased.
 
-As discussed in previous chapters automated accessibility can't catch all issues. So the fact that no additional violations have not been added alone can't provide certainty that this component library is just as accessible as it was the last time the report was generated. It could be argued that the biggest value of using this in addition to finding certain kinds of accessibility violations has been bringing focus and attention to the subject of accessibility.
+As discussed in previous chapters automated accessibility can't catch all issues. So the fact that almost no additional violations have been added alone can't provide certainty that this component library is just as accessible as it was the last time the report was generated. It could be argued that the biggest value of using this in addition to finding certain kinds of accessibility violations has been bringing focus and attention to the subject of accessibility.
 
 \citeauthor{Paterno2020} said that developers find maintaining a high level of accessibility hard because it is then only considered after the first release of the product. Having a continuous way to monitor and detect issues should help keep the level that was reached in the phase where there was more time to focus on accessibility. The data collected in the short time that this automated accessibility tool has been in use in Pipedrive supports that theory.
 
@@ -212,16 +211,18 @@ A good level of accessibility is easier to achieve when developers consider it f
 
 With the data collected during this research, I can definitively say that implementing automated accessibility testing in a component library's development workflow will improve the accessibility of the end product where these elements are being used, but there is data to support that it is very likely that it could improve it to some extent.
 
-The experience of using these tools and conversations with other developers in the company has suggested that one big benefit of using tools like this is that it makes the whole subject of web accessibility a bit more measurable and less daunting. Having an easy familiar way of testing for and solving issues related to accessibility will make it more like for developers to take on solving these issues.
+The experience of using these tools and conversations with other developers in the company has suggested that one big benefit of using tools like this is that it makes the whole subject of web accessibility a bit more measurable and less daunting. Having an easy familiar way of testing for accessibility violations together with links to resources that help in solving these issues will make it more likely for developers to take on solving these issues.
 
 \subsection{Limitations of Automated Accessibility Testing}
 \info{RQ4: What are the biggest problems of integrating automated accessibility testing into a component library's development workflow?}
 
 \todo{Follow up survey + reach out to devs I know have used addon-a11y, button issue, not possible to add to CI currently - easy to not notice}
 
-The accessibility add-on in Storybook analyzes the examples that have been made for the component and unsuitable examples can cause false results. Like components triggered by a button described before. This is because the initial \ac{html} that the accessibility tests are being run on only has the button and the tests are not being run again after triggering the element. This could potentially be remedied with better examples.
+The accessibility add-on in Storybook analyzes the examples that have been made for the component and unsuitable examples can cause false results. Like components triggered by a button described before. This is because the initial \ac{html} that the accessibility tests are being run on only has the button and the tests are not being run again after triggering the element.
 
-The biggest limitation of this tool currently is that it can only be viewed in Storybook. To see the number of passes and fails you need to open the accessibility tab for each component. I looked into ways of automating this so that the same checks could be run on every change to the library and added to the \ac{ci} workflow. In the current version of Storybook, there is no easy way to do this, but it will become much easier in the next major version.
+This could be solved with better examples. Brick-ui, the simple playgound for testing solutions in Storybook was used to explore different way of mitigating this. This revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component, because accessibility tests are run after this interaction has been executed. In Storybook 6 the same thing could be achived by opening the example manually and triggerig a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7).
+
+Another limitation of this tool currently is that it can only be viewed in Storybook. To see the number of passes and fails you need to open the accessibility tab for each component. Ways of automating this were explored so that the same checks could be run on every change to the library and added to the \ac{ci} workflow. In the current version of Storybook, there is no easy way to do this, but it will become much easier in the next major version where accessibility test can be added to the built in test-runner.
 
 Upgrading our component library to that version would need some extra work to make it compatible, but I have tested out this solution on a test library, and it seems like it would be an improvement. Running the tests in \ac{ci} would ensure that they are run every time someone makes a change and not only when we choose to. We could also block changes that don't pass the required accessibility checks.
 
