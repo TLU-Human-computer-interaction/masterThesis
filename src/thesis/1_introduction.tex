@@ -2,15 +2,34 @@
 \documentclass{master_thesis}
 \addbibresource{refs.bib}
 \begin{document}
-\section{Introduction}
+\section{Introduction} \label{chap:intro}
 \info{Overview of the entire thesis.  It ends by describing the organization of this document.}
+
+% Provide preliminary background information that puts your research in context
+According to Internet World Stats 67.9\% of the global world population uses the internet \citep{MMG2023} and a big part of these people might face difficulties accessing the content that is provided on the web. Web accessibility focuses on making the web equally accessible to everyone.
+
+% Clarify the focus of your study
+
+The most common standard to follow for making webpages accessible is \ac{wcag} and there are different methods and tools for testing the compliance of web content with it. One of them is automated testing. The goal of this research is to understand the limitations of automated accessibility testing in the context of evaluating the accessibility of a component library.
+
+% Point out the value of your research(including secondary research)
+
+To explore this a case study and manual accessibility audit will be carried out in Pipedrive's component library. This will give valuable insights into what using automated accessibility testing tools would look like in a real-life situation. The aim of this is to understand the pros and cons of these tools.
+
+% Specify your specific research aims and objectives
+
+The \nameref{chap:intro} chapter will outline the research problem and goal and will end with phrasing the research questions that this thesis will aim to answer. The \nameref{chap:background} chapter will put this research into context. Looking into what is web accessibility and what are the common standards and regulations for it, what are the different methods and tools for evaluating it. The case study focuses on accessibility evaluations in a component library so the last part of this chapter will explain the concept, usage and importance of component libraries in web development.
+
+\nameref{chap:research} chapter will start by going over the methodology for this research and continue with explaining how the 3 main parts of this work: a survey conducted in Pipedrive to get insights about the current state of knowledge and awareness around accessibility, an explorative case study about the usage of automated accessibility testing conducted in Pipedrive's component library and overview of a manual accessibility audit carried out in the same component library.
+
+\nameref{chap:results} chapter will analyze the results from the survey, case study and manual audit to understand the capabilities and limitations of automated accessibility testing tools. The last chapter, \nameref{chap:conclusions} will focus on discussing the limitations of this research as well as exploring possibilities of future research on similar or related subjects.
 
 \subsection{Research Problem and Goal}
 
 \info{ Research Problem and Significance: What is the problem you are addressing? Why is this a problem? Why is this important to HCI? Supported scientific references? ate 3 4 ½ page max \\
 Research Goal and Motivation: Why are you doing this research? what will be your contributions? Supported scientific references? ate 3 4 ½ page max}
 
-According to \ac{who} 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They may not be able to use websites and mobile applications in a conventional way. To provide equal possibilities, digital environments need to be made accessible. Focusing on accessibility has a profound effect on the overall quality of products and services and therefore provides a big business value \citep{Miesenberger2020}.
+According to \ac{who} 1 billion people or about 16\% of the world's population are estimated to have a significant disability \citep{WHO2022}. They may not be able to use websites and mobile applications in a conventional way. To provide equal possibilities, digital environments need to be made accessible. Focusing on accessibility also has a profound effect on the overall quality of products and services and therefore provides a big business value \citep{Miesenberger2020}.
 
 Developers find it hard to maintain a high level of accessibility over time as it is considered more at the first release of the product \citep{Paterno2020}. \ac{ci} is used to speed up development and maintain general code quality \citep{Zhao2017} and it could also help in maintaining a high level of accessibility by testing the added code against predefined accessibility requirements. There is some initial research into the current state of accessibility testing in \ac{ci}, but it could be improved by doing a case study for an organization \citep{Sane2021, KelseyAdkins2022}.
 
@@ -21,16 +40,6 @@ Most accessibility checkers are intended to be used for the whole page or websit
 The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
 
 This thesis will explore the potential pros and cons of accessibility testing in the \ac{ci} of a component library by trying out an automated accessibility evaluation tool in Pipedrive's component library.
-
-% In this thesis, I have explored if automated accessibility tests can help improve overall accessibility and awareness about it. Most testing tools also provide descriptions of the issue and its importance and instructions on how to solve it. This can work as a learning tool that helps understand accessibility-related problems better.
-
-% This will probably pose some limitations on the tool I can use. The selected tool should work with our current tooling and not disrupt the current development flow.
-
-% My work focused on exploring the potential benefits of using tools that could help improve the accessibility of websites. I conducted a manual accessibility evaluation but did not include any actual disabled users, because the goal of this research was not to improve accessibility but to understand the capabilities of automated accessibility testing tools. I evaluated a component library that can not provide a logical user experience without contact. Testing with users should come in the next steps when the components are used in a real webpage.
-
-% Linters and tests are used in software development to ensure that all newly added code follows the quality and best practice standards that the company or developer has defined and that these changes don't break anything. A similar quality gate could be set up for ensuring conformance with accessibility standards. This would act as a gatekeeper to ensure that if there are any detectable problems in the added code then it can not be deployed until these have been fixed.
-
-% Many studies have been done to compare different accessibility testing tools \citep{Alsaeedi2020, Ismailova2022, Sane2021, Vigo2013, RybinKoob2022, Duran2017}.
 
 \subsection{Research Questions}
 
