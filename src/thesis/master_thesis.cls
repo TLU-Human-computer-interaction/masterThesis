@@ -113,10 +113,7 @@
 % List of Abbreviation
 
 \RequirePackage{acro}
-\DeclareAcronym{usa}{
-  short=USA,
-  long=United States of America,
-}
+
 \DeclareAcronym{eu}{
   short=EU,
   long=European Union,
