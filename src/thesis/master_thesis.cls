@@ -181,8 +181,8 @@
   short=IAAP,
   long=International Association of Accessibility Professionals
 }
-\DeclareAcronym{iaapwap}{
-  short=IAAP WAP,
+\DeclareAcronym{iaapwas}{
+  short=IAAP WAS,
   long=International Association of Accessibility Professionals Web Accessibility Specialist
 }
 \DeclareAcronym{wai-aria}{
