@@ -12,6 +12,87 @@
 
 % Don’t forget to relate your findings back to the central research question or thesis statement.
 
+\subsection{Current state of awareness about accessibility in Pipedrive}
+
+\info{RQ1: How good is the knowledge about accessibility standards, tools and best practices in the company before integrating the accessibility testing tool?}
+
+As the first step of the research, a survey was sent out in Pipedive's Slack channels (Figure \ref{fig:slack-message}) to understand what is the knowledge and general approach to web accessibility in the company. It was shared in 4 channels to reach people who are most likely to be dealing with accessibility, the component library and who are interested in accessibility (Table \ref{table:survey-shared}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/survey.png}
+	\caption{Message in company Slack announcing adding accessibility tool and inviting people to reply to the survey.}
+	\label{fig:slack-message}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{List of all the channels the survey was shared in.}
+
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Channel members or theme} & \textbf{number of members}  \\
+		\hline
+		Front end developers  & 212  \\
+		\hline
+		Dedicated to our component library  & 124  \\
+		\hline
+		Designers  & 73  \\
+		\hline
+		Accessibility channel  & 31  \\
+		\hline
+	\end{tabular}
+	\label{table:survey-shared}
+\end{table}
+
+Some people might also be on more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and contribute to the library. There were 7 questions and some of them also included a field for free text to give more details on the subject if they wanted (Appendix \ref{appendix:pre-survey-questions}).
+
+In total, 20 people replied to the survey - 6 designers and 14 developers, including one engineering manager. This does not give a full overview of the company, but it should give a good insight into the general opinions regarding accessibility. Likely, developers and designers that are more involved with our component library and/or are interested in accessibility were more likely to respond.
+
+The results show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average and none of the responders judge their knowledge about accessibility to be very good (Figure \ref{fig:a11y-knowledge-current}). 35\% of people who participated in the survey know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (Figure \ref{fig:a11y-resources}).
+
+\begin{figure}[H]
+    \centering
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-knowledge.png}
+		\caption{Pre-case study survey: How much do you know about accessibility (standards, best practices, importance, testing)? 1- "Almost no knowledge" to 5 - "I have very good knowledge" }
+		\label{fig:a11y-knowledge-current}
+	\end{subfigure}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-resources.png}
+		\caption{Do you know where to find resources
+		about accessibility standards? (no one chose the 4th option "No I don't think I need them") }
+    	\label{fig:a11y-resources}
+	\end{subfigure}
+	\caption{Accessibility knowledge in Pipedrive}
+    \label{fig:a11y-knowledge}
+\end{figure}
+
+Most people who replied to the survey don't think accessibility is being prioritized in Pipedrive and at the same time, most of them think that Pipedrive should be putting more focus on following common accessibility standards (Figure \ref{fig:a11y-priority}). They elaborate a bit more about what they think are the reasons behind this in the free text answers to questions 4 and 6.
+
+According to these replies, accessibility has always been at the end of Pipedrive's priorities and there is no clear company-wide strategy on how to manage and improve it. There has never been a dedicated project manager to bring focus to this subject
+and right now developers and designers are the ones that seem to be responsible for it. Two people also mentioned that the priority might be low because as a private service, Pipedrive does not have a legal obligation to comply with any specific accessibility standard. Two people think that it would not affect Pipedrive's customers much. All replies can be seen in  Appendix \ref{appendix:post-survey-responses}.
+
+\begin{figure}[H]
+    \centering
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-priority.png}
+		\caption{Do you think accessibility is a priority in our company? 1-No not at all to 5-Yes very much \\
+		\\
+		\\}
+	\end{subfigure}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\textwidth]{img/a11y-goals.png}
+		\caption{Do you think we should prioritize following accessibility standards (like \ac{wcag}, EN 301 549) in our product? 1- "No I think they are irrelevant for Pipedrive customers" to 5 - "Yes I think following accessibility standards should be a high priority" }
+	\end{subfigure}
+	\caption{Priority of accessibility in Pipedrive}
+    \label{fig:a11y-priority}
+\end{figure}
+
+It seems like the biggest obstacle to improving the accessibility of Pipedrive is the lack of knowledge about the business impact. More knowledge would help prioritize solving these problems. There is a lot currently that could be improved, but the evidence would suggest that implementing a way of continuously testing for at least some basic issues from the beginning of all new developments would help to ensure that the technical debt related to accessibility would not grow to be even bigger. There were several comments in the free text sections expressing saying they appreciate this subject being brought to focus and even some offering to help.
+
 \subsection{Results from Manual Audit and Automated Tests}
 
 \info{RQ2: What kind of errors can be caught by running automated accessibility tests on a component library?}
@@ -41,16 +122,22 @@ The results show that addon-a11y did not report any violations for 27 (51\%) com
 \end{figure}
 
 \begin{figure}[H]
-	\begin{subfigure}{0.45\textwidth}
-	\includegraphics[height=0.9\textheight]{img/audit-failed.png}
+	\centering
+	\begin{subfigure}{0.24\textwidth}
+	\includegraphics[height=0.7\textheight]{img/audit-failed.png}
 	\caption{All violations reported by addon-a11y and how many of them are valid.}
 	\label{fig:audit-failed}
 	\end{subfigure}
-	\hspace{0.05\textwidth}
-	\begin{subfigure}{0.45\textwidth}
-	\includegraphics[height=0.9\textheight]{img/audit-passed.png}
+	% \hspace{0.05\textwidth}
+	\begin{subfigure}{0.34\textwidth}
+	\includegraphics[height=0.7\textheight]{img/audit-passed.png}
 	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
 	\label{fig:audit-passed}
+	\end{subfigure}
+	\begin{subfigure}{0.39\textwidth}
+	\includegraphics[height=0.7\textheight]{img/audit-all.png}
+	\caption{All checks performed by addon-a11y and how many of them are valid.}
+	\label{fig:audit-all}
 	\end{subfigure}
 \caption{All issues checked by addon-a11y}
 \label{fig:audit-passed-failed}
@@ -59,7 +146,7 @@ The results show that addon-a11y did not report any violations for 27 (51\%) com
 % summary of violations + passes
 Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of these included false violations or passes. After validating the results the number of components not tested is 20 (38\%). This included components that become visible only when triggered by another element, like modals and popups that were displayed with a button as a trigger in the Storybook examples (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
 
-The components that are displayed with a button trigger would normally open when triggered by something and the examples are intended to look similar to how they would be used in real life. Brick-ui, the simple playground that was set up for testing solutions in Storybook was used to explore different ways of mitigating this. Testing revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component because accessibility tests are run after this interaction has been executed. In Storybook 6 the same thing could be achieved by opening the example manually and triggering a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7). All 11 components were retested and accessibility checks could be triggered on one of the examples of \textit{Tooltip} and \textit{Modal}. It is possible to render all the components except \textit{VideoOverlay} and \textit{FeedbackModal} inside the root element. This means that with improved examples tests could be run for these components. At the time of the case study, there was a bug in axe-core that caused most of the components to be ignored even if all the requirements described above are fulfilled.
+The components that are displayed with a button trigger would normally open when triggered by something, and the examples are intended to resemble how they would be used in real life. Brick-ui was used to explore different ways of mitigating this. Testing revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component. Accessibility tests are run after this interaction has been executed. In Storybook 6 the same thing could be achieved by opening the example manually and triggering a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7). All 11 components were retested and accessibility checks could be triggered on one of the examples of \textit{Tooltip} and \textit{Modal}. It is possible to render all the components except \textit{VideoOverlay} and \textit{FeedbackModal} inside the root element. This means that with improved examples tests could be run for these components. At the time of the case study, there was a bug in axe-core that caused most of the components to be ignored even if all the requirements described above are fulfilled.
 
 The remainder of the components that did not get tested by the addon included very simple components for spacing and visuals. These need further testing when they are being used in context to make sure that the visual info they are conveying is also included in text form. The results from manual testing did not reveal any further issues for 6 of these components. The components that have a trigger button in the example had the most additional issues. This is expected as due to the limitation of the examples the correct component was not evaluated by the tool.
 
@@ -172,7 +259,7 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 	% \end{itemize}
 \end{itemize}
 
-In addition to these axe-core automated accessibility testing engine tested for the correct usage of \ac{wai-aria} and best practices rules that are defined by the developers of the testing tool based on the accepted practices in the industry. There are other \ac{wcag} Success Criteria that the tool is also capable of testing, but that just was not represented by this certain set of components and examples.
+In addition to these axe-core automated accessibility testing engine tested for the correct usage of \ac{wai-aria} and best practices rules that are defined by the developers of the testing tool based on the accepted practices in the industry. Deque's Github repository list 87 rules that are enabled by default in axe-core \citep{Fiers2023}. 58 of these check for conformance WCAG 2.0 and 2.1 Level A and AA success criteria that can be automated and 29 are best practice rules that can't necessarily be mapped to \ac{wcag} but should indicate industry-accepted practices for improvements that can be made to the overall user experience. This shows that axe-core testing engine is capable of testing more than what was listed above, but these issues might have just not been represented by this certain set of components and examples.
 
 The most common valid test result was color contrast with 45,1\% of all violations and passes being color contrast issues. It is also important to note that this tool can reliably test for the existence of the alt attribute in an image, but it is not capable of judging how accurate the meaning is or even if the image is purely decorative and should have an empty alt value.
 
@@ -194,7 +281,7 @@ Inaccurate results and missed issues indicated problems with how the component e
 	\item Variants of components that are meant to be used on dark backgrounds should always be displayed on a dark background
 	\item Examples where the component gets triggered by a button should be avoided when possible or made visible to the testing tool by other means
 	\item Pseudo-classes (like hover, focus etc) of interactive elements should be displayed in examples
-	\item Examples should be simple and display one component at a time to reduce the number of test being run that are irrelaant to the isolated component
+	\item Examples should be simple and display one component at a time to reduce the number of test being run that are irrelevant to the isolated component
 \end{itemize}
 
 \subsection{How Much Was Compliance with WCAG 2.1 Improved?}
@@ -227,7 +314,7 @@ The experience of using these tools and conversations with other developers in t
 \info{RQ4: What are the biggest problems of integrating automated accessibility testing into a component library's development workflow?}
 
 \todo{Follow up survey + reach out to devs I know have used addon-a11y, button issue, not possible to add to CI currently - easy to not notice}
-Considering that automated accessibility tests are not capable of evaluating all \ac{wcag} Success Criteria there are also additional limitations that apply when these tests are being run on isolated components. The context around the elements that are being used on a webpage is important to understand what the purpose of each element is. \ac{cdd} development methodology promotes first perfecting these isolated elements before moving on to the next step where they are combined to build up full views and logical interactions. This means that in component library testing it is not so important to focus on the things that depend on the final context, but rather on everything that is contained in the component. The assumption is that there should be additional testing in the next stages of development.
+Automated accessibility tests are not capable of evaluating all \ac{wcag} Success Criteria and there are also additional limitations that apply when these tests are being run on isolated components. The context around the elements that are being used on a webpage is important to understand what the purpose of each element is. \ac{cdd} development methodology promotes first perfecting these isolated elements before moving on to the next step where they are combined to build up full views and logical interactions. This means that in component library testing it is not so important to focus on the things that depend on the final context, but rather on everything that is contained in the component. The assumption is that there should be additional testing in the next stages of development.
 
 In the case study that was carried out in Pipedrive's component library, Storybook was used as a way of rendering the components and running automated tests on them. The accessibility add-on in Storybook analyzes the examples that have been made for the component and unsuitable examples can cause false results. Like components triggered by a button described before.
 
