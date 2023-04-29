@@ -142,6 +142,8 @@ The results show that addon-a11y did not report any violations for 27 (51\%) com
 \label{fig:audit-passed-failed}
 \end{figure}
 
+\todo{This Figure looks bad. I will make it more readable}
+
 % summary of violations + passes
 Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of these included false violations or passes. After validating the results the number of components not tested is 20 (38\%). This included components that become visible only when triggered by another element, like modals and popups that were displayed with a button as a trigger in the Storybook examples (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
 
