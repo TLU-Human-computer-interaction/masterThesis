@@ -18,7 +18,7 @@
 
 As the first step of the research, a survey was shared in Pipedive's Slack channels (Figure \ref{fig:slack-message}) to understand what is the knowledge and general approach to web accessibility in the company. It was shared in 4 channels to reach people who are most likely to be dealing with accessibility, the component library and who are interested in accessibility (Table \ref{table:survey-shared}).
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{img/survey.png}
 	\caption{Message in company Slack announcing adding accessibility tool and inviting people to reply to the survey.}
@@ -50,7 +50,7 @@ In total, 20 people replied to the survey - 6 designers and 14 developers, inclu
 
 The results show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average and none of the responders judge their knowledge about accessibility to be very good (Figure \ref{fig:a11y-knowledge-current}). 35\% of people who participated in the survey know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (Figure \ref{fig:a11y-resources}).
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
 	\begin{subfigure}{0.5\textwidth}
 		\includegraphics[width=\textwidth]{img/a11y-knowledge.png}
@@ -71,9 +71,11 @@ The results show that 10\% of people who responded think their knowledge of acce
 Most people who replied to the survey don't think accessibility is being prioritized in Pipedrive and at the same time, most of them think that Pipedrive should be putting more focus on following common accessibility standards (Figure \ref{fig:a11y-priority}). They elaborated on what they think are the reasons behind this in the free text answers to questions 4 and 6.
 
 According to these replies, accessibility has always been at the end of Pipedrive's priorities and there is no clear company-wide strategy on how to manage and improve it. There has never been a dedicated project manager to bring focus to this subject
-and right now developers and designers are the ones that seem to be responsible for it. Two people also mentioned that the priority might be low because as a private service, Pipedrive does not have a legal obligation to comply with any specific accessibility standard. Two people think that it would not affect Pipedrive's customers much. All replies can be seen in  Appendix \ref{appendix:post-survey-responses}.
+and right now developers and designers are the ones that seem to be responsible for it.
+% Two people also mentioned that the priority might be low because as a private service, Pipedrive does not have a legal obligation to comply with any specific accessibility standard.
+Two people think that it would not affect Pipedrive's customers much. All replies can be seen in  Appendix \ref{appendix:post-survey-responses}.
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\textwidth]{img/a11y-priority.png}
@@ -90,7 +92,7 @@ and right now developers and designers are the ones that seem to be responsible 
     \label{fig:a11y-priority}
 \end{figure}
 
-It seems like the biggest obstacle to improving the accessibility of Pipedrive is the lack of knowledge about the business impact. More knowledge would help prioritize solving these problems. There is a lot currently that could be improved, but it could be argued that implementing a way of continuously testing for at least some accessibility issues from the beginning of all new developments could help to ensure that the technical debt related to accessibility would not grow to be even bigger. There were several comments in the free text sections expressing that they appreciate this subject being brought to focus and even some offering to help.
+It seems like with most things more knowledge about the business impact of accessibility would help prioritize solving these problems. There is a lot currently that could be improved, but it could be argued that implementing a way of continuously testing for at least some accessibility issues from the beginning of all new developments could help to ensure that the technical debt related to accessibility would not grow to be even bigger. There were several comments in the free text sections expressing that they appreciate this subject being brought to focus and even some offering to help.
 
 \subsection{Results from Manual Audit and Automated Tests}
 
@@ -99,10 +101,16 @@ It seems like the biggest obstacle to improving the accessibility of Pipedrive i
 A summarized table was created from all violations and passes in automated tests and issues found in the manual audit. In this table, the results have been reduced to counts that can be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
 
 % summary of violations
-The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components after verifying the validity of these issues the number goes up to 31 (58\%) (Figure \ref{fig:audit-failed}). On average the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6.
+The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components after verifying the validity of these issues the number goes up to 31 (58\%) (Figure \ref{fig:audit-combined}). On average the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{img/audit-combined.png}
+	\caption{Violations and passes detected by addon-a11y}
+	\label{fig:audit-combined}
+\end{figure}
 
 % summary of passes
-4 components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-passed}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes was 18 and that many issues were detected for \textit{Form} and \textit{Table} components. After validating the number of passes changed to 9 for \textit{Table} and 7 for \textit{Form}. The average number of passes for each component was 5 before and 2 after validating the results.
+4 components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-combined}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes was 18. That many issues were detected for \textit{Form} and \textit{Table} components. After validating the number of passes changed to 9 for \textit{Table} and 7 for \textit{Form}. The average number of passes for each component was 5 before and 2 after validating the results.
 
 \begin{figure}[ht]
 	\begin{subfigure}{0.45\textwidth}
@@ -120,32 +128,33 @@ The results show that addon-a11y did not report any violations for 27 (51\%) com
 \label{fig:sb-button-trigger}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}{0.24\textwidth}
-	\includegraphics[height=0.7\textheight]{img/audit-failed.png}
-	\caption{All violations reported by addon-a11y and how many of them are valid.}
-	\label{fig:audit-failed}
-	\end{subfigure}
-	% \hspace{0.05\textwidth}
-	\begin{subfigure}{0.34\textwidth}
-	\includegraphics[height=0.7\textheight]{img/audit-passed.png}
-	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
-	\label{fig:audit-passed}
-	\end{subfigure}
-	\begin{subfigure}{0.39\textwidth}
-	\includegraphics[height=0.7\textheight]{img/audit-all.png}
-	\caption{All checks performed by addon-a11y and how many of them are valid.}
-	\label{fig:audit-all}
-	\end{subfigure}
-\caption{All issues checked by addon-a11y}
-\label{fig:audit-passed-failed}
-\end{figure}
 
-\todo{This Figure looks bad. I will make it more readable}
+
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}{0.24\textwidth}
+% 	\includegraphics[height=0.7\textheight]{img/audit-failed.png}
+% 	\caption{All violations reported by addon-a11y and how many of them are valid.}
+% 	\label{fig:audit-failed}
+% 	\end{subfigure}
+% 	% \hspace{0.05\textwidth}
+% 	\begin{subfigure}{0.34\textwidth}
+% 	\includegraphics[height=0.7\textheight]{img/audit-passed.png}
+% 	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
+% 	\label{fig:audit-passed}
+% 	\end{subfigure}
+% 	\begin{subfigure}{0.39\textwidth}
+% 	\includegraphics[height=0.7\textheight]{img/audit-all.png}
+% 	\caption{All checks performed by addon-a11y and how many of them are valid.}
+% 	\label{fig:audit-all}
+% 	\end{subfigure}
+% \caption{All issues checked by addon-a11y}
+% \label{fig:audit-passed-failed}
+% \end{figure}
+
 
 % summary of violations + passes
-Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of these included false violations or passes. After validating the results the number of components not tested is 20 (38\%). This included components that become visible only when triggered by another element, like modals and popups that were displayed with a button as a trigger in the Storybook examples (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
+Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of these included false violations or passes. After validating the results the number of components not tested is 20 (38\%). This included components that become visible only when triggered by another element, like modals and popups that were displayed with a button as a trigger in the Storybook examples (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-combined} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
 
 The components that are displayed with a button trigger would normally open when triggered by something, and the examples are intended to resemble how they would be used in real life. Brick-ui was used to explore different ways of mitigating this. Testing revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component. Accessibility tests are run after this interaction has been executed. In Storybook 6 the same thing could be achieved by opening the example manually and triggering a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7). All 11 components were retested and accessibility checks could be triggered on one of the examples of \textit{Tooltip} and \textit{Modal}. It is possible to render all the components except \textit{VideoOverlay} and \textit{FeedbackModal} inside the root element. This means that with improved examples tests could be run for these components. At the time of the case study, there was a bug in axe-core that caused most of the components to be ignored even if all the requirements described above are fulfilled.
 
