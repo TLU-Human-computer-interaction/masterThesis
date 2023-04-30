@@ -101,6 +101,25 @@
 \settowidth{\tabNumLen}{\cfttabpresnum\cfttabaftersnum0}
 \renewcommand{\cfttabnumwidth}{\tabNumLen}
 
+\makeatletter
+\providecommand\phantomsection{}% for hyperref
+
+\newcommand\listofillustrations{%
+    \section*{List of Illustrations}%
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Illustrations}%
+    \subsection*{Figures}%
+    \phantomsection
+    \addcontentsline{toc}{section}{\protect\numberline{}Figures}%
+    \@starttoc{lof}%
+    \bigskip
+    \subsection*{Tables}%
+    \phantomsection
+    \addcontentsline{toc}{section}{\protect\numberline{}Tables}%
+    \@starttoc{lot}}
+
+\makeatother
+
 
 % Paragraph style. If you do not use indentation there should be a space between the paragraphs. No mixing of the two styles is permitted within the same paper.
 
