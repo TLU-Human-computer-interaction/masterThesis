@@ -14,8 +14,6 @@
 
 \subsection{Current state of awareness about accessibility in Pipedrive}
 
-\info{RQ1: How good is the knowledge about accessibility standards, tools and best practices in the company before integrating the accessibility testing tool?}
-
 As the first step of the research, a survey was shared in Pipedive's Slack channels (Figure \ref{fig:slack-message}) to understand what is the knowledge and general approach to web accessibility in the company. It was shared in 4 channels to reach people who are most likely to be dealing with accessibility, the component library and who are interested in accessibility (Table \ref{table:survey-shared}).
 
 \begin{figure}[ht]
@@ -48,7 +46,7 @@ Some people might also be on more than one of these channels. The aim was to rea
 
 In total, 20 people replied to the survey - 6 designers and 14 developers, including one engineering manager. This does not give a full overview of the company, but it should give a good insight into the general opinions regarding accessibility. Likely, developers and designers that are more involved with our component library and/or are interested in accessibility were more likely to respond.
 
-The results show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average and none of the responders judge their knowledge about accessibility to be very good (Figure \ref{fig:a11y-knowledge-current}). 35\% of people who participated in the survey know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (Figure \ref{fig:a11y-resources}).
+\textbf{RQ1:} "How good is the knowledge about accessibility standards, tools and best practices in the company before integrating the accessibility testing tool?" is answered by the results of this survey. They show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average and none of the responders judge their knowledge about accessibility to be very good (Figure \ref{fig:a11y-knowledge-current}). 35\% of people who participated in the survey know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (Figure \ref{fig:a11y-resources}).
 
 \begin{figure}[ht]
     \centering
@@ -70,9 +68,8 @@ The results show that 10\% of people who responded think their knowledge of acce
 
 Most people who replied to the survey don't think accessibility is being prioritized in Pipedrive and at the same time, most of them think that Pipedrive should be putting more focus on following common accessibility standards (Figure \ref{fig:a11y-priority}). They elaborated on what they think are the reasons behind this in the free text answers to questions 4 and 6.
 
-According to these replies, accessibility has always been at the end of Pipedrive's priorities and there is no clear company-wide strategy on how to manage and improve it. There has never been a dedicated project manager to bring focus to this subject
+According to these replies, accessibility has always been seen as something that is at the end of Pipedrive's priorities and there has not been any clear company-wide strategy on how to manage and improve it. There has never been a dedicated project manager to bring focus to this subject
 and right now developers and designers are the ones that seem to be responsible for it.
-% Two people also mentioned that the priority might be low because as a private service, Pipedrive does not have a legal obligation to comply with any specific accessibility standard.
 Two people think that it would not affect Pipedrive's customers much. All replies can be seen in  Appendix \ref{appendix:post-survey-responses}.
 
 \begin{figure}[ht]
@@ -96,9 +93,7 @@ It seems like with most things more knowledge about the business impact of acces
 
 \subsection{Results from Manual Audit and Automated Tests}
 
-\info{RQ2: What kind of errors can be caught by running automated accessibility tests on a component library?}
-
-A summarized table was created from all violations and passes found in the automated tests and violations found in the manual audit. In this table, the listed violations and passes have been counted to get numerical data that can be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
+A summary table was created from all violations and passes found in the automated tests and violations found in the manual audit. The listed violations and passes were counted to obtain numerical data that can be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
 
 % summary of violations
 The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components. After verifying, the validity of these issues the number goes up to 31 (58\%) (Figure \ref{fig:audit-combined}). On average, the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6.
@@ -296,8 +291,6 @@ Inaccurate results and missed issues indicated problems with how the component e
 
 \subsection{How Much Was Compliance with WCAG Improved?}
 
-\info{RQ3: To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}?  }
-
 One of the benefits of using automated testing tools is the improved observability of the state of accessibility.
 Multiple accessibility reports were generated in Pipedrive's component library during the time when the usage of the automated testing tool was being observed. The reports counted different
 issues, but for the purpose of this study and for observing the overall accessibility improvement process, the total number of detected violations was compared. (Figure \ref{fig:automted-reports}).
@@ -309,7 +302,7 @@ issues, but for the purpose of this study and for observing the overall accessib
 	\label{fig:automted-reports}
 \end{figure}
 
-Results show that over the course of 5 months, the number of accessibility issues was reduced while and immediately after conducting the manual accessibility audit. This is logical because the team involved in performing the audit also had dedicated time to focus on solving these issues. It is also worth noting that several new components were added to the library between the last two reports and the number of accessibility issues did not increased considerably.
+Results show that over the course of 5 months, the number of accessibility issues was reduced while and immediately after conducting the manual accessibility audit. This is logical because the team involved in performing the audit also had dedicated time to focus on solving these issues. It is also worth noting that several new components were added to the library between the last two reports and the number of accessibility issues did not increase considerably.
 
 As discussed in the previous chapters, automated accessibility testing tools cannot catch all issues. So the fact that almost no additional violations were introduced with the new components alone cannot provide certainty that the component library is just as accessible as it was the last time the report was generated. It could be argued that the biggest value of using automated testing tools in Pipedrive's component library, in addition to finding certain kinds of accessibility violations, has been bringing focus and attention to the subject of accessibility.
 
@@ -317,7 +310,9 @@ As discussed in the previous chapters, automated accessibility testing tools can
 
 A good level of accessibility is easier to achieve when developers consider it from the start of the process. Fixing things in a later phase is more difficult to justify to the business side and is usually more difficult than building an accessible component or webpage from the beginning.
 
-With the data collected during this research, it is not possible to say definitively that implementing automated accessibility testing in a component library's development workflow will improve the accessibility of the end product, but there is data to support that it is very likely that it could improve it to some extent.
+% \info{RQ3: To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with \ac{wcag}? }
+
+Answering \textbf{RQ3}, "To what extent can integrating automated testing into a component library's development pipeline help improve its compliance with WCAG?" is not as simple as examining the reduced number of violations in the automated accessibility testing report. Based on the data gathered in this research, it is not possible to claim conclusively that implementing automated accessibility testing in a component library's development workflow will improve the accessibility of the final product. However, the data does suggest that such integration is highly likely to result in at least some improvement.
 
 The experience of using automated accessibility testing tools and conversations with other developers in the company has suggested that a big benefit of using tools like this is that it makes the whole subject of web accessibility a bit more measurable and less daunting. Having an easy and familiar way of testing for accessibility violations together with links to resources that help solve these issues makes it more likely for developers to take on the task of solving these issues.
 
