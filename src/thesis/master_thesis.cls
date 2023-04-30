@@ -114,9 +114,9 @@
 
 \RequirePackage{acro}
 
-\DeclareAcronym{eu}{
-  short=EU,
-  long=European Union,
+\DeclareAcronym{svg}{
+  short=SVG,
+  long=Scalable Vector Graphics,
 }
 \DeclareAcronym{who}{
   short=WHO,
