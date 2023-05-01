@@ -133,6 +133,14 @@
 
 \RequirePackage{acro}
 
+\DeclareAcronym{ai}{
+  short=AI,
+  long=artificial intelligence,
+}
+\DeclareAcronym{ml}{
+  short=ML,
+  long=machine learning,
+}
 \DeclareAcronym{svg}{
   short=SVG,
   long=Scalable Vector Graphics,
