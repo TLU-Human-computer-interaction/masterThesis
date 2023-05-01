@@ -95,16 +95,51 @@ It seems like with most things more knowledge about the business impact of acces
 A summary table was created from all violations and passes found while running the automated accessibility tests and all the violations found in the manual audit. The listed violations and passes were counted to obtain numerical data that can be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
 
 % summary of violations
-The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components. After verifying, the validity of these issues the number goes up to 31 (58\%). On average, the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6 (Figure \ref{fig:audit-combined}).
+The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components. After verifying, the validity of these issues the number goes up to 31 (58\%). On average, the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6 (Figure \ref{fig:audit-failed}).
+
+% \begin{figure}[H]
+% 	\includegraphics[width=\textwidth]{img/audit/combined.png}
+% 	\caption{Option A: Violations and passes detected by addon-a11y}
+% 	\label{fig:audit-combined}
+% \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{img/audit-combined.png}
-	\caption{Violations and passes detected by addon-a11y}
-	\label{fig:audit-combined}
+	\centering
+	\begin{subfigure}{0.46\textwidth}
+	\includegraphics[width=\textwidth]{img/audit/failed.png}
+	\caption{All violations reported by addon-a11y and how many of them are valid.}
+	\label{fig:audit-failed}
+	\end{subfigure}
+	\hspace{0.05\textwidth}
+	\begin{subfigure}{0.46\textwidth}
+	\includegraphics[width=\textwidth]{img/audit/passed.png}
+	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
+	\label{fig:audit-passed}
+	\end{subfigure}
+\caption{Option B: All issues checked by addon-a11y}
+\label{fig:audit-passed-failed}
 \end{figure}
 
+
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}{0.46\textwidth}
+% 	\includegraphics[width=\textwidth]{img/audit/failed2.png}
+% 	\caption{All violations reported by addon-a11y and how many of them are valid.}
+% 	\label{fig:audit-failed}
+% 	\end{subfigure}
+% 	\hspace{0.05\textwidth}
+% 	\begin{subfigure}{0.46\textwidth}
+% 	\includegraphics[width=\textwidth]{img/audit/passed2.png}
+% 	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
+% 	\label{fig:audit-passed}
+% 	\end{subfigure}
+% \caption{Option C: All issues checked by addon-a11y}
+% \label{fig:audit-passed-failed}
+% \end{figure}
+
 % summary of passes
-Four components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-combined}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes - 18 - was detected in \textit{Form} and \textit{Table} components. After validating, the number of passes changed to 9 for \textit{Table} and 7 for \textit{Form}. The average number of passes for each component was 5, which decreased to 2 after validating the results.
+Four components out of 53 did not have any passed checks and 22 did not have any valid passed checks (see figure \ref{fig:audit-passed-failed}). This means that the number of components with no valid passed checks changed from 4\%  to 42\% after manually validating the results. The highest number of passes - 18 - was detected in \textit{Form} and \textit{Table} components. After validating, the number of passes changed to 9 for \textit{Table} and 7 for \textit{Form}. The average number of passes for each component was 5, which decreased to 2 after validating the results.
 
 \begin{figure}[ht]
 	\begin{subfigure}{0.45\textwidth}
@@ -148,7 +183,7 @@ Four components out of 53 did not have any passed checks and 22 did not have any
 
 
 % summary of violations + passes
-Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of the ones that did get tested included false violations or passes. After validating the results, the number of components that were not tested increased to 20 (38\%). This number includes components that become visible only when triggered by another element, like modals and popups for which the examples in Storybook only displayed a trigger button (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-combined} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
+Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of the ones that did get tested included false violations or passes. After validating the results, the number of components that were not tested increased to 20 (38\%). This number includes components that become visible only when triggered by another element, like modals and popups for which the examples in Storybook only displayed a trigger button (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
 
 The components that are displayed with a trigger button would normally open when triggered by something, and the examples are intended to resemble how they would be used in real life. Brick-ui was used to explore different ways of mitigating this. Testing revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component. Accessibility tests are run after this mocked user interaction has been executed. In Storybook 6 the same thing could be achieved by opening the example manually and triggering a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7). All 11 components were retested in Storybook with addon-a11y with the changes described above made. Accessibility checks could only be triggered in one of the examples of \textit{Tooltip} and on of the examples of \textit{Modal}. The rest of the components need more improvements to their examples. It is possible to render all the components except \textit{VideoOverlay} and \textit{FeedbackModal} inside the root element. This means that with improved examples, tests could be run for these components. At the time of the case study, there was a bug in axe-core that caused most of the components to be ignored even if all the requirements described above were fulfilled.
 
