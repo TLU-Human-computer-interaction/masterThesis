@@ -16,7 +16,7 @@ According to Internet World Stats 67.9\% of the global world population uses the
 
 % Clarify the focus of your study
 
-The most commonly used standard for making webpages accessible is the Web Content Accessibility Guidelines \ac{wcag}, and there are various methods and tools available for testing web content's compliance with it. One such method is automated testing. The aim of this research is to investigate the limitations of automated accessibility testing when evaluating a component library's compliance with common accessibility standards.
+The most commonly used standard for making webpages accessible is the Web Content Accessibility Guidelines \ac{wcag}, and there are various methods and tools available for testing web content's compliance with it. One such method is automated testing. The aim of this research is to investigate the possibilities and limitations of automated accessibility testing when evaluating a component library's compliance with common accessibility standards.
 
 % Point out the value of your research(including secondary research)
 
@@ -31,7 +31,7 @@ The "\nameref{chap:intro}" chapter will outline the research problem and objecti
 
 The "\nameref{chap:research}" chapter will begin by describing the methodology used in this study, followed by an explanation of the three main components: a survey conducted at Pipedrive to gather insights into the current level of knowledge and awareness around accessibility, an exploratory case study on the usage of automated accessibility testing in Pipedrive's component library, and an overview of a manual accessibility audit on the same component library. The "\nameref{chap:results}" chapter will analyze the findings of this research to understand the capabilities of automated accessibility testing tools and to find answers to the research questions posed earlier.
 
-The final chapter, "\nameref{chap:conclusions}", will focus on exploring the limitations of this research and possibilities for future research on similar or related subjects. It will also explain the contributions of this thesis to the research of automated accessibility testing. The chapter will conclude with a summary of the key findings and a reevaluation of the statements proposed at the beginning of this paper.
+The final chapter "\nameref{chap:conclusions}", will focus on exploring the limitations of this research and possibilities for future research on similar or related subjects. It will also explain the contributions of this thesis to the research of automated accessibility testing. The chapter will conclude with a summary of the key findings and a reevaluation of the statements proposed at the beginning of this paper.
 
 \subsection{Research Problem and Goal}
 
@@ -46,7 +46,7 @@ Design Systems are an increasingly common way to build websites because they hel
 
 Most accessibility checkers are designed to be used for the entire website or page. However, in the case study conducted during this research, automatic accessibility tests were run on the individual components of a component library, as this is a crucial aspect of most Design Systems \citep{Yew2020}. While certain aspects of accessibility, such as the proper usage of headings or the page language, can only be evaluated within the context of the entire page, there is still much to gain from this type of testing.
 
- Parallels can be drawn between isolated component testing and unit tests in software development. The goal of unit tests is to verify that small units of code function properly \citep[p.60]{Humble2010}. Similarly, accessibility testing of components should ensure that this specific component does not have any issues related to accessibility. The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
+Parallels can be drawn between isolated component testing and unit tests in software development. The goal of unit tests is to verify that small units of code function properly \citep[p.60]{Humble2010}. Similarly, accessibility testing of components should ensure that this specific component does not have any issues related to accessibility. The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
 
 This thesis will explore the potential pros and cons of accessibility testing in the \ac{ci} of a component library by trying out an automated accessibility evaluation tool in Pipedrive's component library.
 

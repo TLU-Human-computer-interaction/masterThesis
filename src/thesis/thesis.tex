@@ -8,7 +8,7 @@
 
 
 %===BEGIN TITLE PAGE
-\thispagestyle{empty}
+\begin{titlepage}
 \begin{center}
 
 \large
@@ -29,11 +29,13 @@ Inimese ja arvuti interaktsioon\\
 	\iflanguage{english}{Improving Web Accessibility Through Continuous Evaluation of Component Libraries}
 	{Veebi Ligipääsetavuse Parendamine Läbi Komponentiteekide Pideva Testimise}}
 
+\vspace{5mm}
+
+\large
+\iflanguage{english}{Master’s Thesis}{Magistritöö} \\
 \vspace{10mm}
 
-\Large
-\iflanguage{english}{Master’s Thesis}{Magistritöö} \\
-\iflanguage{english}{Author}{Autor}: Mariann Tapfer \\
+% \iflanguage{english}{Author}{Autor}: Mariann Tapfer \\
 
 \end{center}
 
@@ -43,6 +45,8 @@ Inimese ja arvuti interaktsioon\\
  {
  \setlength{\extrarowheight}{5pt}
  \begin{tabular}{r l}
+\iflanguage{english}{Author}{Autor}:& Mariann Tapfer \\
+
    \iflanguage{english}{Supervisors}{Juhendaja(d)}: &
    Mustafa Can Özdemir, MSc \\
     & Mari-Ell Mets, \acs{iaapwas}
@@ -54,7 +58,7 @@ Inimese ja arvuti interaktsioon\\
 
 \vfill
 \centerline{\large Tallinn \the\year}
-
+\end{titlepage}
 %===END TITLE PAGE
 
 % Remove this before you submit a final paper
@@ -67,12 +71,17 @@ Inimese ja arvuti interaktsioon\\
 % The term abstract is often used interchangeably with executive summary. While common usage suggests they’re the same, they’re technically different: An executive summary discusses the findings or conclusion of the research, whereas an abstract does not.
 
 \section*{Acknowledgements}
+\thispagestyle{empty}
 
 \tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\thispagestyle{empty}
+
 
 % The table of contents lists all titles for chapters, headings, and subheadings, as well as their corresponding page numbers. Moreover, the table of contents also includes the supplementary sections—such as the bibliography, appendices, and optional sections like a glossary, list of abbreviations, or a list of figures and tables.
 
 \listoffigures
+\thispagestyle{empty}
 % \addcontentsline{toc}{section}{List of Figures}
 
 \begingroup
@@ -84,6 +93,7 @@ Inimese ja arvuti interaktsioon\\
 % \listofillustrations
 
 \printacronyms[name=List of Abbreviation]
+\thispagestyle{empty}
 
 \subfile{1_introduction.tex}
 
@@ -99,6 +109,16 @@ Inimese ja arvuti interaktsioon\\
 % \nocite{*}
 \emergencystretch=1em
 \printbibliography[heading=bibintoc]
+
+\begin{titlepage}
+	\begin{center}
+		\vspace*{\stretch{3}}
+		\LARGE \textbf{Appendices}
+		\vspace*{\stretch{9}}
+	\end{center}
+	% \section*{Appendices}
+\end{titlepage}
+
 
 \subfile{appendices.tex}
 
