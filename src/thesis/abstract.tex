@@ -1,0 +1,28 @@
+% !TeX root = thesis.tex
+\documentclass{master_thesis}
+\addbibresource{refs.bib}
+\begin{document}
+
+\section*{Abstract}
+
+% An APA abstract is a comprehensive summary of your paper in which you briefly address the research problem, hypotheses, methods, results, and implications of your research. It’s placed on a separate page right after the title page and is usually no longer than 250 words.
+
+% Simply answer the following questions and put them together, then voila! You have an abstract for your paper.
+
+% What is the problem? Outline the objective, research questions and/or hypotheses.
+
+Web accessibility affects a large number of people, but ensuring that web content complies with the standards like \ac{wcag} be a challenging task. Accessibility can be evaluated in various ways, ranging from manual evaluations with real users to expert reviews and automated accessibility testing. This thesis aims to explore the possibilities of using automated accessibility testing tools to evaluate the compliance of component libraries with the most widely used accessibility standards.
+
+% What has been done? Explain your research methods.
+
+The primary part of this research is a case study conducted at Pipedrive, a company that develops a web-based CRM. The case study is supported by two surveys in the same company, one before and the other at the end of the case study, to understand the level of knowledge and approaches toward accessibility among developers and designers.
+% What did you discover? Summarize the key findings and conclusions.
+
+The results of the study indicate that the accessibility knowledge in the company is average, and most designers and developers feel that they need more resources on the subject. Storybook and its accessibility add-on were used to run automated accessibility tests in Pipedrive's component library. The most common issue identified by the tool was color contrast. After validating all violations and passes detected by this tool, it was observed that 53\% of them were valid, while only 32\% of all violations and 51\% of all passes could be considered invalid.
+
+% What do the findings mean? Summarize the discussion and recommendations.
+
+Based on these findings, we can conclude that using automated accessibility tests in the development of component libraries can be helpful, but it needs to be set up correctly to catch as many issues as possible. Additional manual testing will also be required to ensure that the result is truly accessible.
+
+
+\end{document}
