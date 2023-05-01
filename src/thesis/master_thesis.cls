@@ -83,8 +83,15 @@
 \AddToHook{cmd/section/before}{\clearpage}
 % if the section has 3 lines or less then it should start from the next page
 \RequirePackage{titlesec}
-
 \renewcommand{\bottomtitlespace}{.3\textheight}
+
+% unnumbred section titles should be aligned in the middle of the page
+\titleformat{name=\section,numberless}[hang]
+  {\normalfont\Large\filcenter\bf}
+  {}
+  {0em}
+  {\Large}
+
 
 % LISTS
 \RequirePackage[titles]{tocloft}
