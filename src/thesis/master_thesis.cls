@@ -81,6 +81,10 @@
 \addto{\captionsenglish}{\renewcommand*{\contentsname}{Table of Contents}}
 % The major level subsections (heading 1 level) start from a new page.
 \AddToHook{cmd/section/before}{\clearpage}
+% if the section has 3 lines or less then it should start from the next page
+\RequirePackage{titlesec}
+
+\renewcommand{\bottomtitlespace}{.3\textheight}
 
 % LISTS
 \RequirePackage[titles]{tocloft}
@@ -100,25 +104,6 @@
 \renewcommand\cfttabaftersnum{.} % affix after tabure number
 \settowidth{\tabNumLen}{\cfttabpresnum\cfttabaftersnum0}
 \renewcommand{\cfttabnumwidth}{\tabNumLen}
-
-\makeatletter
-\providecommand\phantomsection{}% for hyperref
-
-\newcommand\listofillustrations{%
-    \section*{List of Illustrations}%
-    \phantomsection
-    \addcontentsline{toc}{chapter}{List of Illustrations}%
-    \subsection*{Figures}%
-    \phantomsection
-    \addcontentsline{toc}{section}{\protect\numberline{}Figures}%
-    \@starttoc{lof}%
-    \bigskip
-    \subsection*{Tables}%
-    \phantomsection
-    \addcontentsline{toc}{section}{\protect\numberline{}Tables}%
-    \@starttoc{lot}}
-
-\makeatother
 
 
 % Paragraph style. If you do not use indentation there should be a space between the paragraphs. No mixing of the two styles is permitted within the same paper.

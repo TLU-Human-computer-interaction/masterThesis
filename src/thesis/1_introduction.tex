@@ -44,13 +44,15 @@ Developers find it hard to maintain a high level of accessibility over time as i
 
 Design Systems are an increasingly common way to build websites because they help in producing a consistent user experience \citep{Yew2020}. Influencing how these are built is important in the field of HCI because it will allow us to play a role in shaping the future of User Interfaces. Many companies have design systems to help maintain consistency both in what the end users experience and how the code is written. This is a good place to start with establishing a basic level of accessibility. Making changes there will have the widest impact and will build a solid foundation.
 
-Most accessibility checkers are intended to be used for the whole page or website. In the case study conducted during this research automatic accessibility tests will be run on the individual components in a component library because that's a key part of most Design Systems \citep{Yew2020}. Some aspects of accessibility, like correct usage of headings or page language, can only be evaluated on the full page. Parallels can be drawn between isolated component testing and unit tests in software development. The goal of unit tests is to verify that small pieces of code function properly \citep[p.60]{Humble2010}. Similarly, component testing should ensure that this specific component does not have any issues related to accessibility.
+Most accessibility checkers are designed to be used for the entire website or page. However, in the case study conducted during this research, automatic accessibility tests were run on the individual components of a component library, as this is a crucial aspect of most Design Systems \citep{Yew2020}. While certain aspects of accessibility, such as the proper usage of headings or the page language, can only be evaluated within the context of the entire page, there is still much to gain from this type of testing.
 
-The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
+ Parallels can be drawn between isolated component testing and unit tests in software development. The goal of unit tests is to verify that small units of code function properly \citep[p.60]{Humble2010}. Similarly, accessibility testing of components should ensure that this specific component does not have any issues related to accessibility. The next step would be running end-to-end tests on the whole page or application that is made up of these small parts. End-to-end tests should imitate what would happen when end users are using the product. When individual component tests are working well then there should already be fewer issues when you test the whole page.
 
 This thesis will explore the potential pros and cons of accessibility testing in the \ac{ci} of a component library by trying out an automated accessibility evaluation tool in Pipedrive's component library.
 
 \subsection{Research Questions}
+
+To address the research goals of this thesis, stated above, four research questions have been formulated.
 
 	\begin{RQlist}
 		\item How good is the knowledge about accessibility standards, tools and best practices in the company before integrating the accessibility testing tool?
@@ -59,5 +61,7 @@ This thesis will explore the potential pros and cons of accessibility testing in
 		% This might be the most difficult question to answer. There is not enough time to do another manual audit, but I can generate a new automatic report. What can I read into that? If the state is better now is it because of the automated accessibility tool integration or because we also did a manual audit? Maybe I can get some insights from the end questionnaire + reaching out to some devs who have used these tools during that period. Is this a one-time fix and if now then what evidence do I have that it would have a wider impact?
 		\item What are the biggest problems of integrating automated accessibility testing into a component library's development workflow?
 	\end{RQlist}
+
+The first research question will be addressed by conducting a survey in Pipedrive. The remaining three research questions will be answered by analyzing the results of the case study and manual accessibility audit.
 
 \end{document}
