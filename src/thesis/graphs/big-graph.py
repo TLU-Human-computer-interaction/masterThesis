@@ -30,13 +30,15 @@ violations_true_pass = list(df.iloc[:, 8])
 print(df.head())
 
 # create plot
-fig, ax = plt.subplots(figsize=(15,20))
+fig, ax = plt.subplots(figsize=(15,25))
 
-plt.barh(component, true_violations, fill=False, hatch='///', label='Valid violations')
-plt.barh(component, false_violations,  left=true_violations , fill=False, hatch='/', label='Invalid violations')
+bar_height = 0.7
 
-plt.barh(component, true_passes, left=violations, fill=False, hatch='xxx', label='Valid passes')
-plt.barh(component, false_passes, left=violations_true_pass, fill=False, hatch='x', label='Invalid passes')
+plt.barh(component, true_violations, fill=False, hatch='///', label='Valid violations', height=bar_height)
+plt.barh(component, false_violations,  left=true_violations , fill=False, hatch='/', label='Invalid violations', height=bar_height)
+
+plt.barh(component, true_passes, left=violations, fill=False, hatch='xxx', label='Valid passes', height=bar_height)
+plt.barh(component, false_passes, left=violations_true_pass, fill=False, hatch='x', label='Invalid passes', height=bar_height)
 
 # set spines visibility to False
 ax.spines["top"].set_visible(False)
@@ -52,10 +54,11 @@ plt.ylabel('Component', fontsize=14)
 plt.xlabel('Violations', fontsize=14)
 
 # set font size for y-axis tick labels
-plt.yticks(fontsize=14)
+plt.yticks(fontsize=16)
+plt.xticks(fontsize=16)
 
 # add legend
-plt.legend(loc='lower right')
+plt.legend(loc='lower right', fontsize=16)
 
 # remove vertical space between bars and spines
 ax.margins(0)
@@ -65,6 +68,5 @@ fig.subplots_adjust(left=0.2)
 
 # save the plot with trim
 plt.savefig("src/thesis/graphs/audit.svg", bbox_inches='tight', pad_inches=0 )
-plt.savefig("src/thesis/graphs/audit.png", bbox_inches='tight', pad_inches=0)
-plt.savefig("src/thesis/graphs/audit.png")
+plt.savefig("src/thesis/img/audit/combined_bw.png", bbox_inches='tight', pad_inches=0)
 
