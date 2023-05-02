@@ -92,6 +92,19 @@
   {0em}
   {\Large}
 
+% APPENDIX
+
+\newcommand{\appendixnumberline}[1]{Appendix #1\space}
+
+\let\oldappendix\appendix
+\makeatletter
+\renewcommand{\appendix}{%
+  \addtocontents{toc}{\let\protect\numberline\protect\appendixnumberline}%
+  \renewcommand{\@seccntformat}[1]{Appendix~\csname the##1\endcsname\quad}%
+  \oldappendix
+}
+\makeatother
+
 
 % LISTS
 \RequirePackage[titles]{tocloft}
