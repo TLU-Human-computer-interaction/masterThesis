@@ -138,6 +138,10 @@
 
 \RequirePackage{acro}
 
+\DeclareAcronym{hci}{
+  short=HCI,
+  long=Human-Computer Interaction,
+}
 \DeclareAcronym{ai}{
   short=AI,
   long=artificial intelligence,
