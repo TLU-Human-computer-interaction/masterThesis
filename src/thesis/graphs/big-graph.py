@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-
-print("Hello world!")
-#!/usr/bin/env python3
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -32,20 +29,42 @@ violations_true_pass = list(df.iloc[:, 8])
 
 print(df.head())
 
-plt.figure(figsize=(15,20))
+# create plot
+fig, ax = plt.subplots(figsize=(15,20))
 
-plt.barh(component, true_violations, fill=False, hatch='///')
-plt.barh(component, false_violations,  left=true_violations , fill=False, hatch='/')
+plt.barh(component, true_violations, fill=False, hatch='///', label='Valid violations')
+plt.barh(component, false_violations,  left=true_violations , fill=False, hatch='/', label='Invalid violations')
 
-plt.barh(component, true_passes, left=violations, fill=False, hatch='xxx')
-plt.barh(component, false_passes, left=violations_true_pass, fill=False, hatch='x')
+plt.barh(component, true_passes, left=violations, fill=False, hatch='xxx', label='Valid passes')
+plt.barh(component, false_passes, left=violations_true_pass, fill=False, hatch='x', label='Invalid passes')
 
+# set spines visibility to False
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+# ax.spines["left"].set_visible(False)
 
+#  set grids
+ax.yaxis.grid(False)
+ax.xaxis.grid(True, color='#D9D9D9')
 
-# plt.title('Violations per component', fontsize=14)
+# set labels
 plt.ylabel('Component', fontsize=14)
 plt.xlabel('Violations', fontsize=14)
 
+# set font size for y-axis tick labels
+plt.yticks(fontsize=14)
 
-plt.savefig("src/thesis/graphs/audit.svg")
+# add legend
+plt.legend(loc='lower right')
+
+# remove vertical space between bars and spines
+ax.margins(0)
+
+# adjust the left margin
+fig.subplots_adjust(left=0.2)
+
+# save the plot with trim
+plt.savefig("src/thesis/graphs/audit.svg", bbox_inches='tight', pad_inches=0 )
+plt.savefig("src/thesis/graphs/audit.png", bbox_inches='tight', pad_inches=0)
 plt.savefig("src/thesis/graphs/audit.png")
+
