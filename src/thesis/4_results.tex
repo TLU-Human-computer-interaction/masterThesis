@@ -44,7 +44,7 @@ As the first step of the research, a survey was shared in Pipedive's Slack chann
 
 Some people might also be on more than one of these channels. The aim was to reach people in the company who would be most likely to be using these tools and contribute to the library. There were 7 questions and some of them also included a field for free text to give more details on the subject if they wanted (Appendix \ref{appendix:pre-survey-questions}).
 
-In total, 20 people replied to the survey - 6 designers and 14 developers, including one engineering manager. This does not give a full overview of the company, but it should give a good insight into the general opinions regarding accessibility. Likely, developers and designers that are more involved with our component library and/or are interested in accessibility were more likely to respond.
+In total, 20 people replied to the survey - 6 designers and 14 developers, including one engineering manager. This does not give a full overview of the company, but it should give a good insight into the general opinions regarding accessibility. Developers and designers that are more involved with our component library and/or are interested in accessibility were more likely to respond.
 
 \textbf{RQ1:} "How good is the knowledge about accessibility standards, tools and best practices in the company before integrating the accessibility testing tool?" is answered by the results of this survey. They show that 10\% of people who responded think their knowledge of accessibility is very good, while most think that their knowledge level is average and none of the responders judge their knowledge about accessibility to be very good (Figure \ref{fig:a11y-knowledge-current}). 35\% of people who participated in the survey know where to find resources about accessibility standards, 15\% don't know and 50\% know, but think they need more (Figure \ref{fig:a11y-resources}).
 
@@ -88,11 +88,11 @@ Two people think that it would not affect Pipedrive's customers much. All replie
     \label{fig:a11y-priority}
 \end{figure}
 
-It seems like with most things more knowledge about the business impact of accessibility would help prioritize solving these problems. There is a lot currently that could be improved, but it could be argued that implementing a way of continuously testing for at least some accessibility issues from the beginning of all new developments could help to ensure that the technical debt related to accessibility would not grow to be even bigger. There were several comments in the free text sections expressing that they appreciate this subject being brought to focus and even some offering to help.
+Like with most things, it seems that more knowledge about the business impact of accessibility would help prioritize solving these problems. At present, there's a lot that could be improved, but it could be argued that implementing a way of continuously testing for at least some accessibility issues from the beginning of all new developments could help to ensure that the technical debt related to accessibility would not grow to be even bigger. There were several comments in the free text sections expressing that they appreciate this subject being brought to focus and even some offering to help.
 
 \subsection{Results from Manual Audit and Automated Tests}
 
-A summary table was created from all violations and passes found while running the automated accessibility tests and all the violations found in the manual audit. The listed violations and passes were counted to obtain numerical data that can be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
+A summary table was created from all violations and passes found while running the automated accessibility tests and all the violations found in the manual audit. The listed violations and passes were counted to obtain numerical data that could be analyzed using statistical methods (Appendix \ref{appendix:results-table}).
 
 % summary of violations
 The results show that addon-a11y did not report any violations for 27 (51\%) components out of 53 components. After verifying, the validity of these issues the number goes up to 31 (58\%). On average, the automated testing tool found 1 violation per component. The maximum number of violations reported for a single component was 7 and the maximum number of valid violations was 6 (Figure \ref{fig:audit-failed}).
@@ -116,7 +116,7 @@ The results show that addon-a11y did not report any violations for 27 (51\%) com
 	\caption{All passed checks reported by addon-a11y and how many of them are valid.}
 	\label{fig:audit-passed}
 	\end{subfigure}
-\caption{Option B: All issues checked by addon-a11y}
+\caption{Violations and passed detected by addon-a11y}
 \label{fig:audit-passed-failed}
 \end{figure}
 
@@ -183,11 +183,11 @@ Four components out of 53 did not have any passed checks and 22 did not have any
 
 
 % summary of violations + passes
-Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of the ones that did get tested included false violations or passes. After validating the results, the number of components that were not tested increased to 20 (38\%). This number includes components that become visible only when triggered by another element, like modals and popups for which the examples in Storybook only displayed a trigger button (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
+Looking at all the fails and passes gave a good overview of how many tests were run for each component. Out of 53 components that were tested, only 2 (4\%) did not get checked by addon-a11y at all, but some of the ones that did include false violations or passes. After validating the results, the number of components that were not tested increased to 20 (38\%). This number includes components that become visible only when triggered by another element, like modals and popups for which the examples in Storybook only displayed a trigger button (Figure \ref{fig:sb-button-trigger}). In total, there were 11 components with examples like that and they can be seen in Figure \ref{fig:audit-passed} starting from \textit{VideoOverlay} and ending with \textit{Coachmark}.
 
-The components that are displayed with a trigger button would normally open when triggered by something, and the examples are intended to resemble how they would be used in real life. Brick-ui was used to explore different ways of mitigating this. Testing revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component. Accessibility tests are run after this mocked user interaction has been executed. In Storybook 6 the same thing could be achieved by opening the example manually and triggering a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7). All 11 components were retested in Storybook with addon-a11y with the changes described above made. Accessibility checks could only be triggered in one of the examples of \textit{Tooltip} and on of the examples of \textit{Modal}. The rest of the components need more improvements to their examples. It is possible to render all the components except \textit{VideoOverlay} and \textit{FeedbackModal} inside the root element. This means that with improved examples, tests could be run for these components. At the time of the case study, there was a bug in axe-core that caused most of the components to be ignored even if all the requirements described above were fulfilled.
+The components that are displayed with a trigger button would normally open when triggered by something, and the examples are intended to resemble how they would be used in real life. Brick-ui was used to explore different ways of mitigating this. Testing revealed that these kinds of examples could be improved in Storybook 7 by adding a user interaction that opens the component. Accessibility tests are run after this mocked user interaction has been executed. In Storybook 6 the same thing could be achieved by opening the example manually and triggering a rerun of the accessibility checks. It is important to make sure that the opened component is rendered inside the div element with id="root" (or "storybook-root" in version 7). All 11 components were retested in Storybook with addon-a11y with the changes described above applied. Accessibility checks could only be triggered in one of the examples of \textit{Tooltip} and one of the examples of \textit{Modal}. The rest of the components need more improvements to their examples. It is possible to render all the components except \textit{VideoOverlay} and \textit{FeedbackModal} inside the root element. This means that with improved examples, tests could be run for these components. At the time of the case study, there was a bug in axe-core that caused most of the components to be ignored even if all the requirements described above were fulfilled.
 
-The remainder of the components that did not get tested by the addon included very simple components for spacing and visuals. These need further testing when they are being used in context to make sure that the visual info they are conveying is also included in text form. The results from manual testing did not reveal any additional issues for 6 of the components that did not get tested. Manual testing revealed the most additional issues for the components that have a trigger button in the examples. This is expected as due to the limitation of the examples the correct component was not evaluated by the tool.
+The remainder of the components that did not get tested by the addon included very simple components for spacing and visuals. These need further testing when they are being used in context to make sure that the visual info they convey is also included in text form. The results from manual testing did not reveal any additional issues for 6 of the components that did not get tested. Manual testing revealed the most additional issues for the components that have a trigger button in the examples. This is expected as due to the limitation of the examples the correct component was not evaluated by the tool.
 
 Analyzing the validity of checks performed by addon-a11y further shows that from all the passes and violations together, a bit more than half were valid while 68\% of the detected violations were correct and 51\% of passed checks were confirmed to be relevant (Figure \ref{fig:checks-validity}).
 
@@ -215,44 +215,105 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 \end{figure}
 
 \textbf{RQ2}: "What kind of errors can be caught by running automated accessibility tests on a component library?" can be answered based on these results and the results from manually evaluating the same components. The \ac{wcag} Success Criterion that proved to be reliably testable in Pipedrive's component library are:
+% \begin{table}[H]
+	% \begin{center}
+		% \begin{tabular}{ |m{0.4\textwidth}|m{0.15\textwidth}|m{0.4\textwidth}| }
+		% 	\hline
+		% 	  \textbf{addon-ally description} & \textbf{ACT rule} & \textbf{WCAG Success Criterion} \\
+		% 	\hline
+		% 	Images must have alternate text &  & 1.1.1 Non-text Content \\
+		% 	\hline
+		% 	Certain ARIA roles must contain particular children &  & 1.3.1 Info and Relationships \\
+		% 	\hline
+		% 	Color contrast &  & 1.4.3 Contrast (Minimum) 1.4.6 Contrast (Enhanced)  \\
+		% 	\hline
+		% 	Inline text spacing must be adjustable with custom stylesheets &  & 1.4.12 Text Spacing \\
+		% 	\hline
+		% 	Scrollable region must have keyboard access &  & 2.1.1 Keyboard 2.1.3 Keyboard (No Exception) \\
+		% 	\hline
+		% 	Links with the same name must have a similar purpose &  & 2.4.4 Link Purpose (In Context) 2.4.9 Link Purpose (Link Only) \\
+		% 	\hline
+		% 	Links must have discernible text &  & 2.4.4 Link Purpose (In Context) 2.4.9 Link Purpose (Link Only) \\
+		% 	\hline
+		% 	 &  &  \\
+		% 	\hline
+		% \end{tabular}
+% 		\begin{center}
+% 			\begin{tabular}{ |m{0.4\textwidth}|m{0.15\textwidth}|m{0.35\textwidth}|}
+% 				\hline
+% 				\thead{addon-ally description} & \thead{ACT rule} & \thead{WCAG Success Criterion} \\
+% 				\hline
+% 				\makecell[tl]{Images must have alternate text} &    &  \makecell[tl]{1.1.1 Non-text Content} \\
+% 				\hline
+% 				\makecell[tl]{Certain ARIA roles must contain \\ particular children} &    & \makecell[tl]{1.3.1 Info and Relationships} \\
+% 				\hline
+% 				\makecell[tl]{Color contrast} &    & \makecell[tl]{1.4.3 Contrast (Minimum) \\ 1.4.6 Contrast (Enhanced)} \\
+% 				\hline
+% 				\makecell[tl]{Inline text spacing must be \\ adjustable with custom stylesheets} &    & \makecell[tl]{1.4.12 Text Spacing} \\
+% 				\hline
+% 				\makecell[tl]{Scrollable region must have\\ keyboard access} &    &  \makecell[tl]{2.1.1 Keyboard\\ 2.1.3 Keyboard (No Exception)}\\
+% 				\hline
+% 				\makecell[tl]{Links with the same name must\\ have a similar purpose} &    &  \makecell[tl]{2.4.4 Link Purpose (In Context)\\ 2.4.9 Link Purpose (Link Only)}\\
+% 				\hline
+% 				\makecell[tl]{Links must have discernible text} &    &  \makecell[tl]{2.4.4 Link Purpose (In Context)\\ 2.4.9 Link Purpose (Link Only)}\\
+% 				\hline
+% 				\makecell[tl]{IDs used in ARIA and labels must be \\ unique} &    &  \makecell[tl]{4.1.1 Parsing}\\
+% 				\hline
+% 				\makecell[tl]{Form elements must have labels} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 				\makecell[tl]{Form field must not have multiple\\ label elements} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 				\makecell[tl]{Form elements should have a \\visible label} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 				\makecell[tl]{ARIA input fields must have an \\accessible name} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 				\makecell[tl]{ARIA roles used must conform to \\valid values} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 				\makecell[tl]{ARIA commands must have an \\accessible name} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 				\makecell[tl]{Interactive controls must not be \\nested} &    &  \makecell[tl]{4.1.2 Name, Role, Value}\\
+% 				\hline
+% 			\end{tabular}
+% 		\end{center}
+% \end{table}
 
 \begin{itemize}
-	\item Success Criterion 1.1.1 Non-text Content
+	\item Success Criterion 1.1.1 Non-text Content (Level A)
 	% (https://www.w3.org/TR/WCAG21/#non-text-content)
 	% \begin{itemize}
 	% 	\item Images must have alternate text
 	% \end{itemize}
 
-	\item Success Criterion 1.3.1 Info and Relationships
+	\item Success Criterion 1.3.1 Info and Relationships (Level A)
 	% https://www.w3.org/TR/WCAG21/#info-and-relationships
 	% \begin{itemize}
 	% 	\item Certain ARIA roles must contain particular children
 	% \end{itemize}
 
-	\item Success Criterion 1.4.3 Contrast (Minimum)
+	\item Success Criterion 1.4.3 Contrast (Minimum) (Level AA)
 	% (https://www.w3.org/TR/WCAG21/\#contrast-minimum)
-	\item Success Criterion 1.4.6 Contrast (Enhanced)
+	% \item Success Criterion 1.4.6 Contrast (Enhanced) (Level AAA)
 	% (https://www.w3.org/TR/WCAG21/\#contrast-enhanced)
 	% \begin{itemize}
 	% 	\item Color contrast
 	% \end{itemize}
 
-	\item Success Criterion 1.4.12 Text Spacing
+	\item Success Criterion 1.4.12 Text Spacing (Level AA)
 	% (https://www.w3.org/TR/WCAG21/#text-spacing)
 	% \begin{itemize}
 	% 	\item Inline text spacing must be adjustable with custom stylesheets
 	% \end{itemize}
 
-	\item Success Criterion 2.1.1 Keyboard
-	\item Success Criterion 2.1.3 Keyboard (No Exception)
+	\item Success Criterion 2.1.1 Keyboard (Level A)
+	% \item Success Criterion 2.1.3 Keyboard (No Exception) (Level AAA)
 	% (https://www.w3.org/TR/WCAG21/#keyboard)
 	% (https://www.w3.org/TR/WCAG21/#keyboard-no-exception)
 	% \begin{itemize}
 	% 	\item Scrollable region must have keyboard access
 	% \end{itemize}
 
-	\item Success Criterion 2.4.4 Link Purpose (In Context)
-	\item Success Criterion 2.4.9 Link Purpose (Link Only)
+	\item Success Criterion 2.4.4 Link Purpose (In Context) (Level A)
+	% \item Success Criterion 2.4.9 Link Purpose (Link Only) (Level AAA)
 	% (https://www.w3.org/TR/WCAG21/#link-purpose-in-context)
 	% (https://www.w3.org/TR/WCAG21/#link-purpose-link-only)
 	% \begin{itemize}
@@ -260,13 +321,13 @@ Analyzing the validity of checks performed by addon-a11y further shows that from
 	% 	\item Links must have discernible text
 	% \end{itemize}
 
-	\item Success Criterion 4.1.1 Parsing
+	\item Success Criterion 4.1.1 Parsing (Level A)
 	% (https://www.w3.org/TR/WCAG21/#parsing)
 	% \begin{itemize}
 	% 	\item IDs used in ARIA and labels must be unique
 	% \end{itemize}
 
-	\item Success Criterion 4.1.2 Name, Role, Value
+	\item Success Criterion 4.1.2 Name, Role, Value (Level A)
 	% (https://www.w3.org/TR/WCAG21/\#name-role-value)
 	% \begin{itemize}
 	% 	\item Buttons must have discernible text
@@ -340,7 +401,7 @@ Results show that over the course of 5 months, the number of accessibility issue
 
 As discussed in the previous chapters, automated accessibility testing tools cannot catch all issues. So the fact that almost no additional violations were introduced with the new components alone cannot provide certainty that the component library is just as accessible as it was the last time the report was generated. It could be argued that the biggest value of using automated testing tools in Pipedrive's component library, in addition to finding certain kinds of accessibility violations, has been bringing focus and attention to the subject of accessibility.
 
-\citeauthor{Paterno2020} said that developers find maintaining a high level of accessibility hard because it is only considered after the first release of the product. Having a continuous way to monitor and detect issues should help maintain the level of accessibility that was reached when there was more time to focus on it. The data collected in the short time that this automated accessibility tool has been in use in Pipedrive supports that theory.
+\citeauthor{Paterno2020} \citeyearpar{Paterno2020} said that developers find maintaining a high level of accessibility hard because it is only considered after the first release of the product. Having a continuous way to monitor and detect issues should help maintain the level of accessibility that was reached when there was more time to focus on it. The data collected in the short time that this automated accessibility tool has been in use in Pipedrive supports that theory.
 
 A good level of accessibility is easier to achieve when developers consider it from the start of the process. Fixing things in a later phase is more difficult to justify to the business side and is usually more difficult than building an accessible component or webpage from the beginning.
 
@@ -356,10 +417,10 @@ For answering \textbf{RQ4:} "What are the biggest problems of integrating automa
 
 Automated accessibility tests are not capable of evaluating all \ac{wcag} Success Criteria and there are also additional limitations that apply when these tests are being run on isolated components. The context around the elements on a webpage is important for understanding the purpose of each element. \ac{cdd} development methodology promotes perfecting isolated elements before moving on to the next step where these elements are combined to build full views and logical interactions. This means that when testing a component library, it is not so important to focus on things that depend on the final context, but rather on what is contained in the component. The assumption is that there should be additional testing in the following stages of development.
 
-In the case study that was carried out in Pipedrive's component library, Storybook was used as a way of rendering examples of the components and running automated tests on them. The accessibility add-on in Storybook analyzes the examples that have been made for the component which means unsuitable examples can cause false results, like components triggered by a button as described before.
+In the case study carried out in Pipedrive's component library, Storybook was used as a way of rendering examples of the components and running automated tests on them. The accessibility add-on in Storybook analyzes the examples that have been made for the component which means unsuitable examples can cause false results, like components triggered by a button as described before.
 
 Another limitation of addon-a11y is that currently the results can only be viewed inside Storybook. To see the number of passes and fails, the user needs to open the accessibility tab for each component. In the case study, an additional tool was used to generate a report that summarized all the violations, but generating the report needed some manual steps. It would be possible to automate this, but this would not be worth the effort, because the newest version of Storybook will provide better solutions. It will be possible to run all accessibility checks as a part of the component's unit tests making it possible to add them to the \ac{ci} workflow.
 
-The accessibility checks could not be run as a part of the \ac{ci} workflow while using Storybook 6. This means that the usage of the tool was heavily dependent on the developer's knowledge about the existence of the tool. I could have been easily missed. This was one of the questions in the post-case study survey and the results show that at least one developer who made changes to the component library during that time didn't notice it. One designer also said that they did not have enough information about how the tool works and what they need to do if they see that it has detected potential issues.
+The accessibility checks could not be run as a part of the \ac{ci} workflow while using Storybook 6. This means that the usage of the tool was heavily dependent on the developer's knowledge about the existence of the tool. It could have been easily missed. This was one of the questions in the post-case study survey and the results show that at least one developer who made changes to the component library during that time didn't notice it. One designer also said that they did not have enough information about how the tool works and what they need to do if they see that it has detected potential issues.
 
 \end{document}

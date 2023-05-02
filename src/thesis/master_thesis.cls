@@ -219,6 +219,18 @@
   long=Accessible Rich Internet Applications
 }
 
+% TABLE STUFF
+
+\usepackage{fourier}
+\usepackage{array}
+\usepackage{makecell}
+
+\renewcommand\theadalign{bc}
+% \renewcommand\cellalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
 % CUSTOM COMMANDS
 
 % custom command for listing research questions
