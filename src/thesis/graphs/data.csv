@@ -1,0 +1,409 @@
+component,unique violations detected for component,report_violations,violations,true_violations,color_contrast_violations,passes detected for component ,passes,true_passes,color_contrast_passes,explanation of false violation and passes,violations from manual testing for component,manual_count
+AudioPlayer,"✔ Play button: Element does not have inner text that is visible to screen readers
+✔ More options button: Element does not have inner text that is visible to screen readers
+✔ Sound/ mute button: Element does not have inner text that is visible to screen readers (image)",7,3,3,0,"✔ Elements must have sufficient color contrast
+✔ Interactive controls must not be nested
+",2,2,1,,"- Transcript is needed for audio
+- Focus state in drop menu is cut off. (image)
+- Can't navigate to player knob using a keyboard (image)",3
+Avatar,"✔ Element has insufficient color contrast of 3.44 type: default Expected contrast ratio of 4.5:1- (image)
+✔ Element has insufficient color contrast of 4.13 type: user Expected contrast ratio of 4.5:2. (image)",2,2,2,2,no passes detected,0,0,0,,no additional issues found ,0
+BabyPill,no issues detected,0,0,0,0,"✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Elements must have sufficient color contrast
+✘* Headings should not be empty
+✘* Heading levels should only increase by one",4,0,0,* issue not relevant to isolated component,- Some colors are too similar hard to see that are different. (image),1
+Badge,"""Element has insufficient color contrast of 
+✔ 4.18 variant: info
+✔ 4.07 variant:positive
+✔ 3.49 variant: negative 
+Expected contrast ratio of 4.5:1"". (image)
+Element has insufficient color contrast of 
+✔ 2.85 variant: negative + outline
+✘* 1.07 variant: inverted + outline
+Expected contrast ratio of 4.5:1. (light, dark)
+✘** Elements must have sufficient color contrast. (image)",5,6,4,4,"✔ Elements must have sufficient color contrast
+✘** Elements must only use allowed ARIA attributes
+✘**ARIA role should be appropriate for the element
+✘** ARIA commands must have an accessible name
+✘** Required ARIA attributes must be provided
+✘** ARIA roles used must conform to valid values
+✘** ARIA attributes must conform to valid value
+✘** ARIA attributes must conform to valid names
+✘** Interactive controls must not be nested
+✘** Elements should not have tabindex greater than zero",10,1,1,"* This color should only be used on a dark background, but thest is being run on a light one.
+** Issue is not relevant for this component.",no additional issues found ,0
+Banner,✘* Ensures every ARIA input field has an accessible name. (image),1,1,0,0,"✔ Elements must have sufficient color contrast
+✔ Images must have alternate text
+✔ Alternative text of images should not be repeated as text
+✔ Interactive controls must not be nested",4,4,1,* Issue is related to another component used inside this one. ,no additional issues found ,0
+Button,"Element has insufficient color contrast of 
+✔ 3.49 variant: negative
+✔ 3.91 variant: ghost-link
+Expected contrast ratio of 4.5:1"". (image)
+✔ Loading Button does not have inner text that is visible to screen readers. (loading btn)
+✘* Icon Button does not have inner text that is visible to screen readers. (icon btn)
+Element has insufficient color contrast of 
+✔3.82 variant: secndary, state:active
+✔3.44 variant: ghost, state:active
+✔3.44 variant: ghost-alternative, state:active
+Expected contrast ratio of 4.5:1",8,7,6,5,"✔ Buttons must have discernible text
+✔ Elements must have sufficient color contrast
+✔ Interactive controls must not be nested
+✘** Inline text spacing must be adjustable with custom stylesheets
+
+",4,3,1,"* wrong usage of component. it is possible to add aria-label or use the specific IconButton
+** issue not relevant to isolated component","- Can't move keyboard focus to disabled and loading buttons.
+- Pressing Space on a focused button shows pressed state, but Enter does not. There is not visual indication that the button was pressed",2
+ButtonGroup,"""Element has insufficient color contrast of 
+✔* 3.82 variant: secondary, state: active
+✔* 3.44 variant: ghost, state: active
+✔* 3.44 variant: ghost-alternative, state: active
+Expected contrast ratio of 4.5:1. (image)",4,4,3,3,no passes detected,0,0,0,* Both issues are inherited from Button,"- No info provided about which button from the group is selected (aria-selected=”true/false”)
+- Read as individual buttons no indication that there is a group",2
+Checkbox,no issues detected,0,0,0,0,"✔ Elements must have sufficient color contrast
+✔ Form field must not have multiple label elements
+✔ Form elements should have a visible label
+✔ Form elements must have labels
+✔ Interactive controls must not be nested",5,5,1,,"- Can't navigate to disabled and read-only states
+- Focus moves to hidden html native checkmark → image of the checkmark that is visible → label. (screencapture)",2
+Coachmark,no issues detected,0,0,0,0,"✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Buttons must have discernible text
+✘* Interactive controls must not be nested",3,0,0,* issue not relevant to isolated component,"- Icon button default focus would not be very visible in Coachmark. (close btn focus)
+- link focus state looks different froum our other focus states. (link focus)
+- When I close coachmark then focus should go back to the last element it was on before (keyboard navigation)",3
+Dialog,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- Escape should be always closing - should be fixed in Modal
+- Focus doesn’t move away from entry point.
+- Focus is not trapped in the Dialog and I can tab to the background elements",3
+Divider,no issues detected,0,0,0,0,"✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Elements must have sufficient color contrast
+✘* Form field must not have multiple label elements
+✘* Form elements should have a visible label
+✘* Form elements must have labels
+✘* Interactive controls must not be nested",6,0,0,* issue not relevant to isolated component,no additional issues found ,0
+Dropmenu,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- Focus doesn’t move away from entry point. Can’t navigate dropmenu items.
+- If I close the Dropmenu the focus should come back to previous element",
+EditableText,"✔ Elements must have sufficient color contrast - error message
+",2,1,1,1,"✔ Inline text spacing must be adjustable with custom stylesheets
+✔ Elements must have sufficient color contrast
+✔ Headings should not be empty
+✔ Form field must not have multiple label elements
+✔ Heading levels should only increase by one
+✔ Form elements should have a visible label
+✔ Form elements must have labels",7,7,1,,- Screenreader does not read the error text ,1
+FeedbackModal,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- Submit Button onClick is not triggered by Enter or Space (both work on Cancel)
+- Select label has not connection to the element. They are read separately.",1
+Form,"✘* ARIA commands must have an accessible name - separator
+ARIA input fields must have an accessible name
+✘* select
+✘* select disabeled
+Elements must have sufficient color contrast
+✘* - error message
+✘* - link
+✔ Form elements must have labels",5,6,1,0,"✘* Elements must only use allowed ARIA attributes
+✘* ARIA role should be appropriate for the element
+✘* ARIA commands must have an accessible name
+✘* Required ARIA attributes must be provided
+✘* ARIA roles used must conform to valid values
+✘*ARIA attributes must conform to valid values
+✘* ARIA attributes must conform to valid names
+✔ Elements must have sufficient color contrast
+✔ IDs used in ARIA and labels must be unique
+✔ Headings should not be empty
+✔ Form field must not have multiple label elements
+✔ Heading levels should only increase by one
+✘* Links with the same name must have a similar purpose
+✔ Form elements should have a visible label
+✔ Form elements must have labels
+✘* Links must have discernible text
+✘* Interactive controls must not be nested
+✘* Elements should not have tabindex greater than zero",18,7,1,* issue not relevant to isolated component and wrong role is used here,- Ignores character limit,1
+Icon,no issues detected,0,0,0,0,✘* Inline text spacing must be adjustable with custom stylesheets,1,0,0,* issue not relevant to isolated component,no additional issues found ,0
+IconButton,no issues detected,0,0,0,0,"✔ Elements must only use allowed ARIA attributes
+✔ ARIA attributes must conform to valid values
+✔ ARIA attributes must conform to valid names
+✔ Buttons must have discernible text
+✔ Interactive controls must not be nested",5,5,0,- ,"- Tooltip with icon meaning not displayed when navigating with the keyboard. 
+- Reading the button as a button group - should be regular button
+",2
+ImageOverlay,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- When I close ImageOverlay then focus should go back to where it was before opening it (Open overlay button in storybook example)
+-  icon button for close has no aria label and is read just as an image
+- Icon button for external link is read as just a link
+- The image shown when there is a broken link has no connection to the error text (aria-labelled-by)",4
+InlineInfo,no issues detected,0,0,0,0,"✔ Elements must only use allowed ARIA attributes
+✔ ARIA attributes must conform to valid values
+✔ ARIA attributes must conform to valid names
+✔ Elements must have sufficient color contrast
+✔ Elements should not have tab index greater than zero",5,5,1,Element consists of an iconbutton and popover. The popover in not open and a11y tests will not bu run on it. (pic),- Can’t navigate in popover,1
+Input,"✔ Form elements must have labels
+✔ Elements must have sufficient color contrast - error message",8,2,2,1,"✔ Elements must have sufficient color contrast
+✔ Form field must not have multiple label elements
+✔ Form elements should have a visible label (Form element does not solely use title attribute for its label)
+✔ Form elements must have labels",4,4,1,- ,"- Doesn’t focus on disabled input
+- Doesn’t read helper and error text
+- Type is not read (aria-label for type)
+- Loading not read",0
+Logo,no issues detected,0,0,0,0,no passes detected,0,0,,- ,no additional issues found ,0
+Message,✔ Buttons must have discernible text. (image),3,1,1,0,"✔ Elements must have sufficient color contrast
+✔ Interactive controls must not be nested
+✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Buttons must have discernible text",4,2,1,* issues not relevant to isolated component ,no additional issues found ,0
+Modal,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- Close button is and icon button doesn't have aria-label or tooltip
+- Modal does not get focus when you open it
+- Focus isn’t trapped inside the modal (until the modal is opened)
+- Modal title is not read when you open it",4
+Option,"✔ Elements must have sufficient color contrast 4.18 highlighted option  Expected contrast ratio of 4.5:1
+✘* Elements must have sufficient color contrast 1.95 disabled option Expected contrast ratio of 4.5:1",2,2,1,1,"✔ Elements must have sufficient color contrast (normal option). Element has sufficient color contrast of 14.57
+✘** Inline text spacing must be adjustable with custom stylesheets",2,1,1,"* disabled or interactive elements do not need to comply with color contrast requirement
+** issues not relevant to isolated component ","-  Disabled options is read “disabled option, disabled option” - should only read one time.",1
+PageHeader,✘* Form elements must have labels,1,1,1,0,"✔ Buttons must have discernible text
+✔ Elements must have sufficient color contrast
+✘* Interactive controls must not be nested
+✘* Elements must only use allowed ARIA attributes
+✘* ARIA attributes must conform to valid values
+✘* ARIA attributes must conform to valid names
+✘* Form field must not have multiple label elements
+✘* Form elements should have a visible label
+✘* Interactive controls must not be nested
+✘* Elements should not have tabindex greater than zero",10,2,1,* issues is coming from another component used inside this one.,no additional issues found ,0
+Panel,no issues detected,0,0,0,0,✘* Elements must have sufficient color contrast,1,0,0,* issues is coming from another component used inside this one.,no additional issues found ,0
+Pill,"Elements must have sufficient color contrast
+✔ 4.18 variant: info
+✔ 4.07 variant: postive
+✔ 3.49 variant: negative
+✔ 3.17 variant: negative + outlined
+✘** 1.07 variant: inverted + outlined
+✔ 3.17 variant: negative + outlined
+✘** 1.07 variant: inverted + outlined
+Expected contrast ratio of 4.5
+",4,7,5,5,"✔ Elements must have sufficient color contrast
+✘* Inline text spacing must be adjustable with custom stylesheets",2,1,1,"* issues not relevant to isolated component 
+** should be used on dark background","- all pills are read as one element, like it was text and not as individual items",1
+Popover,✘* Frames must have an accessible name,1,1,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,* issues not relevant to isolated component ,"- When appearing on hover, should be dismissable without moving pointer or keyboard focus.
+- Can’t navigate inside popover. Focus doesn’t move from entry point to popover
+- ESC doesn’t close popover",3
+Progressbar,no issues detected,0,0,0,0,"✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Elements must have sufficient color contrast
+✘* Headings should not be empty
+✘* Heading levels should only increase by one",4,0,0,* issues not relevant to isolated component ,"- Should the prograssbar  numeric value be visually displayed somehow? 
+- Nothing is read when using a screenreader. Element should be read by the screenreader similar to html default <progress/>",2
+PromoOverlay,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- Focus does not move to PromoOverlay when I open it, focus is not trapped inside the PromoOverlay while it is open and focus does not move back to the trigger element when I close it. These issues should all be fixed in Modal
+- All images are read as unlabelled images. Should the images that have a text that visually seems to go with them be connected to the image to convey it’s meaning?",2
+Radio,no issues detected,0,0,0,0,"✔ Elements must have sufficient color contrast
+✘* Headings should not be empty
+✔ Form field must not have multiple label elements
+✘* Heading levels should only increase by one
+✔ Form elements should have a visible label
+✔ Form elements must have labels
+✔ Interactive controls must not be nested",7,5,1,* issues not relevant to isolated component ,- Can’t navigate to disabled and read-only states,1
+Select,"✔ ARIA input fields must have an accessible name
+Elements must have sufficient color contrast. 
+✔ 2.66 placeholder text
+✔ 2.19 placeholder on blue background
+✔ 2.41 placeholder on yellow background
+✘** 2.48 disabled tag
+✘* 1.5 disabled placeholder text
+Expected contrast ratio of 4.5:1
+✔ ARIA attribute element ID does not exist on the page: aria-labelledby=""downshift-31-label"" (incomplete)",35,7,5,3,"✔ Elements must only use allowed ARIA attributes
+✔ ARIA role should be appropriate for the element
+✔ ARIA commands must have an accessible name
+✔ Required ARIA attributes must be provided
+✔ ARIA roles used must conform to valid values
+✔ ARIA attributes must conform to valid values
+✔ ARIA attributes must conform to valid names
+✔ Interactive controls must not be nested
+✔ Elements should not have tab index greater than zero
+✘** Inline text spacing must be adjustable with custom stylesheets
+✘** Buttons must have discernible text
+✘** Elements must have sufficient color contrast button label
+✘** Interactive controls must not be nested
+✘** Links must have discernible text",14,9,0,"* disabled or interactive elements do not need to comply with color contrast requirement
+** issues not relevant to isolated component ","- Multiselect to deselect individual target area is only the x - to small (14x14px) - is using Tag component - should be fixed there?
+- Placeholder text is used instead of the label. When I choose something it dissapears. Should we have proper labels instead?
+-  Expands with down arrow, selects option with Enter, space closes the dropdown
+- Multiselect: can’t focus the x to deselect all 
+- Multiselect: can’t focus to deselect individual, but can't press the button - target area is only the x
+- No announcment about are being expanded: aria-expanded=true/false
+- Grouped options - group titles are ignored ( (look at html select groups)
+- Screenreader says I can type, but I can’t
+- When the option contains more than just a simple text it is announced as object, object
+- No information is conveyed about selecting an item and after is it is selected on not.
+- No label for the input element
+- Multiselect - to deselect one option I need to go inside the input and then go inside the option to reach the button - should be easier",12
+Separator,✔ ARIA commands must have an accessible name,1,1,1,0,"✔ ARIA role should be appropriate for the element
+✔ ARIA commands must have an accessible name
+✔ Required ARIA attributes must be provided
+✔ ARIA roles used must conform to valid values
+✔ Elements must have sufficient color contrast
+✔ Interactive controls must not be nested
+✔ Elements should not have tabindex greater than zero",7,7,1,,"- space extens the expandable content, but I can’t focus on the Options inside
+- Separator type=”line” with no label should not have role=”button”. Only expandable Separator should have role=”button” - Getting a viaolation in Accessibility tab, but no issues with the screenreader
+- Expandable separator is read as just a button. no info conveyed about it being expandable (aria-expanded)
+- No info that there is a group of options inside.",4
+Sidebar,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ",- Close buttons is and icon button and has no tooltip or aria-label,1
+Skeleton,no issues detected,0,0,0,0,"✔ Elements must only use allowed ARIA attributes
+✔ ARIA attributes must conform to valid values
+✔ ARIA attributes must conform to valid names
+✘* Inline text spacing must be adjustable with custom stylesheets",4,3,0,* issues not relevant to isolated component ,- Screenreader skips the element. Should it read something like “area loading”/”element loading”,1
+Snackbar,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- When Snackbar is opened then screenreader should announce it’s contents.
+- When loading is finished, or content in snackbar changes in other ways it shold be announced by the screenreader",2
+Spacing,no issues detected,0,0,0,0,* Elements must have sufficient color contrast,1,0,0,* issues not relevant to isolated component ,no additional issues found ,0
+Spinner,no issues detected,0,0,0,0,no passes detected,0,0,0,,- loading state of Spinner shuld be announced?,1
+SplitButton,"✔ Buttons must have discernible text - option button (image)*
+✔ Buttons must have discernible text - loading button (image)",3,2,2,0,"✔ Elements must only use allowed ARIA attributes
+✔ARIA attributes must conform to valid values
+✔ ARIA attributes must conform to valid names
+✔ Buttons must have discernible text
+✔ Elements must have sufficient color contrast
+✔ Interactive controls must not be nested",6,6,1,* Mistake in the example not in the Component intself,-  Can’t navigate to the dropmenu items. ,1
+StageSelector,"Elements must have sufficient color contrast
+✔4.07 text on green
+✔3.79 text on gray",1,2,2,2,"✘* Elements must have sufficient color contrast 
+✘* Headings should not be empty
+✘* Heading levels should only increase by one
+✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",7,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- No focus states and can’t navigate
+- Reads value but doesn’t show indicator?
+-  Should loading state say something also?
+- Stage name is in a tooltip but that is not read
+- Should it state also the stage name somehow - won, lost etc?",5
+Stepper,"✘* Elements must have sufficient color contrast 2.49 Expected contrast ratio of 4.5:1
+✘** Form elements must have labels",2,2,0,0,"✘** Inline text spacing must be adjustable with custom stylesheets
+✘** Buttons must have discernible text
+Elements must have sufficient color contrast
+✔ step label (optional)
+✔ step bubble text
+✔ step label
+✘** button label
+✘** Form field must not have multiple label elements
+✘** Form elements should have a visible label
+✘** Interactive controls must not be nested
+* Elements must have sufficient color contrast. Element content is too short to determine if it is actual text content (image)",9,3,3,"* disabled or interactive elements do not need to comply with color contrast requirement
+** issues not relevant to isolated component ","-  Can’t focus on any elements
+-  Form elements have no labels
+- Nothing is read",3
+Switch,no issues detected,0,0,0,0,"✔ Elements must have sufficient color contrast
+✔ Form field must not have multiple label elements
+✔ Form elements should have a visible label
+✔ Form elements must have labels
+✔ Interactive controls must not be nested",5,5,1,,- Disabled can’t be focused,1
+Table,"✔Certain ARIA roles must contain particular children: Required ARIA children role not present: cell, columnheader, gridcell, rowheader
+✔ Scrollable region must have keyboard access
+Element has insufficient color contrast of 
+✔ 4.04 green text
+✔ 3.49 red text
+Expected contrast ratio of 4.5:1
+✘* Select element must have an accessible name
+✘* Buttons must have discernible text - Icon button in table",20,6,4,2,"✔ Elements must only use allowed ARIA attributes
+✔ ARIA role should be appropriate for the element
+✔ Required ARIA attributes must be provided
+✔ Certain ARIA roles must contain particular children
+✔ Certain ARIA roles must be contained by particular parents
+✔ ARIA roles used must conform to valid values
+✔ ARIA attributes must conform to valid values
+✔ ARIA attributes must conform to valid names
+✔ Elements must have sufficient color contrast
+✘* Inline text spacing must be adjustable with custom stylesheets
+✘* Buttons must have discernible text
+✘* Headings should not be empty
+✘* Form field must not have multiple label elements
+✘* Heading levels should only increase by one
+✘* Form elements should have a visible label
+✘* Form elements must have labels
+✘* Interactive controls must not be nested
+✘* Scrollable region must have keyboard access",18,9,1,* issues not relevant to isolated component ,"-  isSelectable - checkbox not focusable (fixed in list view, might have old example)
+- Resize handles - focusable but not actionable. Also maybe the order should be opposite? First col then resize handle
+- Column headers can be focused but not activated
+- Can’t select the “settings” button (should be turn into IconButton)
+- Can’t focus on row selector (can in list-view)
+- Can’t focus on the row (so I could interact with the whole row)
+-  Can’t focus on “more” menu for each row",7
+Tabs,"Elements must have sufficient color contrast
+✘* disabled tab text
+✔ Active tab text",3,2,1,1,"✔ Elements must have sufficient color contrast
+✔ Links with the same name must have a similar purpose
+✔ Links must have discernible text",3,3,1,* disabled or interactive elements do not need to comply with color contrast requirement,"- Can’t navigate between items
+- Can’t navigate to more menu
+- Can’t focus on anything",3
+Tag,✘* Elements must have sufficient color contrast - disabled tab,1,1,0,0,"✔ Elements must have sufficient color contrast regular tag
+✔ Elements should not have tabindex greater than zero
+✘** Inline text spacing must be adjustable with custom stylesheets
+✘** Buttons must have discernible text
+✘** Interactive controls must not be nested",5,2,1,"* disabled or interactive elements do not need to comply with color contrast requirement
+** issues not relevant to isolated component ","- Dismissable tag target area is very small (16x16px) - only the X - not required for AA
+- I can focus on the tag, but there is no action to take. Should only focus on dropdown and dismissable tag?
+- Error state tag focus state is not very visible (normal, focus)
+- Can’t interact with dismissable and dropdown tag with keyboard
+- Tag is presented as a group of elements. Text is read two times - fist when I focus on the whole tag and then when I focus on the text element inside it.
+- I need to navigate trough the tag wrapper to get to the dismiss ot dropdown button so I can interact with it.
+- Dismiss and dropdown buttons inside tag are presented as just images. Screenreader conveys no meaning about it being a button, how you can interact with or what it does. ",7
+Text,✔ Elements must have sufficient color contrast. 3.91: link . Expected contrast ratio of 4.5:1,1,1,1,1,"✔ Elements must have sufficient color contrast
+✔ Headings should not be empty
+✔ Heading levels should only increase by one
+✔ Links with the same name must have a similar purpose
+✔ Links must have discernible text
+✘* Interactive controls must not be nested",6,5,1,* issues not relevant to isolated component ,no additional issues found ,0
+Textarea,"✔ Form elements must have labels
+✔ Elements must have sufficient color contrast. 3.25 error text Expected contrast ratio of 4.5:1",6,2,2,1,"Elements must have sufficient color contrast
+✔ default text area
+✔ readonly text area
+✔ Form field must not have multiple label elements
+✔ Form elements should have a visible label
+✘* Interactive controls must not be nested",5,4,1,* issues not relevant to isolated component ,no additional issues found ,0
+Toolbar,"✘* Elements must have sufficient color contrast
+✘* Buttons must have discernible text",4,2,0,0,"✘* Elements must only use allowed ARIA attributes
+✘* ARIA attributes must conform to valid values
+✘* ARIA attributes must conform to valid names
+✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✔ Images must have alternate text
+✔ Alternative text of images should not be repeated as text
+✔ Interactive controls must not be nested",8,3,0,* issues not relevant to isolated component ,no additional issues found ,0
+Tooltip,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ",- Not possible to trigger tooltip with keyboard focus,1
+Trend,no issues detected,0,0,0,0,"✔ Elements must have sufficient color contrast
+✘ Headings should not be empty
+✘ Heading levels should only increase by one",3,1,1,* issues not relevant to isolated component ,no additional issues found ,0
+UserChip,"Element has insufficient color contrast of 
+✔ 4.18  variant: user
+✔ 3.44 link
+✔ 3.61  deactivated
+✔ 3.44 hidden
+Expected contrast ratio of 4.5:1
+✘* Heading levels should only increase by one",3,5,4,4,"✔ Elements must have sufficient color contrast
+✘* Headings should not be empty
+✘* Heading levels should only increase by one
+✔ Links with the same name must have a similar purpose
+✔ Links must have discernible text",5,3,1,* issues not relevant to isolated component ,"- Screenreader reads everything together:
+Name (deactivated) and then it also reads (deactivated) separately",1
+VideoOverlay,no issues detected,0,0,0,0,"✘* Buttons must have discernible text
+✘* Elements must have sufficient color contrast
+✘* Interactive controls must not be nested",3,0,0,"* issues not relevant to isolated component, but only to the Button triggering the actual component. ","- Can’t close the Modal with ESC when focus is on the video controls
+- Wistia example play button doesn’t thave a focus indicator, other controls have them",2
+VideoThumbnail,no issues detected,0,0,0,0,"✔ Elements must have sufficient color contrast
+✔ Links with the same name must have a similar purpose
+✔ Images must have alternate text
+✔ Alternative text of images should not be repeated as text
+✔ Links must have discernible text
+✔ Interactive controls must not be nested",6,6,1,,"- Only the link version has focus state (is focusable)
+- Screenreader should read: Title, desc, time, that it's a video",2
