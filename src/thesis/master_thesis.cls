@@ -38,9 +38,9 @@
 % TABLE OF CONTENTS
 \RequirePackage[notlof, nottoc, notlot, numbib]{tocbibind}
 
-% this will make table of contents hypelinks and will allow to use hyperlinks in refs
-\RequirePackage[]{hyperref}
-    \hypersetup{hidelinks}
+% footnote for restricted access
+\RequirePackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % BIBLIOGRAPHY
 
@@ -124,7 +124,6 @@
 \renewcommand\cfttabaftersnum{.} % affix after tabure number
 \settowidth{\tabNumLen}{\cfttabpresnum\cfttabaftersnum0}
 \renewcommand{\cfttabnumwidth}{\tabNumLen}
-
 
 % Paragraph style. If you do not use indentation there should be a space between the paragraphs. No mixing of the two styles is permitted within the same paper.
 
@@ -266,5 +265,9 @@
 \newcommandx{\info}[2][1=]{\todo[backgroundcolor=lightBlue,bordercolor=lightBlue,#1]{#2}}
 \newcommandx{\problem}[2][1=]{\todo[backgroundcolor=orange,bordercolor=orange,#1]{#2}}
 \newcommandx{\review}[2][1=]{\todo[backgroundcolor=lilac,bordercolor=lilac,#1]{#2}}
+
+% this will make table of contents hypelinks and will allow to use hyperlinks in refs
+\RequirePackage[hyperfootnotes=false]{hyperref}
+    \hypersetup{hidelinks}
 
 \RequirePackage{subfiles} % Best loaded last in the preamble
